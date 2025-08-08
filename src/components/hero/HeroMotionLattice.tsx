@@ -36,14 +36,22 @@ const HeroMotionLattice: React.FC = () => {
   const [debug, setDebug] = useState(false);
   const [active, setActive] = useState(false);
 
+  // Effect 1: set debug + decide activation only
   useEffect(() => {
     const qp = new URLSearchParams(window.location.search);
     setDebug(qp.get('anim') === 'debug');
-    if (shouldDisableAnim()) return; // do not start
+    if (shouldDisableAnim()) return; // respect reduced motion / toggles
     setActive(true);
+  }, []);
 
-    const canvas = canvasRef.current!;
-    const ctx = canvas.getContext('2d')!;
+  // Effect 2: initialize canvas only when mounted & active
+  useEffect(() => {
+    if (!active) return;
+    const canvas = canvasRef.current;
+    if (!canvas) return; // wait for mount
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return; // environment without 2d ctx
+
     let dpr = Math.min(window.devicePixelRatio || 1, 2);
 
     const resize = () => {
@@ -92,10 +100,7 @@ const HeroMotionLattice: React.FC = () => {
       ctx.fillStyle = hexToHsla('#0B0B0C', 1);
       ctx.fillRect(0,0,w,h);
 
-      // slow hue shift
-      const hueShift = (now/1000)/40 * 360; // ~40s per loop
-
-      // parallax
+      // parallax (subtle)
       const px = (mouse.x - w/2) * 0.002;
       const py = (mouse.y - h/2) * 0.002;
 
@@ -175,7 +180,7 @@ const HeroMotionLattice: React.FC = () => {
       window.removeEventListener('mousemove', onMouse as any);
       io.disconnect();
     };
-  }, []);
+  }, [active]);
 
   return (
     <div className="absolute inset-0 pointer-events-none select-none" aria-hidden>

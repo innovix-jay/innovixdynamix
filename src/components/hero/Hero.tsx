@@ -8,7 +8,7 @@ const Hero: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
     <section id="hero" className="relative overflow-hidden">
       <HeroMotionLattice />
       <div className="container relative z-10 py-24 md:py-32">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight max-w-3xl animate-fade-in">
+        <h1 className="text-4xl md:text-6xl font-display font-bold tracking-tight max-w-3xl animate-fade-in">
           AI that accelerates real work
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground mt-4 max-w-2xl animate-fade-in">
