@@ -9,7 +9,7 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
       <div className="container py-12 grid gap-8 md:grid-cols-4">
         <div>
           <h3 className="text-lg font-semibold flex items-center gap-2">
-            <BrandLogo src={["/lovable-uploads/innovix-logo.png","/lovable-uploads/innovix.svg","/lovable-uploads/innovix.png"]} alt="Innovix logo" className="h-6 w-auto" />
+            <BrandLogo src={["/lovable-uploads/innovix-logo.png","/lovable-uploads/innovix-logo.jpg","/lovable-uploads/innovix.svg","/lovable-uploads/innovix.png","/lovable-uploads/innovix.jpg"]} alt="Innovix logo" className="h-6 w-auto" />
           </h3>
           <p className="text-sm text-muted-foreground mt-2">Focused AI tools that make operations faster, clearer, and more reliable.</p>
         </div>

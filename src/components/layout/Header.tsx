@@ -40,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({ className, ...props }) => {
     >
       <div className="container h-full flex items-center justify-between">
         <Link to="/" className="font-semibold tracking-tight hover-scale" aria-label="Innovix home">
-          <BrandLogo src={["/lovable-uploads/innovix-logo.png","/lovable-uploads/innovix.svg","/lovable-uploads/innovix.png"]} alt="Innovix logo" className="h-6 w-auto" eager />
+          <BrandLogo src={["/lovable-uploads/innovix-logo.png","/lovable-uploads/innovix-logo.jpg","/lovable-uploads/innovix.svg","/lovable-uploads/innovix.png","/lovable-uploads/innovix.jpg"]} alt="Innovix logo" className="h-6 w-auto" eager />
         </Link>
         <nav className="flex items-center gap-1" aria-label="Primary">
           <NavLink to="/" end className={linkCls}>Home</NavLink>
