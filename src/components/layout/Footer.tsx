@@ -39,6 +39,7 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
           <div className="flex items-center gap-4">
             <Link to="/privacy">Privacy</Link>
             <Link to="/terms">Terms</Link>
+            <Link to="/accessibility">Accessibility</Link>
           </div>
         </div>
       </div>
