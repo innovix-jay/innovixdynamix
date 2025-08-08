@@ -16,7 +16,7 @@ const Hero: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
             JCAL.ai for builders • Matalino for creators
           </div>
           <h1 className="mt-5 text-5xl md:text-7xl font-display font-bold tracking-tight max-w-5xl leading-tight animate-fade-in">
-            From idea to app — then to market.
+            Idea. Build. Ship. Repeat.
             <span className="block text-gradient">Powered by AI.</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mt-6 max-w-2xl animate-fade-in">
