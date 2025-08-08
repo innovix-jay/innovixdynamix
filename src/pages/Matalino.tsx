@@ -22,10 +22,13 @@ const Matalino: React.FC = () => {
         })}</script>
       </Helmet>
       <div className="mx-auto max-w-3xl text-center">
-        <BrandLogo src={["/lovable-uploads/d1859762-1792-4ebb-bd94-f148b6bdae7b.png","/lovable-uploads/matalino-logo.png","/lovable-uploads/matalino-logo.jpg","/lovable-uploads/matalino.svg","/lovable-uploads/matalino.png","/lovable-uploads/matalino.jpg"]} alt="Matalino logo" className="h-[12rem] w-auto mb-6" eager />
+        <BrandLogo src={["/lovable-uploads/d1859762-1792-4ebb-bd94-f148b6bdae7b.png","/lovable-uploads/matalino-logo.png","/lovable-uploads/matalino-logo.jpg","/lovable-uploads/matalino.svg","/lovable-uploads/matalino.png","/lovable-uploads/matalino.jpg"]} alt="Matalino logo" className="h-[12rem] w-auto mb-6 mx-auto" eager />
         <h1 className="font-display text-4xl md:text-6xl font-bold tracking-tight">Launch smarter. Sell faster. Matalino gets you there.</h1>
         <p className="text-muted-foreground mt-4">A lean, intelligent toolkit for creators and small teams—starter workflows, checklists, and mini‑apps that actually deliver.</p>
-        <div className="mt-6"><EmailCapture list="matalino" /></div>
+        <div className="mt-6">
+          <p className="text-sm uppercase tracking-wide text-muted-foreground mb-2">Join the Matalino waitlist</p>
+          <EmailCapture list="matalino" />
+        </div>
       </div>
 
       <section className="mt-12 grid gap-6 md:grid-cols-2">
