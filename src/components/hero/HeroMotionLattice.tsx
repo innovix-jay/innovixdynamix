@@ -2,6 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 
 const PALETTE = ["#4CC9F0", "#F72585", "#FF8A00"]; // accent colors
 
+const CONFIG = {
+  variant: 'lattice' as const,
+  intensity: 0.6, // medium
+  parallax: true,
+  palette: PALETTE,
+};
+
 function hexToHsla(hex: string, alpha = 1) {
   // simple hex to hsla parser
   const r = parseInt(hex.slice(1, 3), 16) / 255;
@@ -84,8 +91,9 @@ const HeroMotionLattice: React.FC = () => {
     let last = performance.now();
     let fps = 60;
 
-    const near = 80, far = 140; // link distance in px
-    const palette = PALETTE.slice();
+    const near = 80, far = 150; // link distance in px
+    const palette = CONFIG.palette.slice();
+    const intensity = CONFIG.intensity;
 
     const tick = (t:number) => {
       if (!running) return;
@@ -100,35 +108,42 @@ const HeroMotionLattice: React.FC = () => {
       ctx.fillStyle = hexToHsla('#0B0B0C', 1);
       ctx.fillRect(0,0,w,h);
 
-      // parallax (subtle)
-      const px = (mouse.x - w/2) * 0.002;
-      const py = (mouse.y - h/2) * 0.002;
+      // parallax strength and depth-based motion
+      const baseParallax = CONFIG.parallax ? 28 * intensity : 0;
 
-      // animate points with gentle drift using sin noise
+      // animate points with gentle drift using sin noise and depth
       for (const p of points) {
+        const s = 0.6 + p.z * 0.8; // depth scale
         const n = Math.sin((p.ox + now*0.02)*0.002) + Math.cos((p.oy + now*0.018)*0.002);
-        p.x = p.ox + n*10 + px*24;
-        p.y = p.oy + n*10 + py*24;
+        const amp = 6 + 16*intensity*s;
+        const px = (mouse.x - w/2) * 0.002 * baseParallax * s;
+        const py = (mouse.y - h/2) * 0.002 * baseParallax * s;
+        p.x = p.ox + n*amp + px;
+        p.y = p.oy + n*amp + py;
       }
 
-      // draw links
+      // draw links with depth cues
       for (let i=0;i<points.length;i++){
         const a = points[i];
-        for (let j=i+1;j<i+6 && j<points.length;j++){
+        for (let j=i+1;j<i+8 && j<points.length;j++){
           const b = points[j];
           const dx=a.x-b.x, dy=a.y-b.y; const d=Math.hypot(dx,dy);
           if (d<far){
             const t = (d - near) / (far - near);
             if (t<=1){
+              const zmix = (a.z + b.z) * 0.5;
               const color = palette[(i+j)%palette.length];
-              const alpha = Math.max(0, 1 - Math.max(0,t));
-              const width = 1 - Math.max(0,t) * 0.8;
-              ctx.strokeStyle = hexToHsla(color, alpha*0.7);
+              const alpha = Math.max(0, 1 - Math.max(0,t)) * (0.35 + zmix*0.65);
+              const width = Math.max(0.4, 0.5 + zmix*1.2 - Math.max(0,t) * 0.8);
+              ctx.strokeStyle = hexToHsla(color, alpha*0.8);
               ctx.lineWidth = width;
+              ctx.shadowColor = hexToHsla(color, 0.15 * zmix);
+              ctx.shadowBlur = 6 * zmix;
               ctx.beginPath();
               ctx.moveTo(a.x, a.y);
               ctx.lineTo(b.x, b.y);
               ctx.stroke();
+              ctx.shadowBlur = 0;
             }
           }
         }
