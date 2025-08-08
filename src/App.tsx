@@ -18,7 +18,7 @@ import Terms from "./pages/Terms";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import HeroAurora from "./components/hero/HeroAurora";
-import ConsentBanner from "./components/common/ConsentBanner";
+
 import { initAnalytics, setupGlobalAnalytics } from "./utils/analytics";
 
 const queryClient = new QueryClient();
@@ -78,7 +78,7 @@ const AppShell = () => {
         </Routes>
       </main>
       <Footer id="ftr" />
-      <ConsentBanner />
+      
     </div>
   );
 };
