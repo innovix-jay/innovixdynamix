@@ -64,8 +64,8 @@ const AppShell = () => {
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-primary focus:text-primary-foreground focus:px-3 focus:py-2 focus:rounded-md z-50">Skip to content</a>
       <Header id="hdr" />
       <main id="main" className="flex-1">
-        <div className="container pt-4 flex justify-end">
-          <Link to="/" aria-label="Innovix home">
+        <div className="container relative pointer-events-none">
+          <Link to="/" aria-label="Innovix home" className="pointer-events-auto absolute right-0 top-2 md:top-4">
             <BrandLogo
               src="/lovable-uploads/72554a38-f8c3-4d22-a0ba-0a7fd173f7be.png"
               alt="Innovix logo mark"
