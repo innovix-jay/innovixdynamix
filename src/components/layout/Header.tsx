@@ -48,8 +48,6 @@ const Header: React.FC<HeaderProps> = ({ className, ...props }) => {
           <NavLink to="/" end className={linkCls}>Home</NavLink>
           <NavLink to="/products" className={linkCls}>Products</NavLink>
           <NavLink to="/about" className={linkCls}>About</NavLink>
-          <NavLink to="/resources" className={linkCls}>Resources</NavLink>
-          <NavLink to="/accessibility" className={linkCls}>Accessibility</NavLink>
           <NavLink to="/contact" className={linkCls}>Contact</NavLink>
           <Button asChild size="sm" className="ml-2" data-cta="explore-jcal">
             <Link to="/jcal">Explore JCAL</Link>
@@ -69,8 +67,6 @@ const Header: React.FC<HeaderProps> = ({ className, ...props }) => {
               <DropdownMenuItem asChild><Link to="/">Home</Link></DropdownMenuItem>
               <DropdownMenuItem asChild><Link to="/products">Products</Link></DropdownMenuItem>
               <DropdownMenuItem asChild><Link to="/about">About</Link></DropdownMenuItem>
-              <DropdownMenuItem asChild><Link to="/resources">Resources</Link></DropdownMenuItem>
-              <DropdownMenuItem asChild><Link to="/accessibility">Accessibility</Link></DropdownMenuItem>
               <DropdownMenuItem asChild><Link to="/contact">Contact</Link></DropdownMenuItem>
               <div className="px-2 py-1.5">
                 <Button asChild className="w-full mb-2" data-cta="explore-jcal"><Link to="/jcal">Explore JCAL</Link></Button>
