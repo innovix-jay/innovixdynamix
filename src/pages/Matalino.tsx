@@ -8,8 +8,8 @@ const Matalino: React.FC = () => {
   return (
     <div className="container py-16">
       <Helmet>
-        <title>Matalino – Compact Insights | Innovix</title>
-        <meta name="description" content="Matalino delivers compact insights at the moment of decision. Less searching, more clarity." />
+        <title>Matalino – Launch smarter. Sell faster. | Innovix</title>
+        <meta name="description" content="A lean, intelligent toolkit for creators and small teams—starter workflows, checklists, and mini‑apps that actually deliver." />
         <link rel="canonical" href={canonical} />
         <meta property="og:image" content="/assets/share.jpg" />
         <script type="application/ld+json">{JSON.stringify({
@@ -21,12 +21,41 @@ const Matalino: React.FC = () => {
           offers:{"@type":"Offer","price":"0","priceCurrency":"USD"}
         })}</script>
       </Helmet>
-      <BrandLogo src={["/lovable-uploads/d1859762-1792-4ebb-bd94-f148b6bdae7b.png","/lovable-uploads/matalino-logo.png","/lovable-uploads/matalino-logo.jpg","/lovable-uploads/matalino.svg","/lovable-uploads/matalino.png","/lovable-uploads/matalino.jpg"]} alt="Matalino logo" className="h-[14rem] w-auto mb-6" eager />
-      <h1 className="sr-only">Matalino – Compact Insights</h1>
-      <p className="text-muted-foreground mt-2 max-w-2xl">Sharper decisions through compact, contextual insights.</p>
-      <div className="mt-8">
-        <EmailCapture list="matalino" />
+      <div className="mx-auto max-w-3xl text-center">
+        <BrandLogo src={["/lovable-uploads/d1859762-1792-4ebb-bd94-f148b6bdae7b.png","/lovable-uploads/matalino-logo.png","/lovable-uploads/matalino-logo.jpg","/lovable-uploads/matalino.svg","/lovable-uploads/matalino.png","/lovable-uploads/matalino.jpg"]} alt="Matalino logo" className="h-[12rem] w-auto mb-6" eager />
+        <h1 className="font-display text-4xl md:text-6xl font-bold tracking-tight">Launch smarter. Sell faster. Matalino gets you there.</h1>
+        <p className="text-muted-foreground mt-4">A lean, intelligent toolkit for creators and small teams—starter workflows, checklists, and mini‑apps that actually deliver.</p>
+        <div className="mt-6"><EmailCapture list="matalino" /></div>
       </div>
+
+      <section className="mt-12 grid gap-6 md:grid-cols-2">
+        <article className="rounded-xl border bg-card/60 backdrop-blur supports-[backdrop-filter]:bg-card/30 p-6">
+          <h2 className="text-xl font-semibold">Why It Matters</h2>
+          <p className="text-muted-foreground mt-2">Skip the brainstorm. Matalino arms you with systems you use, not read about. Ship critical workflows, fast.</p>
+        </article>
+        <article className="rounded-xl border bg-card/60 backdrop-blur supports-[backdrop-filter]:bg-card/30 p-6">
+          <h2 className="text-xl font-semibold">Bottom Line Impact</h2>
+          <p className="text-muted-foreground mt-2">Matalino cuts launch time from weeks to hours—so you can focus on what matters: your craft.</p>
+        </article>
+      </section>
+
+      <section className="mt-8 rounded-xl border bg-card/60 backdrop-blur supports-[backdrop-filter]:bg-card/30 p-6">
+        <h2 className="text-xl font-semibold">Features · How It Works</h2>
+        <ul className="mt-3 space-y-2 text-muted-foreground list-disc pl-5">
+          <li>Start from the first word—plug‑and‑play starter kits like landing pages, checkout flows, and email sequences.</li>
+          <li>Hands‑on automations and checklists—no dev, no designers, no excuses.</li>
+          <li>Scales from solo creators to micro‑teams, with zero overengineering.</li>
+        </ul>
+      </section>
+
+      <section className="mt-8 rounded-xl border bg-card/60 backdrop-blur supports-[backdrop-filter]:bg-card/30 p-6">
+        <h2 className="text-xl font-semibold">Who It’s For</h2>
+        <ul className="mt-3 space-y-2 text-muted-foreground list-disc pl-5">
+          <li>Writers, artists, creators who just want to ship.</li>
+          <li>Busy solopreneurs tired of tool paralysis.</li>
+          <li>Micro‑agencies repeating setups, not reinventing them.</li>
+        </ul>
+      </section>
     </div>
   );
 };
