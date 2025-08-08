@@ -65,7 +65,7 @@ export default {
 			},
 			fontFamily: {
 				sans: ['Inter','ui-sans-serif','system-ui','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans','Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'],
-				display: ['Playfair Display','serif'],
+				display: ['"Space Grotesk"','Inter','ui-sans-serif','system-ui','Segoe UI','Roboto','Helvetica Neue','Arial','Noto Sans'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

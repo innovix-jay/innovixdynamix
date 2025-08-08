@@ -53,6 +53,12 @@ All colors MUST be HSL.
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Brand tokens */
+    --brand-1: 258 88% 66%; /* violet */
+    --brand-2: 201 96% 64%; /* sky */
+    --brand-3: 16 100% 60%; /* orange */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--brand-2)), hsl(var(--brand-1)), hsl(var(--brand-3)));
   }
 
   .dark {
@@ -101,5 +107,37 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+@layer components {
+  .hero-aurora {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(600px at 20% 20%, hsl(var(--brand-2) / 0.35), transparent 60%),
+      radial-gradient(500px at 80% 30%, hsl(var(--brand-1) / 0.35), transparent 60%),
+      radial-gradient(600px at 50% 80%, hsl(var(--brand-3) / 0.25), transparent 60%);
+    filter: blur(42px);
+    opacity: 0.9;
+    animation: auroraShift 16s ease-in-out infinite alternate;
+    will-change: transform, opacity;
+  }
+  @keyframes auroraShift {
+    0% { transform: translate3d(0,0,0); }
+    50% { transform: translate3d(0,-12px,0) scale(1.02); }
+    100% { transform: translate3d(0,0,0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-aurora { animation: none; }
   }
 }
