@@ -55,9 +55,6 @@ const Header: React.FC<HeaderProps> = ({ className, ...props }) => {
           <Button asChild variant="outline" size="sm" className="ml-1" data-cta="see-matalino">
             <Link to="/matalino">See Matalino</Link>
           </Button>
-          <Link to="/" aria-label="Innovix home" className="ml-3 hidden md:block">
-            <BrandLogo src={["/lovable-uploads/72554a38-f8c3-4d22-a0ba-0a7fd173f7be.png"]} alt="Innovix logo mark" className="h-6 w-auto" />
-          </Link>
         </nav>
         <div className="md:hidden">
           <DropdownMenu>
