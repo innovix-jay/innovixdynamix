@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import EmailCapture from "@/components/common/EmailCapture";
+
 import BrandLogo from "@/components/common/BrandLogo";
 
 const Footer: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
   return (
     <footer id="ftr" className="border-t bg-background" {...props}>
-      <div className="container py-12 grid gap-8 md:grid-cols-4">
+      <div className="container py-12 grid gap-8 md:grid-cols-3">
         <div>
           <h3 className="text-lg font-semibold flex items-center gap-2">
             <BrandLogo src={["/lovable-uploads/22eb7bdf-ddea-4ea0-af45-54ebbe7df6f9.png","/lovable-uploads/innovix-logo.png","/lovable-uploads/innovix-logo.jpg","/lovable-uploads/innovix.svg","/lovable-uploads/innovix.png","/lovable-uploads/innovix.jpg"]} alt="Innovix logo" className="h-6 w-auto" />
@@ -27,10 +27,6 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
             <li><Link className="story-link" to="/jcal">JCAL</Link></li>
             <li><Link className="story-link" to="/matalino">Matalino</Link></li>
           </ul>
-        </div>
-        <div>
-          <h4 className="font-medium mb-2">Get updates</h4>
-          <EmailCapture id="signup" list="general" />
         </div>
       </div>
       <div className="border-t">
