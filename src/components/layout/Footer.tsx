@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import EmailCapture from "@/components/common/EmailCapture";
+import BrandLogo from "@/components/common/BrandLogo";
 
 const Footer: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
   return (
@@ -8,8 +9,7 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
       <div className="container py-12 grid gap-8 md:grid-cols-4">
         <div>
           <h3 className="text-lg font-semibold flex items-center gap-2">
-            <span className="sr-only">Innovix</span>
-            <img src="/lovable-uploads/innovix-logo.png" alt="Innovix logo" className="h-6 w-auto" loading="lazy" decoding="async" />
+            <BrandLogo src={["/lovable-uploads/innovix-logo.png","/lovable-uploads/innovix.svg","/lovable-uploads/innovix.png"]} alt="Innovix logo" className="h-6 w-auto" />
           </h3>
           <p className="text-sm text-muted-foreground mt-2">Focused AI tools that make operations faster, clearer, and more reliable.</p>
         </div>

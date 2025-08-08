@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import EmailCapture from "@/components/common/EmailCapture";
+import BrandLogo from "@/components/common/BrandLogo";
 
 const Jcal: React.FC = () => {
   const canonical = typeof window !== 'undefined' ? `${window.location.origin}/jcal` : 'https://www.innovix-llc.com/jcal';
@@ -20,7 +21,7 @@ const Jcal: React.FC = () => {
           offers:{"@type":"Offer","price":"0","priceCurrency":"USD"}
         })}</script>
       </Helmet>
-      <img src="/lovable-uploads/jcal-logo.png" alt="JCAL.ai logo" className="h-8 w-auto mb-3" loading="eager" decoding="async" />
+      <BrandLogo src={["/lovable-uploads/jcal-logo.png","/lovable-uploads/jcal.svg","/lovable-uploads/jcal.png"]} alt="JCAL.ai logo" className="h-8 w-auto mb-3" eager />
       <h1 className="text-3xl font-bold">JCAL</h1>
       <p className="text-muted-foreground mt-2 max-w-2xl">Structured collaboration that speeds up alignment and keeps progress visible.</p>
       <div className="mt-8">

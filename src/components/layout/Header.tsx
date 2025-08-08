@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import BrandLogo from "@/components/common/BrandLogo";
 
 interface HeaderProps extends React.HTMLAttributes<HTMLElement> {}
 
@@ -39,8 +40,7 @@ const Header: React.FC<HeaderProps> = ({ className, ...props }) => {
     >
       <div className="container h-full flex items-center justify-between">
         <Link to="/" className="font-semibold tracking-tight hover-scale" aria-label="Innovix home">
-          <span className="sr-only">Innovix</span>
-          <img src="/lovable-uploads/innovix-logo.png" alt="Innovix logo" className="h-6 w-auto" loading="eager" decoding="async" />
+          <BrandLogo src={["/lovable-uploads/innovix-logo.png","/lovable-uploads/innovix.svg","/lovable-uploads/innovix.png"]} alt="Innovix logo" className="h-6 w-auto" eager />
         </Link>
         <nav className="flex items-center gap-1" aria-label="Primary">
           <NavLink to="/" end className={linkCls}>Home</NavLink>
