@@ -11,7 +11,7 @@ const Index = () => {
     'https://www.innovix-llc.com/';
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Helmet>
         <title>AI Products for Precise Operations | Innovix</title>
         <meta name="description" content="Innovix builds focused AI products that streamline operations. Explore JCAL and Matalino. Fast, private, and purpose-built for results." />

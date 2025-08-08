@@ -20,6 +20,7 @@ const Jcal: React.FC = () => {
           offers:{"@type":"Offer","price":"0","priceCurrency":"USD"}
         })}</script>
       </Helmet>
+      <img src="/lovable-uploads/jcal-logo.png" alt="JCAL.ai logo" className="h-8 w-auto mb-3" loading="eager" decoding="async" />
       <h1 className="text-3xl font-bold">JCAL</h1>
       <p className="text-muted-foreground mt-2 max-w-2xl">Structured collaboration that speeds up alignment and keeps progress visible.</p>
       <div className="mt-8">

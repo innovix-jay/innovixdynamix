@@ -39,7 +39,8 @@ const Header: React.FC<HeaderProps> = ({ className, ...props }) => {
     >
       <div className="container h-full flex items-center justify-between">
         <Link to="/" className="font-semibold tracking-tight hover-scale" aria-label="Innovix home">
-          Innovix
+          <span className="sr-only">Innovix</span>
+          <img src="/lovable-uploads/innovix-logo.png" alt="Innovix logo" className="h-6 w-auto" loading="eager" decoding="async" />
         </Link>
         <nav className="flex items-center gap-1" aria-label="Primary">
           <NavLink to="/" end className={linkCls}>Home</NavLink>

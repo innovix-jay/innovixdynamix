@@ -16,11 +16,13 @@ const Products: React.FC = () => {
       <p className="text-muted-foreground mt-2">Two focused products, one goal: better outcomes.</p>
       <div className="grid gap-6 md:grid-cols-2 mt-8">
         <article id="pcard-jcal" className="glass-card p-6">
+          <img src="/lovable-uploads/jcal-logo.png" alt="JCAL.ai logo" className="h-6 w-auto mb-3" loading="lazy" decoding="async" />
           <h2 className="text-xl font-semibold">JCAL</h2>
           <p className="text-sm text-muted-foreground mt-2">Structured collaboration that keeps teams aligned without the noise.</p>
           <Link to="/jcal" className="mt-4 inline-flex text-primary story-link" data-cta="explore-jcal">Explore JCAL</Link>
         </article>
         <article id="pcard-matalino" className="glass-card p-6">
+          <img src="/lovable-uploads/matalino-logo.png" alt="Matalino logo" className="h-6 w-auto mb-3" loading="lazy" decoding="async" />
           <h2 className="text-xl font-semibold">Matalino</h2>
           <p className="text-sm text-muted-foreground mt-2">Sharper decisions through compact insights—right when you need them.</p>
           <Link to="/matalino" className="mt-4 inline-flex text-primary story-link" data-cta="see-matalino">See Matalino</Link>

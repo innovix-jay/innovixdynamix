@@ -7,7 +7,10 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
     <footer id="ftr" className="border-t bg-background" {...props}>
       <div className="container py-12 grid gap-8 md:grid-cols-4">
         <div>
-          <h3 className="text-lg font-semibold">Innovix</h3>
+          <h3 className="text-lg font-semibold flex items-center gap-2">
+            <span className="sr-only">Innovix</span>
+            <img src="/lovable-uploads/innovix-logo.png" alt="Innovix logo" className="h-6 w-auto" loading="lazy" decoding="async" />
+          </h3>
           <p className="text-sm text-muted-foreground mt-2">Focused AI tools that make operations faster, clearer, and more reliable.</p>
         </div>
         <div>
