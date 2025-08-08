@@ -1,12 +1,12 @@
 import React from "react";
-import HeroAurora from "./HeroAurora";
+// Aurora moved to global background
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const Hero: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
   return (
     <section id="hero" className="relative overflow-hidden">
-      <HeroAurora />
+      
       <div className="container relative z-10 py-28 md:py-36">
         <div className="inline-flex items-center rounded-full border px-3 py-1 text-xs md:text-sm text-muted-foreground bg-card/60 backdrop-blur supports-[backdrop-filter]:bg-card/30 animate-fade-in">
           Outcome-focused AI for real work

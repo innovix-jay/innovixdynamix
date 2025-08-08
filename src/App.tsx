@@ -17,6 +17,7 @@ import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
+import HeroAurora from "./components/hero/HeroAurora";
 import ConsentBanner from "./components/common/ConsentBanner";
 import { initAnalytics, setupGlobalAnalytics } from "./utils/analytics";
 
@@ -56,6 +57,9 @@ const AppShell = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
+      <div className="pointer-events-none fixed inset-0 -z-10">
+        <HeroAurora />
+      </div>
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-primary focus:text-primary-foreground focus:px-3 focus:py-2 focus:rounded-md z-50">Skip to content</a>
       <Header id="hdr" />
       <main id="main" className="flex-1">

@@ -124,20 +124,42 @@ All colors MUST be HSL.
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(600px at 20% 20%, hsl(var(--brand-2) / 0.35), transparent 60%),
-      radial-gradient(500px at 80% 30%, hsl(var(--brand-1) / 0.35), transparent 60%),
-      radial-gradient(600px at 50% 80%, hsl(var(--brand-3) / 0.25), transparent 60%);
-    filter: blur(42px);
-    opacity: 0.9;
-    animation: auroraShift 16s ease-in-out infinite alternate;
-    will-change: transform, opacity;
+      radial-gradient(800px at 15% 20%, hsl(var(--brand-2) / 0.45), transparent 60%),
+      radial-gradient(700px at 85% 30%, hsl(var(--brand-1) / 0.45), transparent 60%),
+      radial-gradient(900px at 50% 85%, hsl(var(--brand-3) / 0.35), transparent 60%);
+    filter: blur(54px);
+    opacity: 1;
+    animation: auroraShift 10s ease-in-out infinite alternate;
+    will-change: transform, opacity, filter;
   }
   @keyframes auroraShift {
-    0% { transform: translate3d(0,0,0); }
-    50% { transform: translate3d(0,-12px,0) scale(1.02); }
-    100% { transform: translate3d(0,0,0); }
+    0% { transform: translate3d(0,0,0) scale(1); }
+    50% { transform: translate3d(0,-26px,0) scale(1.04); }
+    100% { transform: translate3d(0,0,0) scale(1); }
   }
   @media (prefers-reduced-motion: reduce) {
     .hero-aurora { animation: none; }
+  }
+
+  /* Reusable elevated glass surface with gradient edge */
+  .glass-card {
+    @apply rounded-lg border text-card-foreground shadow-lg transition-transform duration-200 hover:scale-[1.02] hover:shadow-xl;
+    background: color-mix(in oklab, hsl(var(--card)) 70%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: relative;
+  }
+  .glass-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px; /* gradient edge */
+    background: var(--gradient-primary);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    opacity: 0.25;
+    pointer-events: none;
   }
 }

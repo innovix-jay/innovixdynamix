@@ -9,7 +9,7 @@ const ResultsStrip: React.FC = () => {
   return (
     <div className="grid gap-4 md:grid-cols-3">
       {items.map((it) => (
-        <div key={it.k} className="rounded-lg border bg-card p-4 text-center">
+        <div key={it.k} className="glass-card p-4 text-center">
           <div className="text-sm text-muted-foreground">{it.k}</div>
           <div className="text-xl font-semibold mt-1">{it.v}</div>
         </div>
