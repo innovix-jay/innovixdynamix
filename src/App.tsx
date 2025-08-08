@@ -33,14 +33,8 @@ function ScrollToTop() {
 
 const AnalyticsHead = () => (
   <Helmet>
-    {/* GA4 placeholder */}
+    {/* GA4 external script only; config applied in code to support CSP */}
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-    <script>{`
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);} 
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXX', { 'anonymize_ip': true });
-    `}</script>
     {/* Search Console verification placeholder */}
     <meta name="google-site-verification" content="verify-innovix" />
   </Helmet>
@@ -53,6 +47,11 @@ const AppShell = () => {
     const debug = params.get('debug') === '1';
     initAnalytics(debug);
     setupGlobalAnalytics(debug);
+    const GA_ID = "G-XXXXXXX";
+    if ((window as any).gtag && GA_ID && GA_ID !== "G-XXXXXXX") {
+      (window as any).gtag('js', new Date());
+      (window as any).gtag('config', GA_ID, { anonymize_ip: true, allow_google_signals: false, allow_ad_personalization_signals: false });
+    }
   }, []);
 
   return (

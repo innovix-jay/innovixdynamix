@@ -24,7 +24,7 @@ const ContactForm: React.FC<React.HTMLAttributes<HTMLFormElement>> = (props) => 
 
   const onSubmit = async (data: FormData) => {
     const payload = { ...data, timestamp: new Date().toISOString() };
-    console.log('[contact-webhook] payload', payload);
+    
     trackEvent('contact_submit', { source: 'contact_page' });
     toast({ title: "Thanks. We received your message.", description: "We’ll reply soon." });
     reset();

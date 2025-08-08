@@ -26,7 +26,7 @@ const EmailCapture: React.FC<EmailCaptureProps> = ({ list, className, ...props }
     if (data.website) { return; } // honeypot
     const payload = { email: data.email, list, timestamp: new Date().toISOString() };
     // Stub: log and succeed
-    console.log('[email-webhook] payload', payload);
+    
     trackEvent('email_submit', { list });
     toast({ title: "Thanks. You are on the list." });
     reset();

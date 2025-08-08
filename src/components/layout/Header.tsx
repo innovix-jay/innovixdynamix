@@ -3,6 +3,8 @@ import { NavLink, Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import BrandLogo from "@/components/common/BrandLogo";
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu";
+import { Menu } from "lucide-react";
 
 interface HeaderProps extends React.HTMLAttributes<HTMLElement> {}
 
@@ -42,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ className, ...props }) => {
         <Link to="/" className="font-semibold tracking-tight hover-scale" aria-label="Innovix home">
           <BrandLogo src={["/lovable-uploads/22eb7bdf-ddea-4ea0-af45-54ebbe7df6f9.png", "/lovable-uploads/innovix-logo.png","/lovable-uploads/innovix-logo.jpg","/lovable-uploads/innovix.svg","/lovable-uploads/innovix.png","/lovable-uploads/innovix.jpg"]} alt="Innovix logo" className="h-6 w-auto" eager />
         </Link>
-        <nav className="flex items-center gap-1" aria-label="Primary">
+        <nav className="hidden md:flex items-center gap-1" aria-label="Primary">
           <NavLink to="/" end className={linkCls}>Home</NavLink>
           <NavLink to="/products" className={linkCls}>Products</NavLink>
           <NavLink to="/about" className={linkCls}>About</NavLink>
@@ -55,6 +57,26 @@ const Header: React.FC<HeaderProps> = ({ className, ...props }) => {
             <Link to="/matalino">See Matalino</Link>
           </Button>
         </nav>
+        <div className="md:hidden">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="sm" aria-label="Open menu">
+                <Menu className="h-4 w-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="w-56">
+              <DropdownMenuItem asChild><Link to="/">Home</Link></DropdownMenuItem>
+              <DropdownMenuItem asChild><Link to="/products">Products</Link></DropdownMenuItem>
+              <DropdownMenuItem asChild><Link to="/about">About</Link></DropdownMenuItem>
+              <DropdownMenuItem asChild><Link to="/resources">Resources</Link></DropdownMenuItem>
+              <DropdownMenuItem asChild><Link to="/contact">Contact</Link></DropdownMenuItem>
+              <div className="px-2 py-1.5">
+                <Button asChild className="w-full mb-2" data-cta="explore-jcal"><Link to="/jcal">Explore JCAL</Link></Button>
+                <Button asChild variant="outline" className="w-full" data-cta="see-matalino"><Link to="/matalino">See Matalino</Link></Button>
+              </div>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </div>
     </header>
   );
