@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const CalloutBanner: React.FC = () => {
   return (
-    <div className="rounded-lg border bg-secondary text-secondary-foreground p-6 flex flex-col md:flex-row items-center justify-between">
+    <div className="glass-card p-6 flex flex-col md:flex-row items-center justify-between">
       <div>
         <h3 className="text-lg font-semibold">See the products in action</h3>
         <p className="text-sm text-muted-foreground">Pick a path and explore a focused demo.</p>

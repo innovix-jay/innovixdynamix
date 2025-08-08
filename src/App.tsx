@@ -56,7 +56,7 @@ const AppShell = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen text-foreground relative">
       <div className="pointer-events-none fixed inset-0 -z-10">
         <HeroAurora />
       </div>
