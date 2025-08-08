@@ -1,8 +1,11 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import Hero from "@/components/hero/Hero";
-import FeatureGrid from "@/components/common/FeatureGrid";
-import ResultsStrip from "@/components/common/ResultsStrip";
+import ProductCallouts from "@/components/home/ProductCallouts";
+import WhyInnovix from "@/components/home/WhyInnovix";
+import OurJourney from "@/components/home/OurJourney";
+import HowWeWork from "@/components/home/HowWeWork";
+import HomeFAQ from "@/components/home/HomeFAQ";
 import CalloutBanner from "@/components/common/CalloutBanner";
 import EmailCapture from "@/components/common/EmailCapture";
 
@@ -13,11 +16,11 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>AI Products for Precise Operations | Innovix</title>
-        <meta name="description" content="Innovix builds focused AI products that streamline operations. Explore JCAL and Matalino. Fast, private, and purpose-built for results." />
+        <title>Innovix | We build the tools that build your business</title>
+        <meta name="description" content="Innovix is the AI mothership behind JCAL.ai and Matalino. Build apps from prompts or launch with creator focused workflows. Clear paths, fast outcomes." />
         <link rel="canonical" href={canonical} />
-        <meta property="og:title" content="AI Products for Precise Operations | Innovix" />
-        <meta property="og:description" content="Innovix builds focused AI products that streamline operations. Explore JCAL and Matalino." />
+        <meta property="og:title" content="Innovix | We build the tools that build your business" />
+        <meta property="og:description" content="Innovix builds JCAL.ai and Matalino so small teams can ship fast." />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/assets/share.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -44,16 +47,32 @@ const Index = () => {
 
       <Hero id="hero" />
 
-      <section id="features" className="container py-16 animate-fade-in">
-        <FeatureGrid />
+      <section id="products" className="container py-16 animate-fade-in">
+        <ProductCallouts />
       </section>
 
-      <section id="results" className="container py-12 animate-fade-in">
-        <ResultsStrip />
+      <section id="why" className="container py-12 animate-fade-in">
+        <WhyInnovix />
       </section>
 
-      <section id="signup" className="container py-16 animate-fade-in">
-        <EmailCapture id="signup" list="general" />
+      <section id="journey" className="container py-12 animate-fade-in">
+        <OurJourney />
+      </section>
+
+      <section id="how" className="container py-12 animate-fade-in">
+        <HowWeWork />
+      </section>
+
+      <section id="email" className="container py-16 animate-fade-in">
+        <header className="mb-4">
+          <h2 className="text-2xl md:text-3xl font-semibold">Get early access and playbooks</h2>
+          <p className="text-sm text-muted-foreground mt-1">Join the list for product updates, launch guides, and practical tips. No spam.</p>
+        </header>
+        <EmailCapture id="signup" list="general" className="max-w-xl" data-cta="join-list-home" aria-label="Join the list" /* @ts-ignore custom prop */ emailOnly successMessage="You are on the list. We will be in touch soon." />
+      </section>
+
+      <section id="faq" className="container py-12 animate-fade-in">
+        <HomeFAQ />
       </section>
 
       <section id="callout" className="container py-12 animate-fade-in">
