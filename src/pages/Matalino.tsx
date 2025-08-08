@@ -21,7 +21,7 @@ const Matalino: React.FC = () => {
           offers:{"@type":"Offer","price":"0","priceCurrency":"USD"}
         })}</script>
       </Helmet>
-      <BrandLogo src={["/lovable-uploads/matalino-logo.png","/lovable-uploads/matalino-logo.jpg","/lovable-uploads/matalino.svg","/lovable-uploads/matalino.png","/lovable-uploads/matalino.jpg"]} alt="Matalino logo" className="h-8 w-auto mb-3" eager />
+      <BrandLogo src={["/lovable-uploads/d1859762-1792-4ebb-bd94-f148b6bdae7b.png","/lovable-uploads/matalino-logo.png","/lovable-uploads/matalino-logo.jpg","/lovable-uploads/matalino.svg","/lovable-uploads/matalino.png","/lovable-uploads/matalino.jpg"]} alt="Matalino logo" className="h-8 w-auto mb-3" eager />
       <h1 className="text-3xl font-bold">Matalino</h1>
       <p className="text-muted-foreground mt-2 max-w-2xl">Sharper decisions through compact, contextual insights.</p>
       <div className="mt-8">
