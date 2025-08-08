@@ -7,8 +7,8 @@ const Terms: React.FC = () => {
   return (
     <div className="container py-16">
       <Helmet>
-        <title>Terms of Service | Matalino</title>
-        <meta name="description" content="Terms of Service for Matalino AI covering accounts, subscriptions, acceptable use, IP, disclaimers, and changes." />
+        <title>Terms of Service | Innovix</title>
+        <meta name="description" content="Innovix website terms of service. Covers use of innovix-llc.com only. Separate terms apply to JCAL.ai and Matalino." />
         <link rel="canonical" href={canonical} />
         <meta property="og:image" content="/assets/share.jpg" />
         <script type="application/ld+json">{JSON.stringify({
@@ -21,104 +21,81 @@ const Terms: React.FC = () => {
 
       <header className="prose prose-invert max-w-3xl mx-auto text-center mb-10">
         <h1>Terms of Service</h1>
-        <p className="text-muted-foreground"><strong>Last Updated:</strong> {updated}</p>
+        <p className="text-muted-foreground"><strong>Last updated:</strong> {new Date().toLocaleDateString()}</p>
       </header>
 
       <div className="grid gap-6 max-w-4xl mx-auto">
         {/* 1. Acceptance of Terms */}
         <section aria-labelledby="acceptance" className="glass-card p-6 rounded-xl">
           <h2 id="acceptance" className="text-xl font-semibold mb-2">1. Acceptance of Terms</h2>
-          <p>By accessing and using Matalino AI ("the Service"), you accept and agree to be bound by these terms. If you do not agree, please do not use the Service.</p>
+          <p>These Terms govern your use of the Innovix LLC website available at innovix-llc.com (the “Site”). By accessing or using the Site, you agree to these Terms. If you do not agree, do not use the Site.</p>
         </section>
 
-        {/* 2. Description of Service */}
-        <section aria-labelledby="description" className="glass-card p-6 rounded-xl">
-          <h2 id="description" className="text-xl font-semibold mb-2">2. Description of Service</h2>
-          <p>Matalino AI is an artificial intelligence–powered business mentorship platform that provides:</p>
+        {/* 2. Scope and Separate Product Terms */}
+        <section aria-labelledby="scope" className="glass-card p-6 rounded-xl">
+          <h2 id="scope" className="text-xl font-semibold mb-2">2. Scope and Separate Product Terms</h2>
+          <p>These Terms apply only to the Innovix corporate website and related informational pages. Our products and brands, including JCAL.ai and Matalino, have their own terms and policies which govern use of those services.</p>
+        </section>
+
+        {/* 3. Use of the Site */}
+        <section aria-labelledby="use" className="glass-card p-6 rounded-xl">
+          <h2 id="use" className="text-xl font-semibold mb-2">3. Use of the Site</h2>
           <ul className="list-disc pl-6 mt-2 space-y-1">
-            <li>AI-powered chat consultations for business guidance</li>
-            <li>Document generation and management tools</li>
-            <li>Email marketing campaign creation and management</li>
-            <li>E‑commerce store building capabilities</li>
-            <li>Link-in-bio page creation tools</li>
-            <li>Business analytics and insights</li>
+            <li>You may browse the Site and use any publicly available resources for informational purposes.</li>
+            <li>You agree not to misuse the Site, attempt to interfere with its operation, or access non‑public areas.</li>
+            <li>You must comply with all applicable laws while using the Site.</li>
           </ul>
         </section>
 
-        {/* 3. User Accounts */}
-        <section aria-labelledby="accounts" className="glass-card p-6 rounded-xl">
-          <h2 id="accounts" className="text-xl font-semibold mb-2">3. User Accounts</h2>
-          <h3 className="text-base font-medium mt-2">3.1 Registration</h3>
-          <p>You must register for an account to access certain features. You agree to provide accurate, current, and complete information.</p>
-          <h3 className="text-base font-medium mt-4">3.2 Account Security</h3>
-          <p>You are responsible for safeguarding your password and for activities under your account. Notify us promptly of any unauthorized use.</p>
-        </section>
-
-        {/* 4. Subscription Plans */}
-        <section aria-labelledby="plans" className="glass-card p-6 rounded-xl">
-          <h2 id="plans" className="text-xl font-semibold mb-2">4. Subscription Plans</h2>
-          <h3 className="text-base font-medium mt-2">4.1 Free Plan</h3>
-          <p>Limited access with usage restrictions on AI messages, document generation, and other premium features.</p>
-          <h3 className="text-base font-medium mt-4">4.2 Pro Plan</h3>
-          <p>Unlimited access to all features for a monthly subscription fee. Billing occurs monthly; you may cancel anytime.</p>
-          <h3 className="text-base font-medium mt-4">4.3 Payment Terms</h3>
-          <p>Subscription fees are billed in advance monthly. All fees are non‑refundable except as expressly stated in our refund policy.</p>
-        </section>
-
-        {/* 5. Acceptable Use */}
-        <section aria-labelledby="acceptable-use" className="glass-card p-6 rounded-xl">
-          <h2 id="acceptable-use" className="text-xl font-semibold mb-2">5. Acceptable Use</h2>
-          <p>You agree not to:</p>
-          <ul className="list-disc pl-6 mt-2 space-y-1">
-            <li>Violate any applicable laws or regulations</li>
-            <li>Infringe on the rights of others</li>
-            <li>Generate harmful, offensive, or inappropriate content</li>
-            <li>Attempt to gain unauthorized access to our systems</li>
-            <li>Use the Service for any commercial purpose without authorization</li>
-            <li>Share your account credentials with others</li>
-          </ul>
-        </section>
-
-        {/* 6. Intellectual Property */}
+        {/* 4. Intellectual Property */}
         <section aria-labelledby="ip" className="glass-card p-6 rounded-xl">
-          <h2 id="ip" className="text-xl font-semibold mb-2">6. Intellectual Property</h2>
-          <h3 className="text-base font-medium mt-2">6.1 Our Content</h3>
-          <p>The Service and its original content, features, and functionality are owned by Matalino AI and protected by applicable intellectual property laws.</p>
-          <h3 className="text-base font-medium mt-4">6.2 User Content</h3>
-          <p>You retain ownership of content you create using the Service. You grant us a license to use and process your content as necessary to provide the Service.</p>
+          <h2 id="ip" className="text-xl font-semibold mb-2">4. Intellectual Property</h2>
+          <p>The Site, its design, text, graphics, and other content are owned or licensed by Innovix LLC and are protected by intellectual property laws. You may not copy, modify, distribute, or create derivative works without prior written permission.</p>
         </section>
 
-        {/* 7. Privacy and Data Protection */}
-        <section aria-labelledby="privacy" className="glass-card p-6 rounded-xl">
-          <h2 id="privacy" className="text-xl font-semibold mb-2">7. Privacy and Data Protection</h2>
-          <p>Your privacy is important to us. See our <a className="story-link" href="/privacy">Privacy Policy</a> for details on collection, use, and protection of information.</p>
+        {/* 5. No Accounts or Purchases on the Site */}
+        <section aria-labelledby="accounts" className="glass-card p-6 rounded-xl">
+          <h2 id="accounts" className="text-xl font-semibold mb-2">5. No Accounts or Purchases on the Site</h2>
+          <p>The Site does not offer user accounts or direct purchases. If you choose to contact us or join our mailing list, you may provide your name and email address. Handling of that information is described in our <a className="story-link" href="/privacy">Privacy Policy</a>.</p>
         </section>
 
-        {/* 8. Disclaimers */}
+        {/* 6. Third‑Party Links */}
+        <section aria-labelledby="links" className="glass-card p-6 rounded-xl">
+          <h2 id="links" className="text-xl font-semibold mb-2">6. Third‑Party Links</h2>
+          <p>The Site may contain links to third‑party websites. Innovix does not control and is not responsible for the content or practices of those sites.</p>
+        </section>
+
+        {/* 7. Disclaimers */}
         <section aria-labelledby="disclaimers" className="glass-card p-6 rounded-xl">
-          <h2 id="disclaimers" className="text-xl font-semibold mb-2">8. Disclaimers</h2>
-          <p>The information provided by Matalino AI is for general informational purposes only. We make no warranties regarding completeness, reliability, or suitability.</p>
+          <h2 id="disclaimers" className="text-xl font-semibold mb-2">7. Disclaimers</h2>
+          <p>The Site is provided “as is” and “as available” without warranties of any kind, express or implied, including but not limited to warranties of accuracy, reliability, or fitness for a particular purpose.</p>
         </section>
 
-        {/* 9. Limitation of Liability */}
+        {/* 8. Limitation of Liability */}
         <section aria-labelledby="liability" className="glass-card p-6 rounded-xl">
-          <h2 id="liability" className="text-xl font-semibold mb-2">9. Limitation of Liability</h2>
-          <p>To the maximum extent permitted by law, Matalino AI shall not be liable for indirect, incidental, special, consequential, or punitive damages, or any loss of profits, data, use, goodwill, or other intangible losses.</p>
+          <h2 id="liability" className="text-xl font-semibold mb-2">8. Limitation of Liability</h2>
+          <p>To the maximum extent permitted by law, Innovix LLC and its affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from or related to your use of the Site.</p>
         </section>
 
-        {/* 10. Termination */}
-        <section aria-labelledby="termination" className="glass-card p-6 rounded-xl">
-          <h2 id="termination" className="text-xl font-semibold mb-2">10. Termination</h2>
-          <p>We may suspend or terminate your account immediately, without prior notice, for any reason, including breach of these Terms.</p>
-        </section>
-
-        {/* 11. Changes to Terms */}
+        {/* 9. Changes to the Site and Terms */}
         <section aria-labelledby="changes" className="glass-card p-6 rounded-xl">
-          <h2 id="changes" className="text-xl font-semibold mb-2">11. Changes to Terms</h2>
-          <p>We may modify these Terms at any time. If a revision is material, we will provide notice before new terms take effect.</p>
+          <h2 id="changes" className="text-xl font-semibold mb-2">9. Changes to the Site and Terms</h2>
+          <p>We may update the Site and these Terms from time to time. Updates will be posted on this page with the “Last updated” date above.</p>
         </section>
 
-        <p className="text-xs text-muted-foreground text-center">Have legal counsel review before use.</p>
+        {/* 10. Governing Law */}
+        <section aria-labelledby="law" className="glass-card p-6 rounded-xl">
+          <h2 id="law" className="text-xl font-semibold mb-2">10. Governing Law</h2>
+          <p>These Terms are governed by the laws of the jurisdiction where Innovix LLC is formed, without regard to conflict of laws principles.</p>
+        </section>
+
+        {/* 11. Contact */}
+        <section aria-labelledby="contact" className="glass-card p-6 rounded-xl">
+          <h2 id="contact" className="text-xl font-semibold mb-2">11. Contact</h2>
+          <p>If you have questions about these Terms, please contact us via the <a className="story-link" href="/contact">contact page</a>.</p>
+        </section>
+
+        <p className="text-xs text-muted-foreground text-center">Placeholder legal text for review by counsel.</p>
       </div>
     </div>
   );

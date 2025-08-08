@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Products from "./pages/Products";
@@ -19,7 +19,7 @@ import Accessibility from "./pages/Accessibility";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import HeroAurora from "./components/hero/HeroAurora";
-import BrandLogo from "@/components/common/BrandLogo";
+
 import { initAnalytics, setupGlobalAnalytics } from "./utils/analytics";
 
 const queryClient = new QueryClient();
@@ -62,18 +62,6 @@ const AppShell = () => {
       </div>
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:bg-primary focus:text-primary-foreground focus:px-3 focus:py-2 focus:rounded-md z-50">Skip to content</a>
       <Header id="hdr" />
-      <Link
-        to="/"
-        aria-label="Innovix home"
-        className="fixed z-50 pointer-events-auto"
-        style={{ right: "max(env(safe-area-inset-right), 8px)", top: "calc(max(env(safe-area-inset-top), 8px) + 56px)" }}
-      >
-        <BrandLogo
-          src="/lovable-uploads/72554a38-f8c3-4d22-a0ba-0a7fd173f7be.png"
-          alt="Innovix logo mark"
-          className="w-20 h-20 md:w-24 md:h-24 drop-shadow"
-        />
-      </Link>
       <main id="main" className="flex-1">
         <Routes>
           <Route path="/" element={<Index />} />
