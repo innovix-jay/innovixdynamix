@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import EmailCapture from "@/components/common/EmailCapture";
 import BrandLogo from "@/components/common/BrandLogo";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 const Matalino: React.FC = () => {
   const canonical = typeof window !== 'undefined' ? `${window.location.origin}/matalino` : 'https://www.innovix-llc.com/matalino';
@@ -19,6 +20,20 @@ const Matalino: React.FC = () => {
           applicationCategory:"BusinessApplication",
           operatingSystem:"Web",
           offers:{"@type":"Offer","price":"0","priceCurrency":"USD"}
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context":"https://schema.org",
+          "@type":"FAQPage",
+          mainEntity:[
+            {
+              "@type":"Question",
+              name:"Do I need coding skills?",
+              acceptedAnswer:{
+                "@type":"Answer",
+                text:"No. Matalino is a no-code business suite with a product store builder, link-in-bio maker, and email campaign creator. It also offers unified access to several premium AI models under one roof—nothing to code."
+              }
+            }
+          ]
         })}</script>
       </Helmet>
       <div className="mx-auto max-w-3xl text-center">
@@ -58,6 +73,18 @@ const Matalino: React.FC = () => {
           <li>Busy solopreneurs tired of tool paralysis.</li>
           <li>Micro‑agencies repeating setups, not reinventing them.</li>
         </ul>
+      </section>
+
+      <section aria-labelledby="matalino-faq" className="mt-8 rounded-xl border bg-card/60 backdrop-blur supports-[backdrop-filter]:bg-card/30 p-6">
+        <h2 id="matalino-faq" className="text-xl font-semibold">FAQ</h2>
+        <Accordion type="single" collapsible className="mt-4">
+          <AccordionItem value="no-code">
+            <AccordionTrigger>Do I need coding skills?</AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              No. Matalino is a no‑code business suite with a product store builder, link‑in‑bio maker, and email campaign creator. It also offers unified access to several premium AI models under one roof—nothing to code.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </section>
     </div>
   );
