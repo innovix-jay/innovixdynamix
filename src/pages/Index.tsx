@@ -16,8 +16,9 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Innovix | We build the tools that build your business</title>
-        <meta name="description" content="Innovix is the AI mothership behind JCAL.ai and Matalino. Build apps from prompts or launch with creator focused workflows. Clear paths, fast outcomes." />
+        <title>Innovix | The AI mothership for JCAL.ai and Matalino</title>
+        <meta name="description" content="Innovix builds JCAL.ai and Matalino — focused AI tools to help creators and small teams ship faster. No buzzwords. Just results." />
+        <meta name="keywords" content="AI app builder, creator workflows, launch automation, prompt to app, small business AI tools" />
         <link rel="canonical" href={canonical} />
         <meta property="og:title" content="Innovix | We build the tools that build your business" />
         <meta property="og:description" content="Innovix builds JCAL.ai and Matalino so small teams can ship fast." />

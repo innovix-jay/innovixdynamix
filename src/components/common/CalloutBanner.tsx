@@ -9,8 +9,8 @@ const CalloutBanner: React.FC = () => {
         <h3 className="text-lg font-semibold">Two products. One mission. Build and ship faster.</h3>
       </div>
       <div className="mt-4 md:mt-0 flex gap-2">
-        <Button asChild data-cta="see-jcal"><Link to="/jcal" aria-label="See JCAL.ai">See JCAL.ai</Link></Button>
-        <Button asChild variant="outline" data-cta="see-matalino"><Link to="/matalino" aria-label="See Matalino">See Matalino</Link></Button>
+        <Button asChild data-cta="explore-jcal"><Link to="/jcal" aria-label="Explore JCAL.ai">Explore JCAL.ai</Link></Button>
+        <Button asChild variant="outline" data-cta="explore-matalino"><Link to="/matalino" aria-label="Explore Matalino">Explore Matalino</Link></Button>
       </div>
     </div>
   );

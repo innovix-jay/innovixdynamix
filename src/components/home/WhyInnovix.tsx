@@ -3,16 +3,8 @@ import React from "react";
 const WhyInnovix: React.FC = () => {
   return (
     <section aria-labelledby="why-this-matters">
-      <p className="text-xs uppercase tracking-wide text-muted-foreground">Why this matters</p>
-      <h2 id="why-this-matters" className="text-2xl md:text-3xl font-semibold mt-2">Clarity first. Speed to value.</h2>
-      <p className="text-sm text-muted-foreground mt-3">
-        Most teams drown in tools or meetings. We build products that remove friction. No buzzword theater.
-      </p>
-      <ul className="mt-4 list-disc pl-5 space-y-1 text-sm">
-        <li>Outcome driven, not service heavy</li>
-        <li>Clear setup paths and templates</li>
-        <li>Sensible pricing and simple onboarding</li>
-      </ul>
+      <h2 id="why-this-matters" className="text-2xl md:text-3xl font-semibold">The problem isn’t tools — it’s too many of them.</h2>
+      <p className="text-sm text-muted-foreground mt-3">Small teams get buried in platforms, meetings, and complexity. We fix that by building focused tools you’ll actually use, with no learning curve and no wasted motion.</p>
     </section>
   );
 };

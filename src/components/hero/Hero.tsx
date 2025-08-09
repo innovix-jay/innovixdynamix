@@ -16,14 +16,14 @@ const Hero: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
             We build the tools that build your business.
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mt-6 max-w-2xl animate-fade-in">
-            Innovix is the AI mothership. We create JCAL.ai and Matalino—practical products that help you ship, not stall.
+            Innovix is the AI mothership behind JCAL.ai and Matalino — purpose-built products that help you launch faster, build smarter, and skip the noise.
           </p>
         <div className="mt-8 flex flex-wrap gap-3 animate-fade-in">
-          <Button asChild size="lg" data-cta="explore-products-hero">
-            <Link to="/products" aria-label="Explore our products">Explore our products</Link>
+          <Button asChild size="lg" data-cta="see-jcal-hero">
+            <Link to="/jcal" aria-label="See JCAL.ai">See JCAL.ai</Link>
           </Button>
-          <Button asChild variant="outline" size="lg" data-cta="learn-about-hero">
-            <Link to="/about" aria-label="Learn about Innovix">Learn about Innovix</Link>
+          <Button asChild variant="outline" size="lg" data-cta="see-matalino-hero">
+            <Link to="/matalino" aria-label="See Matalino">See Matalino</Link>
           </Button>
         </div>
       </div>
