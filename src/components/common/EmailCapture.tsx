@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { trackEvent } from "@/utils/analytics";
+import { supabase } from "@/integrations/supabase/client";
 
 const schemaFull = z.object({
   name: z.string().min(1),
@@ -31,13 +32,27 @@ const EmailCapture: React.FC<EmailCaptureProps> = ({ list, className, emailOnly 
   });
 
   const onSubmit = async (data: any) => {
-    if (data.website) { return; } // honeypot
-    const payload = { name: data.name, email: data.email, list, timestamp: new Date().toISOString() };
-    // Stub: log and succeed
-    
-    trackEvent('email_submit', { list });
-    toast({ title: successMessage || "Thanks. You are on the list." });
-    reset();
+    try {
+      if (data.website) { return; } // honeypot
+      const payload = {
+        name: data.name,
+        email: data.email,
+        list,
+        source_path: typeof window !== 'undefined' ? window.location.pathname : undefined,
+        user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : undefined,
+        website: data.website,
+      };
+
+      const { data: fnData, error } = await supabase.functions.invoke('collect-email', { body: payload });
+      if (error) throw error;
+
+      trackEvent('email_submit', { list });
+      toast({ title: successMessage || "Thanks. You are on the list." });
+      reset();
+    } catch (e: any) {
+      console.error('email capture submit failed', e);
+      toast({ title: 'Something went wrong', description: 'Please try again.', variant: 'destructive' });
+    }
   };
 
   return (

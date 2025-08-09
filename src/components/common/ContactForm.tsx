@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { trackEvent } from "@/utils/analytics";
+import { supabase } from "@/integrations/supabase/client";
 
 const schema = z.object({
   name: z.string().min(1),
@@ -14,6 +15,7 @@ const schema = z.object({
   company: z.string().optional(),
   interest: z.enum(["JCAL","Matalino","General"]).default("General"),
   message: z.string().min(1),
+  website: z.string().optional(), // honeypot
 });
 
 type FormData = z.infer<typeof schema>;
@@ -23,11 +25,23 @@ const ContactForm: React.FC<React.HTMLAttributes<HTMLFormElement>> = (props) => 
   const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormData>({ resolver: zodResolver(schema) });
 
   const onSubmit = async (data: FormData) => {
-    const payload = { ...data, timestamp: new Date().toISOString() };
-    
-    trackEvent('contact_submit', { source: 'contact_page' });
-    toast({ title: "Thanks. We received your message.", description: "We’ll reply soon." });
-    reset();
+    try {
+      const payload = {
+        ...data,
+        source_path: typeof window !== 'undefined' ? window.location.pathname : undefined,
+        user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : undefined,
+      };
+
+      const { error } = await supabase.functions.invoke('submit-contact', { body: payload });
+      if (error) throw error;
+
+      trackEvent('contact_submit', { source: 'contact_page' });
+      toast({ title: "Thanks. We received your message.", description: "We’ll reply soon." });
+      reset();
+    } catch (e: any) {
+      console.error('contact submit failed', e);
+      toast({ title: 'Something went wrong', description: 'Please try again.', variant: 'destructive' });
+    }
   };
 
   return (
@@ -60,6 +74,8 @@ const ContactForm: React.FC<React.HTMLAttributes<HTMLFormElement>> = (props) => 
           <Textarea rows={4} aria-invalid={!!errors.message} {...register('message')} />
           {errors.message && <p className="text-sm text-destructive mt-1">Message is required.</p>}
         </div>
+        {/* Honeypot field */}
+        <input type="text" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden name="website" {...register('website')} />
         <div>
           <Button type="submit" disabled={isSubmitting}>Send</Button>
         </div>
