@@ -9,8 +9,8 @@ const Matalino: React.FC = () => {
   return (
     <div className="container py-16">
       <Helmet>
-        <title>Matalino – Launch smarter. Sell faster. | Innovix</title>
-        <meta name="description" content="A lean, intelligent toolkit for creators and small teams—starter workflows, checklists, and mini‑apps that actually deliver." />
+        <title>Matalino – AI model aggregator + business suite | Innovix</title>
+        <meta name="description" content="Unified access to several premium AI models with store, email, and automations—launch faster without multiple subscriptions." />
         <link rel="canonical" href={canonical} />
         <meta property="og:image" content="/assets/share.jpg" />
         <script type="application/ld+json">{JSON.stringify({
@@ -38,8 +38,8 @@ const Matalino: React.FC = () => {
       </Helmet>
       <div className="mx-auto max-w-3xl text-center">
         <BrandLogo src={["/lovable-uploads/d1859762-1792-4ebb-bd94-f148b6bdae7b.png","/lovable-uploads/matalino-logo.png","/lovable-uploads/matalino-logo.jpg","/lovable-uploads/matalino.svg","/lovable-uploads/matalino.png","/lovable-uploads/matalino.jpg"]} alt="Matalino logo" className="h-[12rem] w-auto mb-6 mx-auto" eager />
-        <h1 className="font-display text-4xl md:text-6xl font-bold tracking-tight">Launch smarter. Sell faster. Matalino gets you there.</h1>
-        <p className="text-muted-foreground mt-4">A lean, intelligent toolkit for creators and small teams—starter workflows, checklists, and mini‑apps that actually deliver.</p>
+        <h1 className="font-display text-4xl md:text-6xl font-bold tracking-tight">All‑in‑one AI model access + business suite</h1>
+        <p className="text-muted-foreground mt-4">Unified access to several premium AI models under one plan. Launch pages, checkout, email campaigns, and automations—without juggling subscriptions.</p>
         <div className="mt-6">
           <p className="text-sm uppercase tracking-wide text-muted-foreground mb-2">Join the Matalino waitlist</p>
           <EmailCapture list="matalino" />
@@ -49,20 +49,24 @@ const Matalino: React.FC = () => {
       <section className="mt-12 grid gap-6 md:grid-cols-2">
         <article className="rounded-xl border bg-card/60 backdrop-blur supports-[backdrop-filter]:bg-card/30 p-6">
           <h2 className="text-xl font-semibold">Why It Matters</h2>
-          <p className="text-muted-foreground mt-2">Skip the brainstorm. Matalino arms you with systems you use, not read about. Ship critical workflows, fast.</p>
+          <p className="text-muted-foreground mt-2">Stop piecing together separate AI subs and tools. Get unified model access plus the business tools to actually ship.</p>
         </article>
         <article className="rounded-xl border bg-card/60 backdrop-blur supports-[backdrop-filter]:bg-card/30 p-6">
           <h2 className="text-xl font-semibold">Bottom Line Impact</h2>
-          <p className="text-muted-foreground mt-2">Matalino cuts launch time from weeks to hours—so you can focus on what matters: your craft.</p>
+          <p className="text-muted-foreground mt-2">Replace multiple subscriptions with one plan—and launch faster while reducing cost and complexity.</p>
         </article>
+      </section>
+
+      <section role="note" aria-label="Unified AI access" className="mt-8 rounded-xl border bg-card/60 backdrop-blur supports-[backdrop-filter]:bg-card/30 p-6">
+        <p className="text-sm md:text-base text-muted-foreground">No separate subscriptions needed—several premium AI models housed under one roof with unified access.</p>
       </section>
 
       <section className="mt-8 rounded-xl border bg-card/60 backdrop-blur supports-[backdrop-filter]:bg-card/30 p-6">
         <h2 className="text-xl font-semibold">Features · How It Works</h2>
         <ul className="mt-3 space-y-2 text-muted-foreground list-disc pl-5">
-          <li>Start from the first word—plug‑and‑play starter kits like landing pages, checkout flows, and email sequences.</li>
-          <li>Hands‑on automations and checklists—no dev, no designers, no excuses.</li>
-          <li>Scales from solo creators to micro‑teams, with zero overengineering.</li>
+          <li>Unified access to several premium AI models—no separate subscriptions.</li>
+          <li>Complete business suite: product store builder, link‑in‑bio maker, and email campaign creator.</li>
+          <li>Starter workflows and checklists so you can ship in hours, not weeks.</li>
         </ul>
       </section>
 
