@@ -19,13 +19,13 @@ const Products: React.FC = () => {
         <article id="pcard-jcal" className="glass-card p-6">
           <BrandLogo src={["/lovable-uploads/2a736c9d-fe6b-4c72-8c35-7564930ab019.png","/lovable-uploads/jcal-logo.png","/lovable-uploads/jcal-logo.jpg","/lovable-uploads/jcal.svg","/lovable-uploads/jcal.png","/lovable-uploads/jcal.jpg"]} alt="JCAL.ai logo" className="h-[10.5rem] w-auto mb-3" />
           
-          <p className="text-sm text-muted-foreground mt-2">Structured collaboration that keeps teams aligned without the noise.</p>
+          <p className="text-sm text-muted-foreground mt-2">Build AI‑powered apps with a prompt. Describe what you want in plain English—get working UI, data, and flows in minutes.</p>
           <Link to="/jcal" className="mt-4 inline-flex text-primary story-link" data-cta="explore-jcal">Explore JCAL</Link>
         </article>
         <article id="pcard-matalino" className="glass-card p-6">
           <BrandLogo src={["/lovable-uploads/d1859762-1792-4ebb-bd94-f148b6bdae7b.png","/lovable-uploads/matalino-logo.png","/lovable-uploads/matalino-logo.jpg","/lovable-uploads/matalino.svg","/lovable-uploads/matalino.png","/lovable-uploads/matalino.jpg"]} alt="Matalino logo" className="h-[10.5rem] w-auto mb-3" />
           
-          <p className="text-sm text-muted-foreground mt-2">Sharper decisions through compact insights—right when you need them.</p>
+          <p className="text-sm text-muted-foreground mt-2">All‑in‑one AI model access + business suite. Unified access to several premium models with a store builder, link‑in‑bio maker, email campaigns, and automations.</p>
           <Link to="/matalino" className="mt-4 inline-flex text-primary story-link" data-cta="see-matalino">See Matalino</Link>
         </article>
       </div>
