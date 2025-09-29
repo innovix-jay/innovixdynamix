@@ -62,7 +62,7 @@ export type Database = {
           id: string
           ip_address: string | null
           list: string
-          name: string
+          name: string | null
           source_path: string | null
           status: string
           updated_at: string
@@ -76,7 +76,7 @@ export type Database = {
           id?: string
           ip_address?: string | null
           list?: string
-          name: string
+          name?: string | null
           source_path?: string | null
           status?: string
           updated_at?: string
@@ -90,7 +90,7 @@ export type Database = {
           id?: string
           ip_address?: string | null
           list?: string
-          name?: string
+          name?: string | null
           source_path?: string | null
           status?: string
           updated_at?: string
