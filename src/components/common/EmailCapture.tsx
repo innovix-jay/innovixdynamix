@@ -56,7 +56,9 @@ const EmailCapture: React.FC<EmailCaptureProps> = ({ list, className, emailOnly 
       
       if (error) {
         console.error('Edge function error:', error);
-        throw error;
+        // Extract the error message from the edge function response
+        const errorMessage = error.context?.body?.error || error.message || 'Please try again.';
+        throw new Error(errorMessage);
       }
 
       trackEvent('email_submit', { list });
