@@ -34,6 +34,9 @@ const EmailCapture: React.FC<EmailCaptureProps> = ({ list, className, emailOnly 
   const onSubmit = async (data: any) => {
     try {
       if (data.website) { return; } // honeypot
+      
+      console.log('Submitting email capture:', { email: data.email, list });
+      
       const payload = {
         name: data.name,
         email: data.email,
@@ -44,7 +47,13 @@ const EmailCapture: React.FC<EmailCaptureProps> = ({ list, className, emailOnly 
       };
 
       const { data: fnData, error } = await supabase.functions.invoke('collect-email', { body: payload });
-      if (error) throw error;
+      
+      console.log('Edge function response:', { fnData, error });
+      
+      if (error) {
+        console.error('Edge function error:', error);
+        throw error;
+      }
 
       trackEvent('email_submit', { list });
       toast({ 
@@ -53,8 +62,12 @@ const EmailCapture: React.FC<EmailCaptureProps> = ({ list, className, emailOnly 
       });
       reset();
     } catch (e: any) {
-      console.error('email capture submit failed', e);
-      toast({ title: 'Something went wrong', description: 'Please try again.', variant: 'destructive' });
+      console.error('email capture submit failed:', e);
+      toast({ 
+        title: 'Something went wrong', 
+        description: e.message || 'Please try again.', 
+        variant: 'destructive' 
+      });
     }
   };
 
