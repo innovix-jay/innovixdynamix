@@ -51,12 +51,16 @@ Deno.serve(async (req) => {
 
     // Rate limiting check - check if this email or IP submitted recently
     const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000).toISOString();
-    const { data: recentSubmissions } = await supabase
+    const { data: recentSubmissions, error: rateLimitError } = await supabase
       .from("email_list")
       .select("id")
-      .or(`email.eq.${email},ip_address.eq.${ip_address}`)
+      .or(`email.eq."${email.replace(/"/g, '""')}",ip_address.eq."${ip_address.replace(/"/g, '""')}"`)
       .gte("created_at", fiveMinutesAgo)
       .limit(1);
+
+    if (rateLimitError) {
+      console.error("collect-email: rate limit check error", rateLimitError);
+    }
 
     if (recentSubmissions && recentSubmissions.length > 0) {
       console.log("collect-email: rate limit exceeded", { email, ip_address });
