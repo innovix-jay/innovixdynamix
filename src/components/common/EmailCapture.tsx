@@ -26,10 +26,14 @@ interface EmailCaptureProps extends React.HTMLAttributes<HTMLFormElement> {
 }
 
 const EmailCapture: React.FC<EmailCaptureProps> = ({ list, className, emailOnly = false, successMessage, ...props }) => {
+  console.log('EmailCapture mounted:', { list, emailOnly });
+  
   const { toast } = useToast();
   const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<any>({
     resolver: zodResolver(emailOnly ? schemaEmailOnly : schemaFull),
   });
+  
+  console.log('EmailCapture form state:', { errors, isSubmitting });
 
   const onSubmit = async (data: any) => {
     try {
