@@ -2,7 +2,7 @@
 // Inserts into email_list with double opt-in and sends confirmation email via Resend
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
-import { Resend } from "npm:resend@4.0.0";
+import { Resend } from "https://esm.sh/resend@4.0.0";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -130,7 +130,7 @@ Deno.serve(async (req) => {
       html,
     });
 
-    console.log("collect-email: email sent", emailResult?.id ?? "ok");
+    console.log("collect-email: email sent", emailResult?.data?.id ?? "ok");
 
     return new Response(JSON.stringify({ ok: true }), {
       status: 200,
