@@ -49,13 +49,14 @@ Deno.serve(async (req) => {
     const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") as string;
     const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
-    // Rate limiting check - check if this email or IP submitted recently
-    const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000).toISOString();
+    // Rate limiting check - only check email (1 minute cooldown to prevent spam)
+    // Don't check IP to allow multiple signups from same office/school/network
+    const oneMinuteAgo = new Date(Date.now() - 1 * 60 * 1000).toISOString();
     const { data: recentSubmissions, error: rateLimitError } = await supabase
       .from("email_list")
       .select("id")
-      .or(`email.eq."${email.replace(/"/g, '""')}",ip_address.eq."${ip_address.replace(/"/g, '""')}"`)
-      .gte("created_at", fiveMinutesAgo)
+      .eq("email", email)
+      .gte("created_at", oneMinuteAgo)
       .limit(1);
 
     if (rateLimitError) {
@@ -63,8 +64,8 @@ Deno.serve(async (req) => {
     }
 
     if (recentSubmissions && recentSubmissions.length > 0) {
-      console.log("collect-email: rate limit exceeded", { email, ip_address });
-      return new Response(JSON.stringify({ error: "Too many requests. Please try again in a few minutes." }), {
+      console.log("collect-email: rate limit exceeded", { email });
+      return new Response(JSON.stringify({ error: "Please wait a minute before trying again." }), {
         status: 429,
         headers: { "Content-Type": "application/json", ...corsHeaders },
       });
@@ -92,6 +93,15 @@ Deno.serve(async (req) => {
 
     if (insertError) {
       console.error("collect-email: insert error", insertError);
+      
+      // Handle duplicate email gracefully
+      if (insertError.code === "23505") {
+        return new Response(JSON.stringify({ error: "You're already on the list! Check your email for the confirmation link." }), {
+          status: 400,
+          headers: { "Content-Type": "application/json", ...corsHeaders },
+        });
+      }
+      
       return new Response(JSON.stringify({ error: insertError.message }), {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },
