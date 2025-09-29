@@ -53,7 +53,7 @@ Deno.serve(async (req) => {
       .from("email_list")
       .select("*")
       .eq("confirmation_token", token)
-      .single();
+      .maybeSingle();
 
     if (findError || !emailRecord) {
       console.error("confirm-email: token not found", findError);

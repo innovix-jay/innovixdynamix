@@ -49,14 +49,16 @@ Deno.serve(async (req) => {
     const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") as string;
     const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
-    // Rate limiting check
-    const { data: rateLimitCheck } = await supabase.rpc('check_email_rate_limit', {
-      p_email: email,
-      p_ip_address: ip_address,
-      p_minutes: 5
-    });
+    // Rate limiting check - check if this email or IP submitted recently
+    const fiveMinutesAgo = new Date(Date.now() - 5 * 60 * 1000).toISOString();
+    const { data: recentSubmissions } = await supabase
+      .from("email_list")
+      .select("id")
+      .or(`email.eq.${email},ip_address.eq.${ip_address}`)
+      .gte("created_at", fiveMinutesAgo)
+      .limit(1);
 
-    if (!rateLimitCheck) {
+    if (recentSubmissions && recentSubmissions.length > 0) {
       console.log("collect-email: rate limit exceeded", { email, ip_address });
       return new Response(JSON.stringify({ error: "Too many requests. Please try again in a few minutes." }), {
         status: 429,
@@ -107,7 +109,7 @@ Deno.serve(async (req) => {
       ? "Confirm your Matalino waitlist signup"
       : "Confirm your Innovix list signup";
 
-    const confirmUrl = `${SUPABASE_URL.replace('.supabase.co', '')}/functions/v1/confirm-email?token=${confirmationToken}`;
+    const confirmUrl = `${SUPABASE_URL}/functions/v1/confirm-email?token=${confirmationToken}`;
 
     const html = `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; line-height:1.6; color:#0f172a">
