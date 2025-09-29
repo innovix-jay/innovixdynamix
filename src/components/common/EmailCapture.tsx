@@ -36,14 +36,8 @@ const EmailCapture: React.FC<EmailCaptureProps> = ({ list, className, emailOnly 
   console.log('EmailCapture form state:', { errors, isSubmitting });
 
   const onSubmit = async (data: any) => {
-    console.log('=== FORM SUBMITTED ===', data);
-    alert('Form submitted! Check console for details.');
-    
     try {
-      if (data.website) { 
-        console.log('Honeypot triggered');
-        return; 
-      }
+      if (data.website) { return; } // honeypot
       
       console.log('Submitting email capture:', { email: data.email, list });
       
@@ -55,8 +49,6 @@ const EmailCapture: React.FC<EmailCaptureProps> = ({ list, className, emailOnly 
         user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : undefined,
         website: data.website,
       };
-
-      console.log('Payload:', payload);
 
       const { data: fnData, error } = await supabase.functions.invoke('collect-email', { body: payload });
       
