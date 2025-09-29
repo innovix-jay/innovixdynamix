@@ -47,7 +47,10 @@ const EmailCapture: React.FC<EmailCaptureProps> = ({ list, className, emailOnly 
       if (error) throw error;
 
       trackEvent('email_submit', { list });
-      toast({ title: successMessage || "Thanks. You are on the list." });
+      toast({ 
+        title: successMessage || "Check your email to confirm.", 
+        description: "We sent you a confirmation link. Click it to complete your signup." 
+      });
       reset();
     } catch (e: any) {
       console.error('email capture submit failed', e);

@@ -7,3 +7,9 @@ verify_jwt = false
 
 [functions.submit-contact]
 verify_jwt = false
+
+[functions.confirm-email]
+verify_jwt = false
+
+[functions.export-emails]
+verify_jwt = false

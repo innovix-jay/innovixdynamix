@@ -7,7 +7,7 @@ export type Json =
   | Json[]
 
 export type Database = {
-  // Allows to automatically instanciate createClient with right options
+  // Allows to automatically instantiate createClient with right options
   // instead of createClient<Database, { PostgrestVersion: 'XX' }>(URL, KEY)
   __InternalSupabase: {
     PostgrestVersion: "13.0.4"
@@ -55,9 +55,12 @@ export type Database = {
       }
       email_list: {
         Row: {
+          confirmation_token: string | null
+          confirmed_at: string | null
           created_at: string
           email: string
           id: string
+          ip_address: string | null
           list: string
           name: string
           source_path: string | null
@@ -66,9 +69,12 @@ export type Database = {
           user_agent: string | null
         }
         Insert: {
+          confirmation_token?: string | null
+          confirmed_at?: string | null
           created_at?: string
           email: string
           id?: string
+          ip_address?: string | null
           list?: string
           name: string
           source_path?: string | null
@@ -77,9 +83,12 @@ export type Database = {
           user_agent?: string | null
         }
         Update: {
+          confirmation_token?: string | null
+          confirmed_at?: string | null
           created_at?: string
           email?: string
           id?: string
+          ip_address?: string | null
           list?: string
           name?: string
           source_path?: string | null
@@ -94,7 +103,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      check_email_rate_limit: {
+        Args: { p_email: string; p_ip_address: string; p_minutes?: number }
+        Returns: boolean
+      }
     }
     Enums: {
       [_ in never]: never

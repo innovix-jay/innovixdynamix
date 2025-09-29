@@ -1,5 +1,5 @@
 // Edge function: collect-email
-// Inserts into email_list and sends a confirmation email via Resend
+// Inserts into email_list with double opt-in and sends confirmation email via Resend
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 import { Resend } from "npm:resend@4.0.0";
@@ -9,6 +9,13 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
 };
 
+// Generate secure random token
+function generateConfirmationToken(): string {
+  const array = new Uint8Array(32);
+  crypto.getRandomValues(array);
+  return Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('');
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
@@ -16,6 +23,11 @@ Deno.serve(async (req) => {
 
   try {
     const { name, email, list = "general", website, source_path, user_agent } = await req.json();
+    
+    // Get IP address for rate limiting
+    const ip_address = req.headers.get("x-forwarded-for")?.split(",")[0] || 
+                       req.headers.get("x-real-ip") || 
+                       "unknown";
 
     // Honeypot check
     if (website && String(website).trim().length > 0) {
@@ -34,10 +46,26 @@ Deno.serve(async (req) => {
     }
 
     const SUPABASE_URL = Deno.env.get("SUPABASE_URL") as string;
-    const SUPABASE_ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY") as string;
-    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") as string;
+    const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+
+    // Rate limiting check
+    const { data: rateLimitCheck } = await supabase.rpc('check_email_rate_limit', {
+      p_email: email,
+      p_ip_address: ip_address,
+      p_minutes: 5
+    });
+
+    if (!rateLimitCheck) {
+      console.log("collect-email: rate limit exceeded", { email, ip_address });
+      return new Response(JSON.stringify({ error: "Too many requests. Please try again in a few minutes." }), {
+        status: 429,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
 
     const normalizedList = String(list).toLowerCase();
+    const confirmationToken = generateConfirmationToken();
 
     const insertPayload = {
       name: name ?? null,
@@ -47,6 +75,9 @@ Deno.serve(async (req) => {
         : "general",
       source_path: source_path ?? null,
       user_agent: user_agent ?? null,
+      ip_address: ip_address,
+      confirmation_token: confirmationToken,
+      status: "pending"
     } as const;
 
     const { error: insertError } = await supabase
@@ -71,15 +102,21 @@ Deno.serve(async (req) => {
       : "Innovix";
 
     const subject = insertPayload.list === "jcal"
-      ? "You're on the JCAL.ai waitlist"
+      ? "Confirm your JCAL.ai waitlist signup"
       : insertPayload.list === "matalino"
-      ? "You're on the Matalino waitlist"
-      : "You're on the Innovix list";
+      ? "Confirm your Matalino waitlist signup"
+      : "Confirm your Innovix list signup";
+
+    const confirmUrl = `${SUPABASE_URL.replace('.supabase.co', '')}/functions/v1/confirm-email?token=${confirmationToken}`;
 
     const html = `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; line-height:1.6; color:#0f172a">
-        <h2 style="margin:0 0 12px;">Thanks for joining ${brand}</h2>
-        <p style="margin:0 0 12px;">We got your info${name ? ", " + String(name) : ""}. We'll keep you posted with updates and early access.</p>
+        <h2 style="margin:0 0 12px;">Confirm your ${brand} signup</h2>
+        <p style="margin:0 0 12px;">Thanks for joining${name ? ", " + String(name) : ""}! Please confirm your email address to complete your signup.</p>
+        <p style="margin:16px 0;">
+          <a href="${confirmUrl}" style="display:inline-block;padding:12px 24px;background:#0f172a;color:#ffffff;text-decoration:none;border-radius:6px;font-weight:600;">Confirm Email</a>
+        </p>
+        <p style="margin:0 0 12px;font-size:14px;color:#64748b;">Or copy and paste this link: ${confirmUrl}</p>
         <p style="margin:0 0 12px;">– Jay</p>
       </div>
     `;
