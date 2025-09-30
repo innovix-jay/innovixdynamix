@@ -9,7 +9,7 @@ const HomeFAQ: React.FC = () => {
         <AccordionItem value="item-1">
           <AccordionTrigger>What is Innovix?</AccordionTrigger>
           <AccordionContent>
-            Innovix is the parent company behind JCAL.ai and Matalino. We build focused AI products for creators and small teams.
+            Innovix delivers AI Training & Enablement that helps teams adopt AI safely and productively in day-to-day work. We provide a hosted, standards-aligned approach suitable for both government and private sector programs—aligned to OMB M-24-10, NIST AI Risk Management Framework (AI RMF), and Section 508 captions/transcripts baseline. Our core capabilities include practical AI patterns and guidance, monthly adoption/completion reporting with a simple Compliance Score snapshot, quarterly content refreshes, and usage-only analytics with no operational data ingestion. Innovix also operates two product initiatives from Innovix Labs: JCAL.ai (build AI-powered apps with a prompt) and Matalino (tools for small businesses and creators who ship).
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
