@@ -15,19 +15,31 @@ const HomeFAQ: React.FC = () => {
         <AccordionItem value="item-2">
           <AccordionTrigger>Which product should I start with?</AccordionTrigger>
           <AccordionContent>
-            If you need an app, start with JCAL.ai. If you need to launch and sell faster, start with Matalino.
+            If you're building AI-powered applications or need rapid prototyping capabilities, start with JCAL.ai—it lets you build functional apps with prompts, no coding required. If you're a small business, creator, or solopreneur looking to launch products, manage operations, and scale faster, Matalino provides the essential tools to ship and sell without getting bogged down in complexity. For organizations needing compliant AI adoption programs (government or enterprise), our AI Training & Enablement service is the right fit.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
           <AccordionTrigger>Do you still offer consulting?</AccordionTrigger>
           <AccordionContent>
-            Only when it helps customers onboard to our products. The point is to use the tools, not buy hours.
+            We offer consulting only when it directly supports customer onboarding and successful adoption of our products and services. Our philosophy is tools over hours—we'd rather empower you with self-service capabilities than sell you expensive consulting engagements. However, for AI Training & Enablement implementations, we provide guidance and support as part of the program to ensure your team gets maximum value and meets compliance requirements.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-4">
           <AccordionTrigger>Pricing</AccordionTrigger>
           <AccordionContent>
-            Final pricing will be announced at launch. Early users get founder friendly tiers.
+            For JCAL.ai and Matalino, final pricing will be announced at launch, with founder-friendly tiers for early users. For AI Training & Enablement services, pricing, terms, and conditions are subject to a legally binding contract, Master Service Agreement (MSA), and Service Level Agreement (SLA) with provisions specific to your organization's needs. To inquire about business opportunities and discuss custom arrangements, please contact us directly.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-5">
+          <AccordionTrigger>What makes your AI Training & Enablement different?</AccordionTrigger>
+          <AccordionContent>
+            Our AI Training & Enablement is built for real-world compliance and productivity—not just theory. We align to OMB M-24-10, NIST AI Risk Management Framework (AI RMF), and Section 508 accessibility requirements, making it suitable for government agencies and private sector organizations with strict standards. You get practical AI patterns, monthly reporting with a Compliance Score snapshot, quarterly content updates, and usage-only analytics with zero operational data ingestion. It's hosted, turnkey, and designed to get teams productive with AI quickly and safely.
+          </AccordionContent>
+        </AccordionItem>
+        <AccordionItem value="item-6">
+          <AccordionTrigger>Can I use Innovix products if I'm not technical?</AccordionTrigger>
+          <AccordionContent>
+            Absolutely. JCAL.ai and Matalino are specifically designed for non-technical users. JCAL.ai lets you build AI-powered apps using natural language prompts—no coding required. Matalino provides straightforward tools for running your business without technical overhead. Our AI Training & Enablement program is also designed for everyday work adoption, not just technical teams. If you can describe what you want, our tools can help you build it or get it done.
           </AccordionContent>
         </AccordionItem>
       </Accordion>
