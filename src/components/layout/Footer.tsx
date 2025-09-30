@@ -20,14 +20,6 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
             <li><Link className="story-link" to="/resources">Resources</Link></li>
             <li><Link className="story-link" to="/contact">Contact</Link></li>
             <li><Link className="story-link" to="/capabilities">Capabilities Statement</Link></li>
-            <li>
-              <button 
-                onClick={() => downloadCapabilitiesPDF()} 
-                className="story-link text-left"
-              >
-                Capabilities Statement (PDF)
-              </button>
-            </li>
           </ul>
         </div>
         <div>

@@ -20,14 +20,13 @@ const Hero: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
           <Button asChild size="lg" data-cta="request-discovery-call">
             <Link to="/contact" aria-label="Request a discovery call">Request a discovery call</Link>
           </Button>
-          <Button 
+          <Button asChild
             variant="outline" 
             size="lg" 
-            data-cta="download-capabilities"
-            onClick={() => downloadCapabilitiesPDF()}
-            aria-label="Download Capabilities Statement"
+            data-cta="view-capabilities"
+            aria-label="View Capabilities Statement"
           >
-            Download Capabilities Statement
+            <Link to="/capabilities">Capabilities Statement</Link>
           </Button>
         </div>
       </div>

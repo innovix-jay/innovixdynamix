@@ -7,8 +7,6 @@ import { downloadCapabilitiesPDF } from "@/utils/capabilities-pdf";
 const Capabilities: React.FC = () => {
   const canonical = typeof window !== 'undefined' ? `${window.location.origin}/capabilities` : 'https://www.innovix-llc.com/capabilities';
   const contactEmail = "jay.cadmus@innovix-llc.com";
-  const contactPhone = "(555) 123-4567"; // Replace with actual phone
-  const location = "City, State"; // Replace with actual location
 
   return (
     <div className="container py-16 max-w-4xl">
@@ -68,9 +66,8 @@ const Capabilities: React.FC = () => {
         <h2 id="company-contact" className="text-2xl font-semibold">Company & Contact</h2>
         <div className="text-muted-foreground mt-3 space-y-2">
           <p><strong>Innovix LLC</strong></p>
-          <p>Contact: Jay Cadmus, CEO — <a href={`mailto:${contactEmail}`} className="story-link">{contactEmail}</a> • {contactPhone}</p>
+          <p>Contact: Jay Cadmus, CEO — <a href={`mailto:${contactEmail}`} className="story-link">{contactEmail}</a></p>
           <p>Website: <a href="https://www.innovix-llc.com" className="story-link">innovix-llc.com</a></p>
-          <p>Location: {location}</p>
         </div>
       </section>
 
@@ -80,15 +77,6 @@ const Capabilities: React.FC = () => {
         </Button>
         <Button asChild variant="outline" size="lg" data-cta="email-requirements">
           <a href={`mailto:${contactEmail}`} aria-label="Email us your requirements">Email us your requirements</a>
-        </Button>
-        <Button 
-          variant="outline" 
-          size="lg" 
-          data-cta="download-pdf"
-          onClick={() => downloadCapabilitiesPDF()}
-          aria-label="Download as PDF"
-        >
-          Download as PDF
         </Button>
       </div>
 
