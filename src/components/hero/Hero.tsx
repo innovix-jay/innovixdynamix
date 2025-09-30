@@ -9,21 +9,18 @@ const Hero: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
     <section id="hero" className="relative overflow-hidden">
       
       <div className="container relative z-10 py-28 md:py-36">
-          <div className="inline-flex items-center rounded-full border px-3 py-1 text-xs md:text-sm text-muted-foreground bg-card/60 backdrop-blur supports-[backdrop-filter]:bg-card/30 animate-fade-in">
-            JCAL.ai for builders • Matalino for creators
-          </div>
           <h1 className="mt-5 text-5xl md:text-7xl font-display font-bold tracking-tight max-w-5xl leading-tight animate-fade-in">
-            We build the tools that build your business.
+            AI Training & Enablement, Ready on Day One.
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mt-6 max-w-2xl animate-fade-in">
-            Innovix is the AI mothership behind JCAL.ai and Matalino — purpose-built products that help you launch faster, build smarter, and skip the noise.
+            Innovix equips teams to use Artificial Intelligence safely and productively with a hosted, standards-aligned training approach—aligned to OMB M-24-10, the NIST AI Risk Management Framework (AI RMF), and Section 508 captions/transcripts baseline. Built for regulated environments and commercial teams alike.
           </p>
         <div className="mt-8 flex flex-wrap gap-3 animate-fade-in">
-          <Button asChild size="lg" data-cta="see-jcal-hero">
-            <Link to="/jcal" aria-label="See JCAL.ai">See JCAL.ai</Link>
+          <Button asChild size="lg" data-cta="request-discovery-call">
+            <Link to="/contact" aria-label="Request a discovery call">Request a discovery call</Link>
           </Button>
-          <Button asChild variant="outline" size="lg" data-cta="see-matalino-hero">
-            <Link to="/matalino" aria-label="See Matalino">See Matalino</Link>
+          <Button asChild variant="outline" size="lg" data-cta="download-capabilities">
+            <a href="/capabilities.pdf" aria-label="Download Capabilities Statement">Download Capabilities Statement</a>
           </Button>
         </div>
       </div>

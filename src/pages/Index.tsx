@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import Hero from "@/components/hero/Hero";
+import FeatureGrid from "@/components/common/FeatureGrid";
 import ProductCallouts from "@/components/home/ProductCallouts";
 import WhyInnovix from "@/components/home/WhyInnovix";
 import OurJourney from "@/components/home/OurJourney";
@@ -16,12 +17,12 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Innovix | The AI mothership for JCAL.ai and Matalino</title>
-        <meta name="description" content="Innovix builds JCAL.ai and Matalino — focused AI tools to help creators and small teams ship faster. No buzzwords. Just results." />
-        <meta name="keywords" content="AI app builder, creator workflows, launch automation, prompt to app, small business AI tools" />
+        <title>Innovix | AI Training & Enablement, Ready on Day One</title>
+        <meta name="description" content="Standards-aligned AI Training & Enablement for government and enterprise—aligned to OMB M-24-10, NIST AI RMF, and Section 508 captions/transcripts baseline." />
+        <meta name="keywords" content="AI training, AI enablement, OMB M-24-10, NIST AI RMF, Section 508, government AI, enterprise AI training" />
         <link rel="canonical" href={canonical} />
-        <meta property="og:title" content="Innovix | We build the tools that build your business" />
-        <meta property="og:description" content="Innovix builds JCAL.ai and Matalino so small teams can ship fast." />
+        <meta property="og:title" content="Innovix | AI Training & Enablement, Ready on Day One" />
+        <meta property="og:description" content="Standards-aligned AI Training & Enablement for government and enterprise—aligned to OMB M-24-10, NIST AI RMF, and Section 508." />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/assets/share.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -47,6 +48,10 @@ const Index = () => {
       </Helmet>
 
       <Hero id="hero" />
+
+      <section id="features" className="container py-12 animate-fade-in">
+        <FeatureGrid />
+      </section>
 
       <section id="products" className="container py-16 animate-fade-in">
         <ProductCallouts />

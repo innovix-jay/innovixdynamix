@@ -16,6 +16,7 @@ import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Accessibility from "./pages/Accessibility";
+import Capabilities from "./pages/Capabilities";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import HeroAurora from "./components/hero/HeroAurora";
@@ -84,6 +85,7 @@ const AppShell = () => {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/accessibility" element={<Accessibility />} />
+          <Route path="/capabilities" element={<Capabilities />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

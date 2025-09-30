@@ -20,15 +20,12 @@ const About: React.FC = () => {
         })}</script>
       </Helmet>
       <h1 className="text-3xl font-bold">About Innovix</h1>
-      <p className="text-muted-foreground mt-2 max-w-2xl">We build practical AI tools that remove busywork and amplify decision quality so builders can ship faster.</p>
+      <p className="text-muted-foreground mt-2 max-w-2xl">Innovix equips teams with practical, standards-aligned AI Training & Enablement so they can use AI safely and productively in everyday work. We focus on clarity, speed, and outcomes—without adding operational burden.</p>
 
       <section aria-labelledby="positioning-heading" className="mt-10">
         <h2 id="positioning-heading" className="text-xl font-semibold">Why Innovix</h2>
         <p className="text-muted-foreground mt-3 max-w-3xl">
-          Innovix is a product-first company for people who create—product teams, agencies, entrepreneurs, and ambitious operators. If Apple crafts premium tools and Google offers premium access, Innovix exists to equip builders with modern AI products to design, launch, and scale what comes next.
-        </p>
-        <p className="text-muted-foreground mt-3 max-w-3xl">
-          Not a consulting firm—an innovative provider dedicated to creation. Our mantra: Innovation. Integration. Excellence.
+          Our approach aligns to OMB M-24-10, the NIST AI Risk Management Framework, and Section 508 captions/transcripts baseline, making it suitable for regulated environments and commercial teams alike. We emphasize capability and readiness: what you need is available quickly, maintained over time, and measured with simple adoption and completion reporting.
         </p>
       </section>
 

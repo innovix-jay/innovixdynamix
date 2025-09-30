@@ -19,6 +19,7 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
             <li><Link className="story-link" to="/about">About</Link></li>
             <li><Link className="story-link" to="/resources">Resources</Link></li>
             <li><Link className="story-link" to="/contact">Contact</Link></li>
+            <li><a className="story-link" href="/capabilities.pdf">Capabilities Statement (PDF)</a></li>
           </ul>
         </div>
         <div>
