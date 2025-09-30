@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { downloadCapabilitiesPDF } from "@/utils/capabilities-pdf";
 
 const Capabilities: React.FC = () => {
   const canonical = typeof window !== 'undefined' ? `${window.location.origin}/capabilities` : 'https://www.innovix-llc.com/capabilities';
@@ -79,6 +80,15 @@ const Capabilities: React.FC = () => {
         </Button>
         <Button asChild variant="outline" size="lg" data-cta="email-requirements">
           <a href={`mailto:${contactEmail}`} aria-label="Email us your requirements">Email us your requirements</a>
+        </Button>
+        <Button 
+          variant="outline" 
+          size="lg" 
+          data-cta="download-pdf"
+          onClick={() => downloadCapabilitiesPDF()}
+          aria-label="Download as PDF"
+        >
+          Download as PDF
         </Button>
       </div>
 

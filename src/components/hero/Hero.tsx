@@ -3,6 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import BrandLogo from "@/components/common/BrandLogo";
+import { downloadCapabilitiesPDF } from "@/utils/capabilities-pdf";
 
 const Hero: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
   return (
@@ -19,8 +20,14 @@ const Hero: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
           <Button asChild size="lg" data-cta="request-discovery-call">
             <Link to="/contact" aria-label="Request a discovery call">Request a discovery call</Link>
           </Button>
-          <Button asChild variant="outline" size="lg" data-cta="download-capabilities">
-            <a href="/capabilities.pdf" aria-label="Download Capabilities Statement">Download Capabilities Statement</a>
+          <Button 
+            variant="outline" 
+            size="lg" 
+            data-cta="download-capabilities"
+            onClick={() => downloadCapabilitiesPDF()}
+            aria-label="Download Capabilities Statement"
+          >
+            Download Capabilities Statement
           </Button>
         </div>
       </div>

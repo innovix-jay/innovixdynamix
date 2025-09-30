@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import BrandLogo from "@/components/common/BrandLogo";
+import { downloadCapabilitiesPDF } from "@/utils/capabilities-pdf";
 
 const Footer: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
   return (
@@ -19,7 +19,15 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
             <li><Link className="story-link" to="/about">About</Link></li>
             <li><Link className="story-link" to="/resources">Resources</Link></li>
             <li><Link className="story-link" to="/contact">Contact</Link></li>
-            <li><a className="story-link" href="/capabilities.pdf">Capabilities Statement (PDF)</a></li>
+            <li><Link className="story-link" to="/capabilities">Capabilities Statement</Link></li>
+            <li>
+              <button 
+                onClick={() => downloadCapabilitiesPDF()} 
+                className="story-link text-left"
+              >
+                Capabilities Statement (PDF)
+              </button>
+            </li>
           </ul>
         </div>
         <div>
