@@ -9,7 +9,7 @@ const Matalino: React.FC = () => {
   return (
     <div className="container py-16">
       <Helmet>
-        <title>Matalino – AI model aggregator + business suite | Innovix</title>
+        <title>Matalino – AI model aggregator + business suite | Innovix Dynamix</title>
         <meta name="description" content="Unified access to several premium AI models with store, email, and automations—launch faster without multiple subscriptions." />
         <link rel="canonical" href={canonical} />
         <meta property="og:image" content="/assets/share.jpg" />

@@ -66,10 +66,10 @@ const AppShell = () => {
       <Header id="hdr" />
       <main id="main" className="flex-1">
         <div className="container relative pointer-events-none">
-          <Link to="/" aria-label="Innovix home" className="pointer-events-auto absolute right-0 top-2 md:top-4">
+          <Link to="/" aria-label="Innovix Dynamix home" className="pointer-events-auto absolute right-0 top-2 md:top-4">
             <BrandLogo
-              src="/lovable-uploads/72554a38-f8c3-4d22-a0ba-0a7fd173f7be.png"
-              alt="Innovix logo mark"
+              src={["/lovable-uploads/22eb7bdf-ddea-4ea0-af45-54ebbe7df6f9.png","/lovable-uploads/innovix-logo.png","/lovable-uploads/innovix-logo.jpg","/lovable-uploads/innovix.svg","/lovable-uploads/innovix.png","/lovable-uploads/innovix.jpg"]}
+              alt="Innovix Dynamix logo mark"
               className="w-20 h-20 md:w-24 md:h-24 drop-shadow"
             />
           </Link>

@@ -8,13 +8,13 @@ const Products: React.FC = () => {
   return (
     <div className="container py-16">
       <Helmet>
-        <title>Products | Innovix</title>
-        <meta name="description" content="Explore Innovix products: JCAL and Matalino. Built to reduce busywork and increase clarity in your operations." />
+        <title>Products | Innovix Dynamix</title>
+        <meta name="description" content="Explore Innovix Dynamix products: JCAL and Matalino. Built to reduce busywork and increase clarity in your operations." />
         <link rel="canonical" href={canonical} />
         <meta property="og:image" content="/assets/share.jpg" />
       </Helmet>
       <h1 className="text-3xl font-bold">Products</h1>
-      <p className="text-muted-foreground mt-2">Two focused initiatives from Innovix Labs. Our AI Training & Enablement offering is available alongside these products for organizations that want standards-aligned onboarding and reporting.</p>
+      <p className="text-muted-foreground mt-2">Two focused initiatives from Innovix Dynamix Labs. Our AI Training & Enablement offering is available alongside these products for organizations that want standards-aligned onboarding and reporting.</p>
       <div className="grid gap-6 md:grid-cols-2 mt-8">
         <article id="pcard-jcal" className="glass-card p-6">
           <BrandLogo src={["/lovable-uploads/2a736c9d-fe6b-4c72-8c35-7564930ab019.png","/lovable-uploads/jcal-logo.png","/lovable-uploads/jcal-logo.jpg","/lovable-uploads/jcal.svg","/lovable-uploads/jcal.png","/lovable-uploads/jcal.jpg"]} alt="JCAL.ai logo" className="h-[10.5rem] w-auto mb-3" />

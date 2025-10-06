@@ -7,9 +7,9 @@ const HomeFAQ: React.FC = () => {
       <h2 id="faq-heading" className="text-2xl md:text-3xl font-semibold">FAQ</h2>
       <Accordion type="single" collapsible className="mt-4">
         <AccordionItem value="item-1">
-          <AccordionTrigger>What is Innovix?</AccordionTrigger>
+          <AccordionTrigger>What is Innovix Dynamix?</AccordionTrigger>
           <AccordionContent>
-            Innovix delivers AI Training & Enablement that helps teams adopt AI safely and productively in day-to-day work. We provide a hosted, standards-aligned approach suitable for both government and private sector programs—aligned to OMB M-24-10, NIST AI Risk Management Framework (AI RMF), and Section 508 captions/transcripts baseline. Our core capabilities include practical AI patterns and guidance, monthly adoption/completion reporting with a simple Compliance Score snapshot, quarterly content refreshes, and usage-only analytics with no operational data ingestion. Innovix also operates two product initiatives from Innovix Labs: JCAL.ai (build AI-powered apps with a prompt) and Matalino (tools for small businesses and creators who ship).
+            Innovix Dynamix delivers AI Training & Enablement that helps teams adopt AI safely and productively in day-to-day work. We provide a hosted, standards-aligned approach suitable for both government and private sector programs—aligned to OMB M-24-10, NIST AI Risk Management Framework (AI RMF), and Section 508 captions/transcripts baseline. Our core capabilities include practical AI patterns and guidance, monthly adoption/completion reporting with a simple Compliance Score snapshot, quarterly content refreshes, and usage-only analytics with no operational data ingestion. Innovix Dynamix also operates two product initiatives from Innovix Dynamix Labs: JCAL.ai (build AI-powered apps with a prompt) and Matalino (tools for small businesses and creators who ship).
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
@@ -37,7 +37,7 @@ const HomeFAQ: React.FC = () => {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-6">
-          <AccordionTrigger>Can I use Innovix products if I'm not technical?</AccordionTrigger>
+          <AccordionTrigger>Can I use Innovix Dynamix products if I'm not technical?</AccordionTrigger>
           <AccordionContent>
             Absolutely. JCAL.ai and Matalino are specifically designed for non-technical users. JCAL.ai lets you build AI-powered apps using natural language prompts—no coding required. Matalino provides straightforward tools for running your business without technical overhead. Our AI Training & Enablement program is also designed for everyday work adoption, not just technical teams. If you can describe what you want, our tools can help you build it or get it done.
           </AccordionContent>

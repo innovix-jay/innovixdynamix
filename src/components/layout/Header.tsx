@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import BrandLogo from "@/components/common/BrandLogo";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import { Menu } from "lucide-react";
+import innovixDynamixLogo from "@/assets/innovix-dynamix-logo.png";
 
 interface HeaderProps extends React.HTMLAttributes<HTMLElement> {}
 
@@ -41,8 +41,8 @@ const Header: React.FC<HeaderProps> = ({ className, ...props }) => {
       {...props}
     >
       <div className="container h-full flex items-center justify-between">
-        <Link to="/" className="font-semibold tracking-tight hover-scale" aria-label="Innovix home">
-          <BrandLogo src={["/lovable-uploads/22eb7bdf-ddea-4ea0-af45-54ebbe7df6f9.png", "/lovable-uploads/innovix-logo.png","/lovable-uploads/innovix-logo.jpg","/lovable-uploads/innovix.svg","/lovable-uploads/innovix.png","/lovable-uploads/innovix.jpg"]} alt="Innovix logo" className="h-6 w-auto" eager />
+        <Link to="/" className="font-semibold tracking-tight hover-scale" aria-label="Innovix Dynamix home">
+          <img src={innovixDynamixLogo} alt="Innovix Dynamix logo" className="h-6 w-auto" />
         </Link>
         <nav className="hidden md:flex items-center gap-1" aria-label="Primary">
           <NavLink to="/" end className={linkCls}>Home</NavLink>

@@ -8,7 +8,7 @@ const Jcal: React.FC = () => {
   return (
     <div className="container py-16">
       <Helmet>
-        <title>JCAL.ai – From idea to app | Innovix</title>
+        <title>JCAL.ai – From idea to app | Innovix Dynamix</title>
         <meta name="description" content="Describe your app in plain English and JCAL.ai scaffolds production-ready UI. Ship tools in minutes." />
         <link rel="canonical" href={canonical} />
         <meta property="og:image" content="/assets/share.jpg" />

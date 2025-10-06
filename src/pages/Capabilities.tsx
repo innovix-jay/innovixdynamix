@@ -11,18 +11,18 @@ const Capabilities: React.FC = () => {
   return (
     <div className="container py-16 max-w-4xl">
       <Helmet>
-        <title>Innovix Capabilities Statement | AI Training & Enablement</title>
+        <title>Innovix Dynamix Capabilities Statement | AI Training & Enablement</title>
         <meta name="description" content="Standards-aligned AI Training & Enablement for government and enterprise—aligned to OMB M-24-10, NIST AI RMF, and Section 508 captions/transcripts baseline." />
         <link rel="canonical" href={canonical} />
         <meta property="og:image" content="/assets/share.jpg" />
       </Helmet>
 
-      <h1 className="text-4xl font-bold">Innovix — Capabilities Statement</h1>
+      <h1 className="text-4xl font-bold">Innovix Dynamix — Capabilities Statement</h1>
 
       <section aria-labelledby="what-we-do" className="mt-10">
         <h2 id="what-we-do" className="text-2xl font-semibold">What We Do</h2>
         <p className="text-muted-foreground mt-3">
-          Innovix delivers AI Training & Enablement that helps teams adopt AI safely in day-to-day work. We provide a hosted, standards-aligned approach so organizations can move fast without increasing risk. Suitable for both government and private sector programs.
+          Innovix Dynamix delivers AI Training & Enablement that helps teams adopt AI safely in day-to-day work. We provide a hosted, standards-aligned approach so organizations can move fast without increasing risk. Suitable for both government and private sector programs.
         </p>
       </section>
 
@@ -58,14 +58,14 @@ const Capabilities: React.FC = () => {
       <section aria-labelledby="how-engagements-work" className="mt-10">
         <h2 id="how-engagements-work" className="text-2xl font-semibold">How Engagements Work</h2>
         <p className="text-muted-foreground mt-3">
-          Discovery → scope confirmation → hosted setup → onboarding → monthly reporting and quarterly refreshes. Innovix participates in kickoff and keeps materials current over time.
+          Discovery → scope confirmation → hosted setup → onboarding → monthly reporting and quarterly refreshes. Innovix Dynamix participates in kickoff and keeps materials current over time.
         </p>
       </section>
 
       <section aria-labelledby="company-contact" className="mt-10">
         <h2 id="company-contact" className="text-2xl font-semibold">Company & Contact</h2>
         <div className="text-muted-foreground mt-3 space-y-2">
-          <p><strong>Innovix LLC</strong></p>
+          <p><strong>Innovix Dynamix LLC</strong></p>
           <p>Contact: Jay Cadmus, CEO — <a href={`mailto:${contactEmail}`} className="story-link">{contactEmail}</a></p>
           <p>Website: <a href="https://www.innovix-llc.com" className="story-link">innovix-llc.com</a></p>
         </div>
@@ -81,7 +81,7 @@ const Capabilities: React.FC = () => {
       </div>
 
       <aside className="mt-16 border-t pt-8 text-sm text-muted-foreground italic">
-        Note: Innovix represents capability and readiness for the services described. Claims are expressed as alignment to OMB M-24-10, NIST AI RMF, and Section 508 practices; no certification or prior federal deployment is implied.
+        Note: Innovix Dynamix represents capability and readiness for the services described. Claims are expressed as alignment to OMB M-24-10, NIST AI RMF, and Section 508 practices; no certification or prior federal deployment is implied.
       </aside>
     </div>
   );

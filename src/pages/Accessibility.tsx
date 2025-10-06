@@ -7,7 +7,7 @@ const Accessibility: React.FC = () => {
   return (
     <div className="container py-16">
       <Helmet>
-        <title>Accessibility Statement | Matalino</title>
+        <title>Accessibility Statement | Innovix Dynamix</title>
         <meta name="description" content="Our commitment to inclusive, accessible digital experiences with WCAG guidance, features, feedback, and conformance." />
         <link rel="canonical" href={canonical} />
         <meta property="og:image" content="/assets/share.jpg" />

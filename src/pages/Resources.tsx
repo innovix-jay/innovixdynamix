@@ -6,8 +6,8 @@ const Resources: React.FC = () => {
   return (
     <div className="container py-16">
       <Helmet>
-        <title>Resources | Innovix</title>
-        <meta name="description" content="Guides and updates from Innovix focused on real results, not buzzwords." />
+        <title>Resources | Innovix Dynamix</title>
+        <meta name="description" content="Guides and updates from Innovix Dynamix focused on real results, not buzzwords." />
         <link rel="canonical" href={canonical} />
         <meta property="og:image" content="/assets/share.jpg" />
       </Helmet>

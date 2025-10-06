@@ -17,11 +17,11 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>Innovix | AI Training & Enablement, Ready on Day One</title>
+        <title>Innovix Dynamix | AI Training & Enablement, Ready on Day One</title>
         <meta name="description" content="Standards-aligned AI Training & Enablement for government and enterprise—aligned to OMB M-24-10, NIST AI RMF, and Section 508 captions/transcripts baseline." />
         <meta name="keywords" content="AI training, AI enablement, OMB M-24-10, NIST AI RMF, Section 508, government AI, enterprise AI training" />
         <link rel="canonical" href={canonical} />
-        <meta property="og:title" content="Innovix | AI Training & Enablement, Ready on Day One" />
+        <meta property="og:title" content="Innovix Dynamix | AI Training & Enablement, Ready on Day One" />
         <meta property="og:description" content="Standards-aligned AI Training & Enablement for government and enterprise—aligned to OMB M-24-10, NIST AI RMF, and Section 508." />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/assets/share.jpg" />
@@ -30,7 +30,7 @@ const Index = () => {
         <script type="application/ld+json">{JSON.stringify({
           "@context":"https://schema.org",
           "@type":"Organization",
-          name:"Innovix LLC",
+          name:"Innovix Dynamix LLC",
           url:"https://www.innovix-llc.com",
           logo:"https://www.innovix-llc.com/assets/innovix-logo.png",
           sameAs:["https://www.linkedin.com/company/innovix-llc"]
