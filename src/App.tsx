@@ -20,7 +20,7 @@ import Capabilities from "./pages/Capabilities";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import HeroAurora from "./components/hero/HeroAurora";
-import BrandLogo from "@/components/common/BrandLogo";
+import innovixDynamixLogo from "@/assets/innovix-dynamix-logo.png";
 
 import { initAnalytics, setupGlobalAnalytics } from "./utils/analytics";
 
@@ -67,10 +67,10 @@ const AppShell = () => {
       <main id="main" className="flex-1">
         <div className="container relative pointer-events-none">
           <Link to="/" aria-label="Innovix Dynamix home" className="pointer-events-auto absolute right-0 top-2 md:top-4">
-            <BrandLogo
-              src={["/lovable-uploads/22eb7bdf-ddea-4ea0-af45-54ebbe7df6f9.png","/lovable-uploads/innovix-logo.png","/lovable-uploads/innovix-logo.jpg","/lovable-uploads/innovix.svg","/lovable-uploads/innovix.png","/lovable-uploads/innovix.jpg"]}
+            <img
+              src={innovixDynamixLogo}
               alt="Innovix Dynamix logo mark"
-              className="w-20 h-20 md:w-24 md:h-24 drop-shadow"
+              className="w-32 h-auto md:w-40 drop-shadow"
             />
           </Link>
         </div>

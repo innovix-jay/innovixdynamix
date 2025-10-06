@@ -9,7 +9,7 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
       <div className="container py-12 grid gap-8 md:grid-cols-3">
         <div>
           <h3 className="text-lg font-semibold flex items-center gap-2">
-            <img src={innovixDynamixLogo} alt="Innovix Dynamix logo" className="h-6 w-auto" />
+            <img src={innovixDynamixLogo} alt="Innovix Dynamix logo" className="h-8 w-auto" />
           </h3>
           <p className="text-sm text-muted-foreground mt-2">Focused AI tools that make operations faster, clearer, and more reliable.</p>
         </div>
@@ -32,7 +32,7 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
       </div>
       <div className="border-t">
         <div className="container py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <div>© {new Date().getFullYear()} Innovix Dynamix LLC</div>
+          <div>© {new Date().getFullYear()} Innovative Vision X LLC, operating as Innovix Dynamix</div>
           <div className="flex items-center gap-4">
             <Link to="/privacy">Privacy</Link>
             <Link to="/terms">Terms</Link>
