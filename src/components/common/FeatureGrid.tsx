@@ -1,7 +1,7 @@
 import React from "react";
 
 const features = [
-  { title: "Standards-Aligned", desc: "Content and guardrails aligned to OMB M-24-10, NIST AI RMF, and Section 508 captions/transcripts baseline." },
+  { title: "Standards-Aligned", desc: "Content and guardrails aligned to OMB M-24-10 and NIST AI RMF." },
   { title: "Low Overhead", desc: "Hosted approach; no new infrastructure required to get started." },
   { title: "Measured Outcomes", desc: "Simple adoption/completion reporting and a practical Compliance Score snapshot." },
 ];
@@ -18,7 +18,7 @@ const FeatureGrid: React.FC = () => {
         ))}
       </div>
       <p className="text-sm text-muted-foreground mt-6 text-center">
-        Usable in government and enterprise contexts • Aligned to OMB M-24-10 • NIST AI RMF • Section 508 captions/transcripts baseline (VPAT on request)
+        Usable in government and enterprise contexts • Aligned to OMB M-24-10 • NIST AI RMF
       </p>
     </>
   );

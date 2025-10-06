@@ -18,11 +18,11 @@ const Index = () => {
     <div className="min-h-screen">
       <Helmet>
         <title>Innovix Dynamix | AI Training & Enablement, Ready on Day One</title>
-        <meta name="description" content="Standards-aligned AI Training & Enablement for government and enterprise—aligned to OMB M-24-10, NIST AI RMF, and Section 508 captions/transcripts baseline." />
-        <meta name="keywords" content="AI training, AI enablement, OMB M-24-10, NIST AI RMF, Section 508, government AI, enterprise AI training" />
+        <meta name="description" content="Standards-aligned AI Training & Enablement for government and enterprise—aligned to OMB M-24-10 and NIST AI RMF." />
+        <meta name="keywords" content="AI training, AI enablement, OMB M-24-10, NIST AI RMF, government AI, enterprise AI training" />
         <link rel="canonical" href={canonical} />
         <meta property="og:title" content="Innovix Dynamix | AI Training & Enablement, Ready on Day One" />
-        <meta property="og:description" content="Standards-aligned AI Training & Enablement for government and enterprise—aligned to OMB M-24-10, NIST AI RMF, and Section 508." />
+        <meta property="og:description" content="Standards-aligned AI Training & Enablement for government and enterprise—aligned to OMB M-24-10 and NIST AI RMF." />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/assets/share.jpg" />
         <meta name="twitter:card" content="summary_large_image" />

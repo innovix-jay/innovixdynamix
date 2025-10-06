@@ -14,7 +14,7 @@ const Hero: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
             AI Training & Enablement, Ready on Day One.
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mt-6 max-w-2xl animate-fade-in">
-            Innovix Dynamix equips teams to use Artificial Intelligence safely and productively with a hosted, standards-aligned training approach—aligned to OMB M-24-10, the NIST AI Risk Management Framework (AI RMF), and Section 508 captions/transcripts baseline. Built for regulated environments and commercial teams alike.
+            Innovix Dynamix equips teams to use Artificial Intelligence safely and productively with a hosted, standards-aligned training approach—aligned to OMB M-24-10 and the NIST AI Risk Management Framework (AI RMF). Built for regulated environments and commercial teams alike.
           </p>
         <div className="mt-8 flex flex-wrap gap-3 animate-fade-in">
           <Button asChild size="lg" data-cta="request-discovery-call">

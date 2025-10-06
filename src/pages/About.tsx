@@ -25,7 +25,7 @@ const About: React.FC = () => {
       <section aria-labelledby="positioning-heading" className="mt-10">
         <h2 id="positioning-heading" className="text-xl font-semibold">Why Innovix Dynamix</h2>
         <p className="text-muted-foreground mt-3 max-w-3xl">
-          Our approach aligns to OMB M-24-10, the NIST AI Risk Management Framework, and Section 508 captions/transcripts baseline, making it suitable for regulated environments and commercial teams alike. We emphasize capability and readiness: what you need is available quickly, maintained over time, and measured with simple adoption and completion reporting.
+          Our approach aligns to OMB M-24-10 and the NIST AI Risk Management Framework, making it suitable for regulated environments and commercial teams alike. We emphasize capability and readiness: what you need is available quickly, maintained over time, and measured with simple adoption and completion reporting.
         </p>
       </section>
 
