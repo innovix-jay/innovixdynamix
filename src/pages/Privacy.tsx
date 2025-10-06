@@ -27,7 +27,7 @@ const Privacy: React.FC = () => {
       {/* Scope notice */}
       <section className="glass-card rounded-xl p-6 max-w-4xl mx-auto mb-6">
         <h2 className="text-lg font-semibold mb-3">Scope</h2>
-        <p className="text-sm text-muted-foreground">This Privacy Policy covers the Innovix Dynamix LLC website at innovix-llc.com and forms on this Site only. Our products JCAL.ai and Matalino have separate privacy policies that govern those services.</p>
+        <p className="text-sm text-muted-foreground">This Privacy Policy covers the Innovative Vision X LLC, operating as Innovix Dynamix website at innovix-llc.com and forms on this Site only. Our products JCAL.ai and Matalino have separate privacy policies that govern those services.</p>
       </section>
 
       <div className="grid gap-6 max-w-4xl mx-auto">

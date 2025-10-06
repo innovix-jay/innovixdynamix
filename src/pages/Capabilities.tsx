@@ -65,7 +65,7 @@ const Capabilities: React.FC = () => {
       <section aria-labelledby="company-contact" className="mt-10">
         <h2 id="company-contact" className="text-2xl font-semibold">Company & Contact</h2>
         <div className="text-muted-foreground mt-3 space-y-2">
-          <p><strong>Innovix Dynamix LLC</strong></p>
+          <p><strong>Innovative Vision X LLC, operating as Innovix Dynamix</strong></p>
           <p>Contact: Jay Cadmus, CEO — <a href={`mailto:${contactEmail}`} className="story-link">{contactEmail}</a></p>
           <p>Website: <a href="https://www.innovix-llc.com" className="story-link">innovix-llc.com</a></p>
         </div>

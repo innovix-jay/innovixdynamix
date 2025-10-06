@@ -28,7 +28,7 @@ const Terms: React.FC = () => {
         {/* 1. Acceptance of Terms */}
         <section aria-labelledby="acceptance" className="glass-card p-6 rounded-xl">
           <h2 id="acceptance" className="text-xl font-semibold mb-2">1. Acceptance of Terms</h2>
-          <p>These Terms govern your use of the Innovix Dynamix LLC website available at innovix-llc.com (the "Site"). By accessing or using the Site, you agree to these Terms. If you do not agree, do not use the Site.</p>
+          <p>These Terms govern your use of the Innovative Vision X LLC, operating as Innovix Dynamix website available at innovix-llc.com (the "Site"). By accessing or using the Site, you agree to these Terms. If you do not agree, do not use the Site.</p>
         </section>
 
         {/* 2. Scope and Separate Product Terms */}
@@ -50,7 +50,7 @@ const Terms: React.FC = () => {
         {/* 4. Intellectual Property */}
         <section aria-labelledby="ip" className="glass-card p-6 rounded-xl">
           <h2 id="ip" className="text-xl font-semibold mb-2">4. Intellectual Property</h2>
-          <p>The Site, its design, text, graphics, and other content are owned or licensed by Innovix Dynamix LLC and are protected by intellectual property laws. You may not copy, modify, distribute, or create derivative works without prior written permission.</p>
+          <p>The Site, its design, text, graphics, and other content are owned or licensed by Innovative Vision X LLC, operating as Innovix Dynamix and are protected by intellectual property laws. You may not copy, modify, distribute, or create derivative works without prior written permission.</p>
         </section>
 
         {/* 5. No Accounts or Purchases on the Site */}
@@ -62,7 +62,7 @@ const Terms: React.FC = () => {
         {/* 6. Third‑Party Links */}
         <section aria-labelledby="links" className="glass-card p-6 rounded-xl">
           <h2 id="links" className="text-xl font-semibold mb-2">6. Third‑Party Links</h2>
-          <p>The Site may contain links to third‑party websites. Innovix Dynamix does not control and is not responsible for the content or practices of those sites.</p>
+          <p>The Site may contain links to third‑party websites. Innovative Vision X LLC, operating as Innovix Dynamix does not control and is not responsible for the content or practices of those sites.</p>
         </section>
 
         {/* 7. Disclaimers */}
@@ -74,7 +74,7 @@ const Terms: React.FC = () => {
         {/* 8. Limitation of Liability */}
         <section aria-labelledby="liability" className="glass-card p-6 rounded-xl">
           <h2 id="liability" className="text-xl font-semibold mb-2">8. Limitation of Liability</h2>
-          <p>To the maximum extent permitted by law, Innovix Dynamix LLC and its affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from or related to your use of the Site.</p>
+          <p>To the maximum extent permitted by law, Innovative Vision X LLC, operating as Innovix Dynamix and its affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from or related to your use of the Site.</p>
         </section>
 
         {/* 9. Changes to the Site and Terms */}
@@ -86,7 +86,7 @@ const Terms: React.FC = () => {
         {/* 10. Governing Law */}
         <section aria-labelledby="law" className="glass-card p-6 rounded-xl">
           <h2 id="law" className="text-xl font-semibold mb-2">10. Governing Law</h2>
-          <p>These Terms are governed by the laws of the jurisdiction where Innovix Dynamix LLC is formed, without regard to conflict of laws principles.</p>
+          <p>These Terms are governed by the laws of the jurisdiction where Innovative Vision X LLC is formed, without regard to conflict of laws principles.</p>
         </section>
 
         {/* 11. Contact */}

@@ -70,7 +70,7 @@ const AppShell = () => {
             <img
               src={innovixDynamixLogo}
               alt="Innovix Dynamix logo mark"
-              className="w-32 h-auto md:w-40 drop-shadow"
+              className="w-40 h-auto md:w-48 drop-shadow"
             />
           </Link>
         </div>
