@@ -12,7 +12,7 @@ const Capabilities: React.FC = () => {
     <div className="container py-16 max-w-4xl">
       <Helmet>
         <title>Innovix Dynamix Capabilities Statement | AI Training & Enablement</title>
-        <meta name="description" content="Standards-aligned AI Training & Enablement for government and enterprise—aligned to OMB M-24-10, NIST AI RMF, and Section 508 captions/transcripts baseline." />
+        <meta name="description" content="Standards-aligned AI Training & Enablement for government and enterprise—aligned to OMB M-24-10 and NIST AI RMF." />
         <link rel="canonical" href={canonical} />
         <meta property="og:image" content="/assets/share.jpg" />
       </Helmet>
@@ -38,16 +38,13 @@ const Capabilities: React.FC = () => {
       </section>
 
       <section aria-labelledby="standards-alignment" className="mt-10">
-        <h2 id="standards-alignment" className="text-2xl font-semibold">Standards Alignment (Plain Language)</h2>
+        <h2 id="standards-alignment" className="text-2xl font-semibold">Standards Alignment</h2>
         <div className="text-muted-foreground mt-3 space-y-3">
           <p>
             <strong>OMB M-24-10:</strong> governance, inventory, impact assessment, oversight, testing (alignment in training and guardrails)
           </p>
           <p>
             <strong>NIST AI RMF:</strong> Govern • Map • Measure • Manage (training maps to these functions)
-          </p>
-          <p>
-            <strong>Section 508:</strong> captions and transcripts provided for training media; VPAT available on request
           </p>
           <p className="text-sm italic">
             Note: "Aligned to" means capability and readiness; no certification or prior federal deployment is implied.
@@ -81,7 +78,7 @@ const Capabilities: React.FC = () => {
       </div>
 
       <aside className="mt-16 border-t pt-8 text-sm text-muted-foreground italic">
-        Note: Innovix Dynamix represents capability and readiness for the services described. Claims are expressed as alignment to OMB M-24-10, NIST AI RMF, and Section 508 practices; no certification or prior federal deployment is implied.
+        Note: Innovix Dynamix represents capability and readiness for the services described. Claims are expressed as alignment to OMB M-24-10 and NIST AI RMF; no certification or prior federal deployment is implied.
       </aside>
     </div>
   );

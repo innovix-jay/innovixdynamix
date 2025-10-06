@@ -63,15 +63,12 @@ const CapabilitiesPDF = () => (
       </View>
 
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Standards Alignment (Plain Language)</Text>
+        <Text style={styles.sectionTitle}>Standards Alignment</Text>
         <Text style={styles.text}>
           OMB M-24-10: governance, inventory, impact assessment, oversight, testing (alignment in training and guardrails)
         </Text>
         <Text style={styles.text}>
           NIST AI RMF: Govern • Map • Measure • Manage (training maps to these functions)
-        </Text>
-        <Text style={styles.text}>
-          Section 508: captions and transcripts provided for training media; VPAT available on request
         </Text>
         <Text style={[styles.text, { fontSize: 9, fontStyle: 'italic', marginTop: 8 }]}>
           Note: "Aligned to" means capability and readiness; no certification or prior federal deployment is implied.
@@ -98,8 +95,7 @@ const CapabilitiesPDF = () => (
 
       <Text style={styles.note}>
         Note: Innovix represents capability and readiness for the services described. Claims are expressed as 
-        alignment to OMB M-24-10, NIST AI RMF, and Section 508 practices; no certification or prior federal 
-        deployment is implied.
+        alignment to OMB M-24-10 and NIST AI RMF; no certification or prior federal deployment is implied.
       </Text>
     </Page>
   </Document>
