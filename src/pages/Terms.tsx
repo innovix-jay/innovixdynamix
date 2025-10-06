@@ -2,13 +2,13 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 
 const Terms: React.FC = () => {
-  const canonical = typeof window !== 'undefined' ? `${window.location.origin}/terms` : 'https://www.innovix-llc.com/terms';
+  const canonical = typeof window !== 'undefined' ? `${window.location.origin}/terms` : 'https://www.innovixdynamix.com/terms';
   const updated = new Date().toISOString();
   return (
     <div className="container py-16">
       <Helmet>
         <title>Terms of Service | Innovix Dynamix</title>
-        <meta name="description" content="Innovix Dynamix website terms of service. Covers use of innovix-llc.com only. Separate terms apply to JCAL.ai and Matalino." />
+        <meta name="description" content="Innovix Dynamix website terms of service. Covers use of innovixdynamix.com only. Separate terms apply to JCAL.ai and Matalino." />
         <link rel="canonical" href={canonical} />
         <meta property="og:image" content="/assets/share.jpg" />
         <script type="application/ld+json">{JSON.stringify({
@@ -28,7 +28,7 @@ const Terms: React.FC = () => {
         {/* 1. Acceptance of Terms */}
         <section aria-labelledby="acceptance" className="glass-card p-6 rounded-xl">
           <h2 id="acceptance" className="text-xl font-semibold mb-2">1. Acceptance of Terms</h2>
-          <p>These Terms govern your use of the Innovative Vision X LLC, operating as Innovix Dynamix website available at innovix-llc.com (the "Site"). By accessing or using the Site, you agree to these Terms. If you do not agree, do not use the Site.</p>
+          <p>These Terms govern your use of the Innovative Vision X LLC, operating as Innovix Dynamix website available at innovixdynamix.com (the "Site"). By accessing or using the Site, you agree to these Terms. If you do not agree, do not use the Site.</p>
         </section>
 
         {/* 2. Scope and Separate Product Terms */}

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import BrandLogo from "@/components/common/BrandLogo";
 
 const Products: React.FC = () => {
-  const canonical = typeof window !== 'undefined' ? `${window.location.origin}/products` : 'https://www.innovix-llc.com/products';
+  const canonical = typeof window !== 'undefined' ? `${window.location.origin}/products` : 'https://www.innovixdynamix.com/products';
   return (
     <div className="container py-16">
       <Helmet>

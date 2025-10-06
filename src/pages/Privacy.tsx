@@ -2,13 +2,13 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 
 const Privacy: React.FC = () => {
-  const canonical = typeof window !== 'undefined' ? `${window.location.origin}/privacy` : 'https://www.innovix-llc.com/privacy';
+  const canonical = typeof window !== 'undefined' ? `${window.location.origin}/privacy` : 'https://www.innovixdynamix.com/privacy';
   const updated = new Date().toISOString();
   return (
     <div className="container py-16">
       <Helmet>
         <title>Privacy Policy | Innovix Dynamix</title>
-        <meta name="description" content="How Innovix Dynamix collects and uses names and emails from our website. This policy applies to innovix-llc.com only." />
+        <meta name="description" content="How Innovix Dynamix collects and uses names and emails from our website. This policy applies to innovixdynamix.com only." />
         <link rel="canonical" href={canonical} />
         <meta property="og:image" content="/assets/share.jpg" />
         <script type="application/ld+json">{JSON.stringify({
@@ -27,7 +27,7 @@ const Privacy: React.FC = () => {
       {/* Scope notice */}
       <section className="glass-card rounded-xl p-6 max-w-4xl mx-auto mb-6">
         <h2 className="text-lg font-semibold mb-3">Scope</h2>
-        <p className="text-sm text-muted-foreground">This Privacy Policy covers the Innovative Vision X LLC, operating as Innovix Dynamix website at innovix-llc.com and forms on this Site only. Our products JCAL.ai and Matalino have separate privacy policies that govern those services.</p>
+        <p className="text-sm text-muted-foreground">This Privacy Policy covers the Innovative Vision X LLC, operating as Innovix Dynamix website at innovixdynamix.com and forms on this Site only. Our products JCAL.ai and Matalino have separate privacy policies that govern those services.</p>
       </section>
 
       <div className="grid gap-6 max-w-4xl mx-auto">

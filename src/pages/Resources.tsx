@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 
 const Resources: React.FC = () => {
-  const canonical = typeof window !== 'undefined' ? `${window.location.origin}/resources` : 'https://www.innovix-llc.com/resources';
+  const canonical = typeof window !== 'undefined' ? `${window.location.origin}/resources` : 'https://www.innovixdynamix.com/resources';
   return (
     <div className="container py-16">
       <Helmet>

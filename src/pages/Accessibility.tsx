@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 
 const Accessibility: React.FC = () => {
-  const canonical = typeof window !== 'undefined' ? `${window.location.origin}/accessibility` : 'https://www.innovix-llc.com/accessibility';
+  const canonical = typeof window !== 'undefined' ? `${window.location.origin}/accessibility` : 'https://www.innovixdynamix.com/accessibility';
   const updated = new Date().toLocaleDateString();
   return (
     <div className="container py-16">

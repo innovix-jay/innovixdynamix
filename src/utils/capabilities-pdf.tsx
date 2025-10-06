@@ -90,9 +90,9 @@ const CapabilitiesPDF = () => (
         <Text style={styles.sectionTitle}>Company & Contact</Text>
         <Text style={styles.contact}>Innovix LLC</Text>
         <Text style={styles.contact}>Contact: Jay Cadmus, CEO</Text>
-        <Text style={styles.contact}>Email: jay.cadmus@innovix-llc.com</Text>
+        <Text style={styles.contact}>Email: jay.cadmus@innovixdynamix.com</Text>
         <Text style={styles.contact}>Phone: (555) 123-4567</Text>
-        <Text style={styles.contact}>Website: innovix-llc.com</Text>
+        <Text style={styles.contact}>Website: innovixdynamix.com</Text>
         <Text style={styles.contact}>Location: City, State</Text>
       </View>
 

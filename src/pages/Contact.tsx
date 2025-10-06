@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import ContactForm from "@/components/common/ContactForm";
 
 const Contact: React.FC = () => {
-  const canonical = typeof window !== 'undefined' ? `${window.location.origin}/contact` : 'https://www.innovix-llc.com/contact';
+  const canonical = typeof window !== 'undefined' ? `${window.location.origin}/contact` : 'https://www.innovixdynamix.com/contact';
   return (
     <div className="container py-16">
       <Helmet>

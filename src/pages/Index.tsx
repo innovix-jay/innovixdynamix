@@ -12,7 +12,7 @@ import EmailCapture from "@/components/common/EmailCapture";
 
 const Index = () => {
   const canonical = typeof window !== 'undefined' ? `${window.location.origin}/` : 
-    'https://www.innovix-llc.com/';
+    'https://www.innovixdynamix.com/';
 
   return (
     <div className="min-h-screen">
@@ -31,17 +31,17 @@ const Index = () => {
           "@context":"https://schema.org",
           "@type":"Organization",
           name:"Innovix Dynamix LLC",
-          url:"https://www.innovix-llc.com",
-          logo:"https://www.innovix-llc.com/assets/innovix-logo.png",
+          url:"https://www.innovixdynamix.com",
+          logo:"https://www.innovixdynamix.com/assets/innovix-logo.png",
           sameAs:["https://www.linkedin.com/company/innovix-llc"]
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context":"https://schema.org",
           "@type":"WebSite",
-          url:"https://www.innovix-llc.com",
+          url:"https://www.innovixdynamix.com",
           potentialAction:{
             "@type":"SearchAction",
-            target:"https://www.innovix-llc.com/search?q={search_term_string}",
+            target:"https://www.innovixdynamix.com/search?q={search_term_string}",
             "query-input":"required name=search_term_string"
           }
         })}</script>

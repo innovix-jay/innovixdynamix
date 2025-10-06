@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 import { downloadCapabilitiesPDF } from "@/utils/capabilities-pdf";
 
 const Capabilities: React.FC = () => {
-  const canonical = typeof window !== 'undefined' ? `${window.location.origin}/capabilities` : 'https://www.innovix-llc.com/capabilities';
-  const contactEmail = "jay.cadmus@innovix-llc.com";
+  const canonical = typeof window !== 'undefined' ? `${window.location.origin}/capabilities` : 'https://www.innovixdynamix.com/capabilities';
+  const contactEmail = "jay.cadmus@innovixdynamix.com";
 
   return (
     <div className="container py-16 max-w-4xl">
@@ -67,7 +67,7 @@ const Capabilities: React.FC = () => {
         <div className="text-muted-foreground mt-3 space-y-2">
           <p><strong>Innovative Vision X LLC, operating as Innovix Dynamix</strong></p>
           <p>Contact: Jay Cadmus, CEO — <a href={`mailto:${contactEmail}`} className="story-link">{contactEmail}</a></p>
-          <p>Website: <a href="https://www.innovix-llc.com" className="story-link">innovix-llc.com</a></p>
+          <p>Website: <a href="https://www.innovixdynamix.com" className="story-link">innovixdynamix.com</a></p>
         </div>
       </section>
 

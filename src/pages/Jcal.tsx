@@ -4,7 +4,7 @@ import EmailCapture from "@/components/common/EmailCapture";
 import BrandLogo from "@/components/common/BrandLogo";
 
 const Jcal: React.FC = () => {
-  const canonical = typeof window !== 'undefined' ? `${window.location.origin}/jcal` : 'https://www.innovix-llc.com/jcal';
+  const canonical = typeof window !== 'undefined' ? `${window.location.origin}/jcal` : 'https://www.innovixdynamix.com/jcal';
   return (
     <div className="container py-16">
       <Helmet>

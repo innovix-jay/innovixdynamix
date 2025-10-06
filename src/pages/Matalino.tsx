@@ -5,7 +5,7 @@ import BrandLogo from "@/components/common/BrandLogo";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 const Matalino: React.FC = () => {
-  const canonical = typeof window !== 'undefined' ? `${window.location.origin}/matalino` : 'https://www.innovix-llc.com/matalino';
+  const canonical = typeof window !== 'undefined' ? `${window.location.origin}/matalino` : 'https://www.innovixdynamix.com/matalino';
   return (
     <div className="container py-16">
       <Helmet>

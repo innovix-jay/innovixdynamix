@@ -2,5 +2,5 @@ User-agent: *
 Allow: /
 Disallow: /api/
 
-Sitemap: https://www.innovix-llc.com/sitemap.xml
+Sitemap: https://www.innovixdynamix.com/sitemap.xml
 

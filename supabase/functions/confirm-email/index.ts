@@ -102,7 +102,7 @@ Deno.serve(async (req) => {
   <div class="card">
     <h1>✅ Already Confirmed</h1>
     <p>Your email has already been confirmed. You're all set!</p>
-    <p style="margin-top: 1rem;"><a href="https://www.innovix-llc.com">← Back to Innovix</a></p>
+    <p style="margin-top: 1rem;"><a href="https://www.innovixdynamix.com">← Back to Innovix Dynamix</a></p>
   </div>
 </body>
 </html>`,
@@ -176,7 +176,7 @@ Deno.serve(async (req) => {
     <h1>✅ Email Confirmed!</h1>
     <p>Thanks for confirming your email.</p>
     <p>You're now on the ${brand} waitlist. We'll keep you posted with updates and early access.</p>
-    <a href="https://www.innovix-llc.com">← Back to Innovix</a>
+    <a href="https://www.innovixdynamix.com">← Back to Innovix Dynamix</a>
   </div>
 </body>
 </html>`,
