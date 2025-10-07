@@ -2,6 +2,7 @@
 // Confirms email subscription via token
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { Resend } from "https://esm.sh/resend@4.0.0";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -342,100 +343,51 @@ Deno.serve(async (req) => {
       ? "Matalino"
       : "Innovix";
 
-    return new Response(
-      `<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Email Confirmed - ${brand}</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      min-height: 100vh; 
-      margin: 0; 
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      padding: 1rem;
+    const siteUrl = "https://innovixdynamix.com";
+
+    // Send confirmation success email
+    const resend = new Resend(Deno.env.get("RESEND_API_KEY") as string);
+    const subject = `Welcome to ${brand}!`;
+    const html = `
+      <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; line-height:1.6; color:#0f172a; max-width:600px; margin:0 auto;">
+        <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding:32px; border-radius:8px 8px 0 0;">
+          <h1 style="margin:0; color:#ffffff; font-size:28px;">✓ You're All Set!</h1>
+        </div>
+        <div style="background:#ffffff; padding:32px; border-radius:0 0 8px 8px; border:1px solid #e2e8f0;">
+          <p style="margin:0 0 16px; font-size:16px;">Thanks for confirming your email${emailRecord.name ? ", " + emailRecord.name : ""}!</p>
+          <p style="margin:0 0 16px; font-size:16px;">You're now subscribed to ${brand} updates. We'll keep you posted on the latest news, features, and releases.</p>
+          <p style="margin:24px 0;">
+            <a href="${siteUrl}" style="display:inline-block;padding:14px 28px;background:#0f172a;color:#ffffff;text-decoration:none;border-radius:6px;font-weight:600;font-size:16px;">Visit ${brand}</a>
+          </p>
+          <p style="margin:24px 0 0; font-size:14px; color:#64748b;">
+            If you have any questions, just reply to this email.
+          </p>
+          <p style="margin:16px 0 0;">– Jay</p>
+        </div>
+      </div>
+    `;
+
+    try {
+      await resend.emails.send({
+        from: "Innovix Dynamix <noreply@innovixdynamix.com>",
+        to: [emailRecord.email],
+        subject,
+        html,
+      });
+      console.log("confirm-email: confirmation email sent to", emailRecord.email);
+    } catch (emailError) {
+      console.error("confirm-email: failed to send confirmation email", emailError);
+      // Continue anyway - the subscription is confirmed even if email fails
     }
-    .card { 
-      background: white; 
-      padding: 3rem 2rem; 
-      border-radius: 16px; 
-      box-shadow: 0 20px 60px rgba(0,0,0,0.2); 
-      max-width: 500px; 
-      width: 100%;
-      text-align: center; 
-      animation: slideUp 0.4s ease-out;
-    }
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .icon { 
-      width: 80px; 
-      height: 80px; 
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      border-radius: 50%; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      margin: 0 auto 1.5rem;
-      font-size: 3rem;
-    }
-    h1 { 
-      color: #0f172a; 
-      margin: 0 0 1rem; 
-      font-size: 1.875rem; 
-      font-weight: 700;
-    }
-    p { 
-      color: #64748b; 
-      margin: 0 0 0.75rem; 
-      line-height: 1.6; 
-      font-size: 1.0625rem;
-    }
-    .brand { 
-      font-weight: 600; 
-      color: #0f172a; 
-    }
-    .button { 
-      display: inline-block;
-      margin-top: 2rem; 
-      padding: 0.875rem 2rem;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1rem;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-    }
-    .button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
-    }
-  </style>
-</head>
-<body>
-  <div class="card">
-    <div class="icon">✓</div>
-    <h1>Email Confirmed!</h1>
-    <p>Thanks for confirming your email address.</p>
-    <p>You're now on the <span class="brand">${brand}</span> waitlist. We'll keep you posted with updates and early access opportunities.</p>
-    <a href="https://www.innovixdynamix.com" class="button">Return to Innovix Dynamix</a>
-  </div>
-</body>
-</html>`,
-      {
-        status: 200,
-        headers: { "Content-Type": "text/html; charset=utf-8", ...corsHeaders },
-      }
-    );
+
+    // Redirect to homepage
+    return new Response(null, {
+      status: 302,
+      headers: { 
+        "Location": siteUrl,
+        ...corsHeaders 
+      },
+    });
   } catch (e) {
     console.error("confirm-email: error", e);
     return new Response(
