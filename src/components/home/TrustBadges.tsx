@@ -18,7 +18,7 @@ const TrustBadges: React.FC = () => {
       </div>
       <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/50 backdrop-blur-sm border border-border/50">
         <Zap className="h-4 w-4 text-primary" />
-        <span className="text-xs font-medium">Rapid Deployment | Production-Ready in 1-3 Weeks</span>
+        <span className="text-xs font-medium">Rapid Deployment | Production-Ready in Days</span>
       </div>
     </div>
   );
