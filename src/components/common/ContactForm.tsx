@@ -32,15 +32,34 @@ const ContactForm: React.FC<React.HTMLAttributes<HTMLFormElement>> = (props) => 
         user_agent: typeof navigator !== 'undefined' ? navigator.userAgent : undefined,
       };
 
-      const { error } = await supabase.functions.invoke('submit-contact', { body: payload });
-      if (error) throw error;
+      const { data: fnData, error } = await supabase.functions.invoke('submit-contact', { body: payload });
+      
+      if (error) {
+        console.error('Edge function error:', error);
+        // Try multiple paths to extract the error message
+        const errorMessage = 
+          (error as any).context?.body?.error || 
+          (fnData as any)?.error || 
+          error.message || 
+          'Please try again.';
+        throw new Error(errorMessage);
+      }
+      
+      // Also check if the response itself contains an error
+      if (fnData?.error) {
+        throw new Error(fnData.error);
+      }
 
       trackEvent('contact_submit', { source: 'contact_page' });
       toast({ title: "Thanks. We received your message.", description: "We’ll reply soon." });
       reset();
     } catch (e: any) {
       console.error('contact submit failed', e);
-      toast({ title: 'Something went wrong', description: 'Please try again.', variant: 'destructive' });
+      toast({ 
+        title: 'Something went wrong', 
+        description: e.message || 'Please try again.', 
+        variant: 'destructive' 
+      });
     }
   };
 
