@@ -396,7 +396,7 @@ Deno.serve(async (req) => {
     try {
       await resend.emails.send({
         from: "Innovix Dynamix <noreply@innovixdynamix.com>",
-        to: ["jay.cadmus@innovix-llc.com"],
+        to: ["jay.cadmus@innovixdynamix.com"],
         subject: `New ${brand} Signup: ${emailRecord.email}`,
         html: adminNotificationHtml,
       });

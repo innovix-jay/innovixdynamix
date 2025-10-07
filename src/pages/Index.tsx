@@ -33,7 +33,7 @@ const Index = () => {
           name:"Innovix Dynamix LLC",
           url:"https://www.innovixdynamix.com",
           logo:"https://www.innovixdynamix.com/assets/innovix-logo.png",
-          sameAs:["https://www.linkedin.com/company/innovix-llc"]
+          sameAs:["https://www.linkedin.com/company/innovixdynamix"]
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context":"https://schema.org",
