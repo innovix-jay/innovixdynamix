@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import BrandLogo from "@/components/common/BrandLogo";
 import { downloadCapabilitiesPDF } from "@/utils/capabilities-pdf";
+import TrustBadges from "@/components/home/TrustBadges";
 
 const Hero: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
   return (
@@ -16,6 +17,7 @@ const Hero: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
           <p className="text-lg md:text-xl text-muted-foreground mt-6 max-w-2xl animate-fade-in">
             Innovix Dynamix delivers expert AI enablement and production-ready solutions—from standards-aligned training programs to specialized products like JCAL and Matalino. We equip teams to adopt AI safely and productively, with guidance anchored in OMB M-24-10 and the NIST AI Risk Management Framework. Built for regulated environments and commercial teams ready to move fast.
           </p>
+          <TrustBadges />
         <div className="mt-8 flex flex-wrap gap-3 animate-fade-in">
           <Button asChild size="lg" data-cta="request-discovery-call">
             <Link to="/contact" aria-label="Request a discovery call">Request a discovery call</Link>
@@ -23,10 +25,10 @@ const Hero: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
           <Button asChild
             variant="outline" 
             size="lg" 
-            data-cta="view-capabilities"
-            aria-label="View Capabilities Statement"
+            data-cta="download-capabilities"
+            aria-label="Download Capabilities Statement"
           >
-            <Link to="/capabilities">Capabilities Statement</Link>
+            <Link to="/capabilities">Download Capabilities Statement</Link>
           </Button>
         </div>
       </div>

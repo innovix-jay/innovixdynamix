@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import Products from "./pages/Products";
 import Jcal from "./pages/Jcal";
 import Matalino from "./pages/Matalino";
+import Training from "./pages/Training";
 import About from "./pages/About";
 import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
@@ -79,6 +80,7 @@ const AppShell = () => {
           <Route path="/products" element={<Products />} />
           <Route path="/jcal" element={<Jcal />} />
           <Route path="/matalino" element={<Matalino />} />
+          <Route path="/training" element={<Training />} />
           <Route path="/about" element={<About />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/contact" element={<Contact />} />

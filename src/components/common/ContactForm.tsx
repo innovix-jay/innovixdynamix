@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useSearchParams } from "react-router-dom";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -13,7 +14,7 @@ const schema = z.object({
   name: z.string().min(1),
   email: z.string().email(),
   company: z.string().optional(),
-  interest: z.enum(["JCAL","Matalino","General"]).default("General"),
+  inquiry_type: z.enum(["General Inquiry", "Training & Enablement", "Partnership & Teaming", "Product Demo (JCAL/Matalino)", "Technical Support"]).default("General Inquiry"),
   message: z.string().min(1),
   website: z.string().optional(), // honeypot
 });
@@ -22,7 +23,23 @@ type FormData = z.infer<typeof schema>;
 
 const ContactForm: React.FC<React.HTMLAttributes<HTMLFormElement>> = (props) => {
   const { toast } = useToast();
-  const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormData>({ resolver: zodResolver(schema) });
+  const [searchParams] = useSearchParams();
+  const { register, handleSubmit, formState: { errors, isSubmitting }, reset, setValue } = useForm<FormData>({ 
+    resolver: zodResolver(schema),
+    defaultValues: {
+      inquiry_type: "General Inquiry"
+    }
+  });
+
+  // Pre-select inquiry type based on query parameter
+  useEffect(() => {
+    const inquiry = searchParams.get('inquiry');
+    if (inquiry === 'partnership') {
+      setValue('inquiry_type', 'Partnership & Teaming');
+    } else if (inquiry === 'training') {
+      setValue('inquiry_type', 'Training & Enablement');
+    }
+  }, [searchParams, setValue]);
 
   const onSubmit = async (data: FormData) => {
     try {
@@ -81,11 +98,17 @@ const ContactForm: React.FC<React.HTMLAttributes<HTMLFormElement>> = (props) => 
           <Input {...register('company')} />
         </div>
         <div>
-          <label className="block text-sm mb-1">Interest</label>
-          <select className="w-full h-10 rounded-md border bg-background" aria-label="Interest" {...register('interest')}>
-            <option>JCAL</option>
-            <option>Matalino</option>
-            <option>General</option>
+          <label className="block text-sm mb-1">Inquiry Type</label>
+          <select 
+            className="w-full h-10 rounded-md border bg-background px-3" 
+            aria-label="Inquiry Type" 
+            {...register('inquiry_type')}
+          >
+            <option value="General Inquiry">General Inquiry</option>
+            <option value="Training & Enablement">Training & Enablement</option>
+            <option value="Partnership & Teaming">Partnership & Teaming</option>
+            <option value="Product Demo (JCAL/Matalino)">Product Demo (JCAL/Matalino)</option>
+            <option value="Technical Support">Technical Support</option>
           </select>
         </div>
         <div>

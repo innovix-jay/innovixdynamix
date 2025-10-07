@@ -11,7 +11,7 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
           <h3 className="text-lg font-semibold flex items-center gap-2">
             <img src={innovixDynamixLogo} alt="Innovix Dynamix logo" className="h-10 w-auto" />
           </h3>
-          <p className="text-sm text-muted-foreground mt-2">Focused AI tools that make operations faster, clearer, and more reliable.</p>
+          <p className="text-sm text-muted-foreground mt-2">Production-ready AI solutions built for teams that ship. Veteran-owned. US-only infrastructure.</p>
         </div>
         <div>
           <h4 className="font-medium mb-2">Company</h4>
@@ -25,6 +25,7 @@ const Footer: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
         <div>
           <h4 className="font-medium mb-2">Products</h4>
           <ul className="space-y-1 text-sm">
+            <li><Link className="story-link" to="/training">AI Training</Link></li>
             <li><Link className="story-link" to="/jcal">JCAL</Link></li>
             <li><Link className="story-link" to="/matalino">Matalino</Link></li>
           </ul>

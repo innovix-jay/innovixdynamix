@@ -2,13 +2,16 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import Hero from "@/components/hero/Hero";
 import FeatureGrid from "@/components/common/FeatureGrid";
+import Differentiators from "@/components/home/Differentiators";
 import ProductCallouts from "@/components/home/ProductCallouts";
 import WhyInnovix from "@/components/home/WhyInnovix";
 import OurJourney from "@/components/home/OurJourney";
 import HowWeWork from "@/components/home/HowWeWork";
 import HomeFAQ from "@/components/home/HomeFAQ";
+import TeamingSection from "@/components/home/TeamingSection";
 import CalloutBanner from "@/components/common/CalloutBanner";
 import EmailCapture from "@/components/common/EmailCapture";
+import StickyCTABanner from "@/components/home/StickyCTABanner";
 
 const Index = () => {
   const canonical = typeof window !== 'undefined' ? `${window.location.origin}/` : 
@@ -16,6 +19,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <StickyCTABanner />
+      
       <Helmet>
         <title>Innovix Dynamix | AI Training & Enablement, Ready on Day One</title>
         <meta name="description" content="Standards-aligned AI Training & Enablement for government and enterprise—aligned to OMB M-24-10 and NIST AI RMF." />
@@ -49,6 +54,8 @@ const Index = () => {
 
       <Hero id="hero" />
 
+      <Differentiators />
+
       <section id="features" className="container py-12 animate-fade-in">
         <FeatureGrid />
       </section>
@@ -69,16 +76,18 @@ const Index = () => {
         <HowWeWork />
       </section>
 
+      <section id="faq" className="container py-12 animate-fade-in">
+        <HomeFAQ />
+      </section>
+
+      <TeamingSection />
+
       <section id="email" className="container py-16 animate-fade-in">
         <header className="mb-4">
           <h2 className="text-2xl md:text-3xl font-semibold">Get early access and playbooks</h2>
           <p className="text-sm text-muted-foreground mt-1">Join the list for product updates, launch guides, and practical tips. No spam.</p>
         </header>
         <EmailCapture id="signup" list="general" className="max-w-xl" data-cta="join-list-home" aria-label="Join the list" /* @ts-ignore custom prop */ emailOnly successMessage="You are on the list. We will be in touch soon." />
-      </section>
-
-      <section id="faq" className="container py-12 animate-fade-in">
-        <HomeFAQ />
       </section>
 
       <section id="callout" className="container py-12 animate-fade-in">
