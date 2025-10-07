@@ -12,6 +12,7 @@ import TeamingSection from "@/components/home/TeamingSection";
 import CalloutBanner from "@/components/common/CalloutBanner";
 import EmailCapture from "@/components/common/EmailCapture";
 import StickyCTABanner from "@/components/home/StickyCTABanner";
+import ConsentBanner from "@/components/common/ConsentBanner";
 
 const Index = () => {
   const canonical = typeof window !== 'undefined' ? `${window.location.origin}/` : 
@@ -93,6 +94,8 @@ const Index = () => {
       <section id="callout" className="container py-12 animate-fade-in">
         <CalloutBanner />
       </section>
+
+      <ConsentBanner />
     </div>
   );
 };
