@@ -11,10 +11,10 @@ const Hero: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
       
       <div className="container relative z-10 py-28 md:py-36">
           <h1 className="mt-5 text-5xl md:text-7xl font-display font-bold tracking-tight max-w-5xl leading-tight animate-fade-in">
-            AI Training & Enablement, Ready on Day One.
+            AI Training & Products That Move at Your Speed.
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mt-6 max-w-2xl animate-fade-in">
-            Innovix Dynamix equips teams to use Artificial Intelligence safely and productively with a hosted, standards-aligned training approach—aligned to OMB M-24-10 and the NIST AI Risk Management Framework (AI RMF). Built for regulated environments and commercial teams alike.
+            Innovix Dynamix delivers expert AI enablement and production-ready solutions—from standards-aligned training programs to specialized products like JCAL and Matalino. We equip teams to adopt AI safely and productively, with guidance anchored in OMB M-24-10 and the NIST AI Risk Management Framework. Built for regulated environments and commercial teams ready to move fast.
           </p>
         <div className="mt-8 flex flex-wrap gap-3 animate-fade-in">
           <Button asChild size="lg" data-cta="request-discovery-call">
