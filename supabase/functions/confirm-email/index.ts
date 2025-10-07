@@ -160,29 +160,96 @@ Deno.serve(async (req) => {
 
     return new Response(
       `<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Email Confirmed</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Confirmed - ${brand}</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f8fafc; }
-    .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 400px; text-align: center; }
-    h1 { color: #0f172a; margin: 0 0 1rem; font-size: 2rem; }
-    p { color: #64748b; margin: 0 0 0.5rem; line-height: 1.6; }
-    a { color: #0f172a; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 1rem; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      min-height: 100vh; 
+      margin: 0; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 1rem;
+    }
+    .card { 
+      background: white; 
+      padding: 3rem 2rem; 
+      border-radius: 16px; 
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2); 
+      max-width: 500px; 
+      width: 100%;
+      text-align: center; 
+      animation: slideUp 0.4s ease-out;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .icon { 
+      width: 80px; 
+      height: 80px; 
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      border-radius: 50%; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      margin: 0 auto 1.5rem;
+      font-size: 3rem;
+    }
+    h1 { 
+      color: #0f172a; 
+      margin: 0 0 1rem; 
+      font-size: 1.875rem; 
+      font-weight: 700;
+    }
+    p { 
+      color: #64748b; 
+      margin: 0 0 0.75rem; 
+      line-height: 1.6; 
+      font-size: 1.0625rem;
+    }
+    .brand { 
+      font-weight: 600; 
+      color: #0f172a; 
+    }
+    .button { 
+      display: inline-block;
+      margin-top: 2rem; 
+      padding: 0.875rem 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>✅ Email Confirmed!</h1>
-    <p>Thanks for confirming your email.</p>
-    <p>You're now on the ${brand} waitlist. We'll keep you posted with updates and early access.</p>
-    <a href="https://www.innovixdynamix.com">← Back to Innovix Dynamix</a>
+    <div class="icon">✓</div>
+    <h1>Email Confirmed!</h1>
+    <p>Thanks for confirming your email address.</p>
+    <p>You're now on the <span class="brand">${brand}</span> waitlist. We'll keep you posted with updates and early access opportunities.</p>
+    <a href="https://www.innovixdynamix.com" class="button">Return to Innovix Dynamix</a>
   </div>
 </body>
 </html>`,
       {
         status: 200,
-        headers: { "Content-Type": "text/html", ...corsHeaders },
+        headers: { "Content-Type": "text/html; charset=utf-8", ...corsHeaders },
       }
     );
   } catch (e) {
