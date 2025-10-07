@@ -153,7 +153,7 @@ Deno.serve(async (req) => {
     `;
 
     const emailResult = await resend.emails.send({
-      from: "Jay Cadmus <jay.cadmus@innovixdynamix.com>",
+      from: "Innovix Dynamix <noreply@innovixdynamix.com>",
       to: [email],
       subject,
       html,
