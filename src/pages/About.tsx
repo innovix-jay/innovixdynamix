@@ -21,12 +21,16 @@ const About: React.FC = () => {
         })}</script>
       </Helmet>
       <h1 className="text-3xl font-bold">About Innovix Dynamix</h1>
-      <p className="text-muted-foreground mt-2 max-w-2xl">Innovix Dynamix equips teams with practical, standards-aligned AI Training & Enablement so they can use AI safely and productively in everyday work. We focus on clarity, speed, and outcomes—without adding operational burden.</p>
+      <p className="text-muted-foreground mt-2 max-w-2xl">Innovix Dynamix delivers practical AI training and production-ready solutions that help teams adopt AI safely and move faster. From standards-aligned training programs to specialized products like JCAL and Matalino, we focus on capability and readiness—not theory.</p>
+      <p className="text-muted-foreground mt-3 max-w-2xl">Founded by a service-disabled Air Force veteran with deep experience in data science, analytics, and digital transformation, we understand what regulated environments and mission-driven teams need: tools and training that work, guidance you can trust, and solutions that ship.</p>
 
       <section aria-labelledby="positioning-heading" className="mt-10">
         <h2 id="positioning-heading" className="text-xl font-semibold">Why Innovix Dynamix</h2>
         <p className="text-muted-foreground mt-3 max-w-3xl">
-          Our approach aligns to OMB M-24-10 and the NIST AI Risk Management Framework, making it suitable for regulated environments and commercial teams alike. We emphasize capability and readiness: what you need is available quickly, maintained over time, and measured with simple adoption and completion reporting.
+          We align with OMB M-24-10 and the NIST AI Risk Management Framework because standards matter—especially in government and regulated environments. Our approach emphasizes three things: speed without shortcuts, security by design, and measurable outcomes.
+        </p>
+        <p className="text-muted-foreground mt-3 max-w-3xl">
+          Everything we build is hosted on US-only infrastructure with federal-grade security standards. We're a small business that moves fast, delivers real products, and partners effectively with prime contractors and commercial teams alike.
         </p>
       </section>
 
@@ -42,10 +46,10 @@ const About: React.FC = () => {
           <div>
             <h3 className="sr-only">Jay Cadmus</h3>
             <p className="text-muted-foreground">
-              Jay Cadmus leads Innovix Dynamix with an operator's focus and a builder's curiosity. Coming from an Air Force background and deep experience in data science and analytics, he's driven by a simple belief: people deserve powerful tools to express their creativity, test ideas, and turn ingenuity into value.
+              Jay Cadmus leads Innovix Dynamix with an operator's focus and a builder's drive. Coming from an Air Force background in contracting and digital transformation, with deep experience in data science and analytics, he's motivated by a straightforward belief: people deserve powerful, practical tools to express their creativity, test ideas, and turn effort into outcomes.
             </p>
             <p className="text-muted-foreground mt-3">
-              At Innovix Dynamix, Jay's mission is to put practical AI in the hands of those who make things—so businesses, creators, and teams can move faster, think clearer, and create with confidence.
+              At Innovix Dynamix, Jay's mission is to put working AI solutions in the hands of those who make things—so businesses, creators, and teams can move faster, think clearer, and build with confidence. We ship products and solutions, not promises.
             </p>
           </div>
         </div>
