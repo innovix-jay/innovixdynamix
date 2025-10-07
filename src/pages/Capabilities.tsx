@@ -2,6 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import profilePhoto from "@/assets/jay-cadmus-profile.png";
 
 const Capabilities: React.FC = () => {
   const canonical = typeof window !== 'undefined' ? `${window.location.origin}/capabilities` : 'https://www.innovixdynamix.com/capabilities';
@@ -18,12 +19,34 @@ const Capabilities: React.FC = () => {
 
       {/* Header */}
       <header className="mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">INNOVIX DYNAMIX</h1>
-        <p className="text-xl md:text-2xl text-muted-foreground mb-4">AI Training, Enablement & Production-Ready Solutions</p>
-        <div className="text-sm text-muted-foreground space-y-1">
-          <p><strong>Innovative Vision X LLC | Operating as Innovix Dynamix</strong></p>
-          <p>953 Bentstation Ln #303, Lake Mary, FL 32746</p>
-          <p>Jay Cadmus, CEO | <a href={`mailto:${contactEmail}`} className="story-link">{contactEmail}</a> | <a href="https://innovixdynamix.com" className="story-link">innovixdynamix.com</a></p>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-center md:text-left">INNOVIX DYNAMIX</h1>
+        <p className="text-xl md:text-2xl text-muted-foreground mb-6 text-center md:text-left">AI Training, Enablement & Production-Ready Solutions</p>
+        
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+          {/* Profile photo - centered on mobile, right side on desktop */}
+          <div className="order-first md:order-last flex-shrink-0">
+            <div className="relative">
+              {/* Glow effect */}
+              <div className="absolute inset-0 bg-primary/30 rounded-full blur-2xl scale-110"></div>
+              {/* Photo */}
+              <img 
+                src={profilePhoto} 
+                alt="Jay Cadmus, CEO" 
+                className="relative w-[120px] h-[120px] rounded-full object-cover border-4 border-primary/40 shadow-2xl ring-2 ring-primary/20"
+                style={{
+                  objectPosition: 'center 15%',
+                  clipPath: 'circle(50%)'
+                }}
+              />
+            </div>
+          </div>
+          
+          {/* Contact info */}
+          <div className="text-sm text-muted-foreground space-y-1 text-center md:text-left flex-1">
+            <p><strong>Innovative Vision X LLC | Operating as Innovix Dynamix</strong></p>
+            <p>953 Bentstation Ln #303, Lake Mary, FL 32746</p>
+            <p>Jay Cadmus, CEO | <a href={`mailto:${contactEmail}`} className="story-link">{contactEmail}</a> | <a href="https://innovixdynamix.com" className="story-link">innovixdynamix.com</a></p>
+          </div>
         </div>
       </header>
 
