@@ -37,8 +37,8 @@ const Hero: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
             </div>
           </div>
 
-          {/* Right side - Dashboard Mockup (Desktop only) */}
-          <div className="hidden lg:block relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          {/* Right side - Dashboard Mockup */}
+          <div className="relative animate-fade-in mt-8 lg:mt-0" style={{ animationDelay: '0.2s' }}>
             <div className="relative">
               {/* Animated glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-brand-2 via-brand-1 to-brand-3 rounded-xl blur-3xl opacity-20 animate-pulse"></div>
