@@ -3,7 +3,7 @@ import { Shield, Globe, Award, Zap } from "lucide-react";
 
 const TrustBadges: React.FC = () => {
   return (
-    <div className="flex flex-wrap gap-3 items-center mt-6">
+    <div className="grid grid-cols-2 gap-3 mt-6 max-w-2xl">
       <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/50 backdrop-blur-sm border border-border/50">
         <Award className="h-4 w-4 text-primary" />
         <span className="text-xs font-medium">Service-Disabled Veteran-Owned Small Business</span>
