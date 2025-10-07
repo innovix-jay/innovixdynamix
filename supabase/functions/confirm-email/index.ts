@@ -20,26 +20,68 @@ Deno.serve(async (req) => {
     if (!token) {
       return new Response(
         `<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Invalid Link</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f8fafc; }
-    .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 400px; text-align: center; }
-    h1 { color: #0f172a; margin: 0 0 1rem; }
-    p { color: #64748b; margin: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      min-height: 100vh; 
+      margin: 0; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 1rem;
+    }
+    .card { 
+      background: white; 
+      padding: 3rem 2rem; 
+      border-radius: 16px; 
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2); 
+      max-width: 500px; 
+      width: 100%;
+      text-align: center; 
+    }
+    .icon { 
+      width: 80px; 
+      height: 80px; 
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      border-radius: 50%; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      margin: 0 auto 1.5rem;
+      font-size: 3rem;
+    }
+    h1 { 
+      color: #0f172a; 
+      margin: 0 0 1rem; 
+      font-size: 1.875rem; 
+      font-weight: 700;
+    }
+    p { 
+      color: #64748b; 
+      margin: 0; 
+      line-height: 1.6; 
+      font-size: 1.0625rem;
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>❌ Invalid Link</h1>
+    <div class="icon">✕</div>
+    <h1>Invalid Link</h1>
     <p>This confirmation link is invalid or has expired.</p>
   </div>
 </body>
 </html>`,
         {
           status: 400,
-          headers: { "Content-Type": "text/html", ...corsHeaders },
+          headers: { "Content-Type": "text/html; charset=utf-8", ...corsHeaders },
         }
       );
     }
@@ -59,26 +101,68 @@ Deno.serve(async (req) => {
       console.error("confirm-email: token not found", findError);
       return new Response(
         `<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Invalid Token</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f8fafc; }
-    .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 400px; text-align: center; }
-    h1 { color: #0f172a; margin: 0 0 1rem; }
-    p { color: #64748b; margin: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      min-height: 100vh; 
+      margin: 0; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 1rem;
+    }
+    .card { 
+      background: white; 
+      padding: 3rem 2rem; 
+      border-radius: 16px; 
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2); 
+      max-width: 500px; 
+      width: 100%;
+      text-align: center; 
+    }
+    .icon { 
+      width: 80px; 
+      height: 80px; 
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      border-radius: 50%; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      margin: 0 auto 1.5rem;
+      font-size: 3rem;
+    }
+    h1 { 
+      color: #0f172a; 
+      margin: 0 0 1rem; 
+      font-size: 1.875rem; 
+      font-weight: 700;
+    }
+    p { 
+      color: #64748b; 
+      margin: 0; 
+      line-height: 1.6; 
+      font-size: 1.0625rem;
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>❌ Invalid Token</h1>
+    <div class="icon">✕</div>
+    <h1>Invalid Token</h1>
     <p>This confirmation link is invalid or has already been used.</p>
   </div>
 </body>
 </html>`,
         {
           status: 404,
-          headers: { "Content-Type": "text/html", ...corsHeaders },
+          headers: { "Content-Type": "text/html; charset=utf-8", ...corsHeaders },
         }
       );
     }
@@ -87,28 +171,86 @@ Deno.serve(async (req) => {
     if (emailRecord.confirmed_at) {
       return new Response(
         `<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Already Confirmed</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f8fafc; }
-    .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 400px; text-align: center; }
-    h1 { color: #0f172a; margin: 0 0 1rem; }
-    p { color: #64748b; margin: 0; }
-    a { color: #0f172a; text-decoration: none; font-weight: 600; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      min-height: 100vh; 
+      margin: 0; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 1rem;
+    }
+    .card { 
+      background: white; 
+      padding: 3rem 2rem; 
+      border-radius: 16px; 
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2); 
+      max-width: 500px; 
+      width: 100%;
+      text-align: center; 
+    }
+    .icon { 
+      width: 80px; 
+      height: 80px; 
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      border-radius: 50%; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      margin: 0 auto 1.5rem;
+      font-size: 3rem;
+    }
+    h1 { 
+      color: #0f172a; 
+      margin: 0 0 1rem; 
+      font-size: 1.875rem; 
+      font-weight: 700;
+    }
+    p { 
+      color: #64748b; 
+      margin: 0 0 0.75rem; 
+      line-height: 1.6; 
+      font-size: 1.0625rem;
+    }
+    .button { 
+      display: inline-block;
+      margin-top: 2rem; 
+      padding: 0.875rem 2rem;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>✅ Already Confirmed</h1>
+    <div class="icon">✓</div>
+    <h1>Already Confirmed</h1>
     <p>Your email has already been confirmed. You're all set!</p>
-    <p style="margin-top: 1rem;"><a href="https://www.innovixdynamix.com">← Back to Innovix Dynamix</a></p>
+    <a href="https://www.innovixdynamix.com" class="button">Return to Innovix Dynamix</a>
   </div>
 </body>
 </html>`,
         {
           status: 200,
-          headers: { "Content-Type": "text/html", ...corsHeaders },
+          headers: { "Content-Type": "text/html; charset=utf-8", ...corsHeaders },
         }
       );
     }
@@ -126,26 +268,68 @@ Deno.serve(async (req) => {
       console.error("confirm-email: update error", updateError);
       return new Response(
         `<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Error</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f8fafc; }
-    .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 400px; text-align: center; }
-    h1 { color: #0f172a; margin: 0 0 1rem; }
-    p { color: #64748b; margin: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      min-height: 100vh; 
+      margin: 0; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 1rem;
+    }
+    .card { 
+      background: white; 
+      padding: 3rem 2rem; 
+      border-radius: 16px; 
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2); 
+      max-width: 500px; 
+      width: 100%;
+      text-align: center; 
+    }
+    .icon { 
+      width: 80px; 
+      height: 80px; 
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      border-radius: 50%; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      margin: 0 auto 1.5rem;
+      font-size: 3rem;
+    }
+    h1 { 
+      color: #0f172a; 
+      margin: 0 0 1rem; 
+      font-size: 1.875rem; 
+      font-weight: 700;
+    }
+    p { 
+      color: #64748b; 
+      margin: 0; 
+      line-height: 1.6; 
+      font-size: 1.0625rem;
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>❌ Error</h1>
+    <div class="icon">✕</div>
+    <h1>Error</h1>
     <p>Something went wrong. Please try again later.</p>
   </div>
 </body>
 </html>`,
         {
           status: 500,
-          headers: { "Content-Type": "text/html", ...corsHeaders },
+          headers: { "Content-Type": "text/html; charset=utf-8", ...corsHeaders },
         }
       );
     }
@@ -256,26 +440,68 @@ Deno.serve(async (req) => {
     console.error("confirm-email: error", e);
     return new Response(
       `<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Error</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f8fafc; }
-    .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); max-width: 400px; text-align: center; }
-    h1 { color: #0f172a; margin: 0 0 1rem; }
-    p { color: #64748b; margin: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      min-height: 100vh; 
+      margin: 0; 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 1rem;
+    }
+    .card { 
+      background: white; 
+      padding: 3rem 2rem; 
+      border-radius: 16px; 
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2); 
+      max-width: 500px; 
+      width: 100%;
+      text-align: center; 
+    }
+    .icon { 
+      width: 80px; 
+      height: 80px; 
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      border-radius: 50%; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      margin: 0 auto 1.5rem;
+      font-size: 3rem;
+    }
+    h1 { 
+      color: #0f172a; 
+      margin: 0 0 1rem; 
+      font-size: 1.875rem; 
+      font-weight: 700;
+    }
+    p { 
+      color: #64748b; 
+      margin: 0; 
+      line-height: 1.6; 
+      font-size: 1.0625rem;
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>❌ Error</h1>
-    <p>Something went wrong: ${(e as Error).message}</p>
+    <div class="icon">✕</div>
+    <h1>Error</h1>
+    <p>Something went wrong. Please try again later.</p>
   </div>
 </body>
 </html>`,
       {
         status: 500,
-        headers: { "Content-Type": "text/html", ...corsHeaders },
+        headers: { "Content-Type": "text/html; charset=utf-8", ...corsHeaders },
       }
     );
   }
