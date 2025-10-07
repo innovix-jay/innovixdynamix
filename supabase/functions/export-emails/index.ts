@@ -14,7 +14,7 @@ Deno.serve(async (req) => {
   }
 
   try {
-    // Get the authorization header
+    // Validate authentication and admin role
     const authHeader = req.headers.get("authorization");
     if (!authHeader) {
       return new Response(JSON.stringify({ error: "Unauthorized" }), {
@@ -24,6 +24,37 @@ Deno.serve(async (req) => {
     }
 
     const SUPABASE_URL = Deno.env.get("SUPABASE_URL") as string;
+    const SUPABASE_ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY") as string;
+
+    // First, validate the JWT and get the user
+    const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+      global: { headers: { Authorization: authHeader } }
+    });
+
+    const { data: { user }, error: authError } = await supabaseClient.auth.getUser();
+    if (authError || !user) {
+      console.error("export-emails: auth error", authError);
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
+
+    // Check if user has admin role
+    const { data: isAdmin, error: roleError } = await supabaseClient.rpc('has_role', { 
+      _user_id: user.id, 
+      _role: 'admin' 
+    });
+
+    if (roleError || !isAdmin) {
+      console.error("export-emails: role check failed", roleError);
+      return new Response(JSON.stringify({ error: "Forbidden: Admin access required" }), {
+        status: 403,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
+
+    // Now use service role key to query data
     const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") as string;
     const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 

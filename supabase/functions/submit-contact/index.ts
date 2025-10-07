@@ -43,6 +43,35 @@ Deno.serve(async (req) => {
       });
     }
 
+    // Validate input lengths
+    if (name.length > 100) {
+      return new Response(JSON.stringify({ error: "Name too long (max 100 characters)" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
+
+    if (email.length > 255) {
+      return new Response(JSON.stringify({ error: "Email too long (max 255 characters)" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
+
+    if (message.length > 5000) {
+      return new Response(JSON.stringify({ error: "Message too long (max 5000 characters)" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
+
+    if (company && company.length > 200) {
+      return new Response(JSON.stringify({ error: "Company name too long (max 200 characters)" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...corsHeaders },
+      });
+    }
+
     const SUPABASE_URL = Deno.env.get("SUPABASE_URL") as string;
     const SUPABASE_ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY") as string;
     const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
