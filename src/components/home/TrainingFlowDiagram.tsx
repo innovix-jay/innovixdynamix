@@ -30,7 +30,7 @@ const TrainingFlowDiagram: React.FC = () => {
                 Role mapping & objectives alignment
               </p>
               <div className="mt-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                Week 1
+                Phase 1
               </div>
             </div>
 
@@ -47,12 +47,12 @@ const TrainingFlowDiagram: React.FC = () => {
                   <BookOpen className="h-10 w-10 text-primary" />
                 </div>
               </div>
-              <h3 className="font-semibold mb-2">Portal Setup</h3>
+              <h3 className="font-semibold mb-2">Setup</h3>
               <p className="text-xs text-muted-foreground">
                 Configuration & user provisioning
               </p>
               <div className="mt-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                Week 1
+                Phase 1
               </div>
             </div>
 
@@ -74,7 +74,7 @@ const TrainingFlowDiagram: React.FC = () => {
                 Role-based learning & prompt engineering
               </p>
               <div className="mt-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                Weeks 1-2
+                Phase 2
               </div>
             </div>
 
@@ -105,7 +105,7 @@ const TrainingFlowDiagram: React.FC = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-12">
           <p className="text-sm text-muted-foreground mb-4">
-            From discovery to deployment in 1-3 weeks
+            From discovery to deployment with speed
           </p>
         </div>
       </div>

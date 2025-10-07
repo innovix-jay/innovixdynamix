@@ -40,11 +40,11 @@ const Hero: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
           {/* Right side - Dashboard Mockup (Desktop only) */}
           <div className="hidden lg:block relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <div className="relative">
-              {/* Glow effect */}
+              {/* Animated glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-brand-2 via-brand-1 to-brand-3 rounded-xl blur-3xl opacity-20 animate-pulse"></div>
               
-              {/* Dashboard image */}
-              <div className="relative glass-card p-2 rounded-xl transform hover:scale-[1.02] transition-transform duration-300">
+              {/* Dashboard image with floating animation */}
+              <div className="relative glass-card p-2 rounded-xl transform hover:scale-[1.02] transition-all duration-500 animate-float">
                 <img 
                   src={trainingDashboard} 
                   alt="AI Training Dashboard Interface showing role-based learning paths and progress tracking" 
@@ -52,9 +52,10 @@ const Hero: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
                 />
               </div>
 
-              {/* Floating accent elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-brand-1/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-brand-3/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+              {/* Floating accent elements with more movement */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-brand-1/20 rounded-full blur-2xl animate-pulse-slow" style={{ animationDelay: '1s' }}></div>
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-brand-3/20 rounded-full blur-2xl animate-pulse-slow" style={{ animationDelay: '1.5s' }}></div>
+              <div className="absolute top-1/2 -right-8 w-16 h-16 bg-brand-2/10 rounded-full blur-xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
             </div>
           </div>
         </div>
