@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import ceoPhoto from "@/assets/jay-cadmus-ceo.png";
 
 const About: React.FC = () => {
   const canonical = typeof window !== 'undefined' ? `${window.location.origin}/about` : 'https://www.innovixdynamix.com/about';
@@ -16,7 +17,7 @@ const About: React.FC = () => {
           name: "Jay Cadmus",
           jobTitle: "Founder & CEO",
           worksFor: { "@type": "Organization", name: "Innovix Dynamix LLC" },
-          image: "/lovable-uploads/4156af08-434d-40d8-ad89-db7c42e92674.png",
+          image: ceoPhoto,
         })}</script>
       </Helmet>
       <h1 className="text-3xl font-bold">About Innovix Dynamix</h1>
@@ -33,7 +34,7 @@ const About: React.FC = () => {
         <h2 id="founder-heading" className="text-xl font-semibold">Founder & CEO</h2>
         <div className="mt-6 grid items-start gap-6 md:grid-cols-[auto,1fr]">
           <img
-            src="/lovable-uploads/4156af08-434d-40d8-ad89-db7c42e92674.png"
+            src={ceoPhoto}
             alt="Jay Cadmus, Founder & CEO of Innovix Dynamix"
             className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover ring-2 ring-border shadow-lg"
             loading="lazy"
