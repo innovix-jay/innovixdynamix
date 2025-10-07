@@ -32,7 +32,7 @@ const Capabilities: React.FC = () => {
               <img 
                 src={profilePhoto} 
                 alt="Jay Cadmus, CEO" 
-                className="relative w-[120px] h-[120px] rounded-full object-cover border-4 border-primary/40 shadow-2xl ring-2 ring-primary/20"
+                className="relative w-[160px] h-[160px] rounded-full object-cover border-4 border-primary/40 shadow-2xl ring-2 ring-primary/20"
                 style={{
                   objectPosition: 'center 15%',
                   clipPath: 'circle(50%)'
