@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu";
 import { Menu } from "lucide-react";
-import innovixDynamixLogo from "@/assets/innovix-dynamix-logo.png";
+import innovixEmblem from "@/assets/innovix-emblem.png";
 
 interface HeaderProps extends React.HTMLAttributes<HTMLElement> {}
 
@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({ className, ...props }) => {
     >
       <div className="container h-full flex items-center justify-between">
         <Link to="/" className="font-semibold tracking-tight hover-scale" aria-label="Innovix Dynamix home">
-          <img src={innovixDynamixLogo} alt="Innovix Dynamix logo" className="h-14 w-auto" />
+          <img src={innovixEmblem} alt="Innovix Dynamix emblem" className="h-16 w-auto" />
         </Link>
         <nav className="hidden md:flex items-center gap-1" aria-label="Primary">
           <NavLink to="/" end className={linkCls}>Home</NavLink>
