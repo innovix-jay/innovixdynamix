@@ -7,6 +7,7 @@ import ProductCallouts from "@/components/home/ProductCallouts";
 import WhyInnovix from "@/components/home/WhyInnovix";
 import OurJourney from "@/components/home/OurJourney";
 import HowWeWork from "@/components/home/HowWeWork";
+import TrainingFlowDiagram from "@/components/home/TrainingFlowDiagram";
 import HomeFAQ from "@/components/home/HomeFAQ";
 import TeamingSection from "@/components/home/TeamingSection";
 import CalloutBanner from "@/components/common/CalloutBanner";
@@ -76,6 +77,8 @@ const Index = () => {
       <section id="how" className="container py-12 animate-fade-in">
         <HowWeWork />
       </section>
+
+      <TrainingFlowDiagram />
 
       <section id="faq" className="container py-12 animate-fade-in">
         <HomeFAQ />
