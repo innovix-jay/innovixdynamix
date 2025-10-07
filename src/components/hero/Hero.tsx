@@ -43,8 +43,8 @@ const Hero: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
               {/* Animated glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-brand-2 via-brand-1 to-brand-3 rounded-xl blur-3xl opacity-20 animate-pulse"></div>
               
-              {/* Dashboard image with floating animation */}
-              <div className="relative glass-card p-2 rounded-xl transform hover:scale-[1.02] transition-all duration-500 animate-float">
+              {/* Dashboard image */}
+              <div className="relative glass-card p-2 rounded-xl transform hover:scale-[1.02] transition-all duration-500">
                 <img 
                   src={trainingDashboard} 
                   alt="AI Training Dashboard Interface showing role-based learning paths and progress tracking" 
