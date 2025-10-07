@@ -109,7 +109,7 @@ const CapabilitiesPDF = () => (
         <Text style={styles.companyName}>INNOVIX DYNAMIX</Text>
         <Text style={styles.tagline}>AI Training & Enablement for Government IT and Cybersecurity Teams</Text>
         <Text style={styles.contactInfo}>Innovative Vision X LLC | Operating as Innovix Dynamix</Text>
-        <Text style={styles.contactInfo}>953 Bentstation Ln #303, Lake Mary, FL 32046</Text>
+        <Text style={styles.contactInfo}>953 Bentstation Ln #303, Lake Mary, FL 32746</Text>
         <Text style={styles.contactInfo}>Jay Cadmus, CEO | jay.cadmus@innovixdynamix.com | innovixdynamix.com</Text>
       </View>
 
@@ -333,7 +333,7 @@ const CapabilitiesPDF = () => (
         <Text style={styles.text}>Innovative Vision X LLC (DBA Innovix Dynamix)</Text>
         <Text style={styles.text}>Email: jay.cadmus@innovixdynamix.com</Text>
         <Text style={styles.text}>Website: https://innovixdynamix.com</Text>
-        <Text style={styles.text}>Address: 953 Bentstation Ln #303, Lake Mary, FL 32046</Text>
+        <Text style={styles.text}>Address: 953 Bentstation Ln #303, Lake Mary, FL 32746</Text>
         <Text style={[styles.text, { marginTop: 6, fontStyle: 'italic' }]}>
           We respond to teaming requests within 24-48 hours.
         </Text>

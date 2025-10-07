@@ -500,7 +500,7 @@ const Privacy: React.FC = () => {
             <p><strong>Contact Form:</strong> <a href="/contact" className="story-link">https://innovixdynamix.com/contact</a></p>
             <p><strong>Physical Address:</strong><br />
             953 Bentstation Ln #303<br />
-            Lake Mary, FL 32046<br />
+            Lake Mary, FL 32746<br />
             United States</p>
           </div>
 

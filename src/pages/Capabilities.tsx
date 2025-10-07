@@ -22,7 +22,7 @@ const Capabilities: React.FC = () => {
         <p className="text-xl md:text-2xl text-muted-foreground mb-4">AI Training, Enablement & Production-Ready Solutions</p>
         <div className="text-sm text-muted-foreground space-y-1">
           <p><strong>Innovative Vision X LLC | Operating as Innovix Dynamix</strong></p>
-          <p>953 Bentstation Ln #303, Lake Mary, FL 32046</p>
+          <p>953 Bentstation Ln #303, Lake Mary, FL 32746</p>
           <p>Jay Cadmus, CEO | <a href={`mailto:${contactEmail}`} className="story-link">{contactEmail}</a> | <a href="https://innovixdynamix.com" className="story-link">innovixdynamix.com</a></p>
         </div>
       </header>
@@ -385,7 +385,7 @@ const Capabilities: React.FC = () => {
           <p>Innovative Vision X LLC (DBA Innovix Dynamix)</p>
           <p>Email: <a href={`mailto:${contactEmail}`} className="story-link">{contactEmail}</a></p>
           <p>Website: <a href="https://innovixdynamix.com" className="story-link">innovixdynamix.com</a></p>
-          <p>Address: 953 Bentstation Ln #303, Lake Mary, FL 32046</p>
+          <p>Address: 953 Bentstation Ln #303, Lake Mary, FL 32746</p>
         </div>
         <p className="text-muted-foreground italic">We respond to teaming and partnership requests within 24-48 hours.</p>
       </section>

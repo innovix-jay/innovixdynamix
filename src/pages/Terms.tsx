@@ -164,7 +164,7 @@ const Terms: React.FC = () => {
           </ul>
           <p className="mt-3"><strong>Copyright Agent Contact:</strong><br />
           Email: jay.cadmus@innovixdynamix.com<br />
-          Address: 953 Bentstation Ln #303, Lake Mary, FL 32046</p>
+          Address: 953 Bentstation Ln #303, Lake Mary, FL 32746</p>
           <p className="mt-2">We may terminate accounts or access for repeat infringers.</p>
         </section>
 
@@ -588,7 +588,7 @@ const Terms: React.FC = () => {
             <p><strong>Contact Form:</strong> <a className="story-link" href="/contact">https://innovixdynamix.com/contact</a></p>
             <p><strong>Physical Address:</strong><br />
             953 Bentstation Ln #303<br />
-            Lake Mary, FL 32046<br />
+            Lake Mary, FL 32746<br />
             United States</p>
             <p><strong>Business Hours:</strong> Monday – Friday, 9:00 AM – 5:00 PM EST</p>
           </div>
