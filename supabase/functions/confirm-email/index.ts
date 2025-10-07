@@ -347,7 +347,7 @@ Deno.serve(async (req) => {
 
     // Send confirmation success email
     const resend = new Resend(Deno.env.get("RESEND_API_KEY") as string);
-    const subject = `Welcome to ${brand}!`;
+    const subject = `Welcome to Innovix Dynamix`;
     const html = `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; line-height:1.6; color:#0f172a; max-width:600px; margin:0 auto;">
         <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding:32px; border-radius:8px 8px 0 0;">
@@ -359,10 +359,7 @@ Deno.serve(async (req) => {
           <p style="margin:24px 0;">
             <a href="${siteUrl}" style="display:inline-block;padding:14px 28px;background:#0f172a;color:#ffffff;text-decoration:none;border-radius:6px;font-weight:600;font-size:16px;">Visit ${brand}</a>
           </p>
-          <p style="margin:24px 0 0; font-size:14px; color:#64748b;">
-            If you have any questions, just reply to this email.
-          </p>
-          <p style="margin:16px 0 0;">– Jay</p>
+          <p style="margin:16px 0 0;">– Jay Cadmus, Founder & CEO</p>
         </div>
       </div>
     `;
@@ -378,6 +375,35 @@ Deno.serve(async (req) => {
     } catch (emailError) {
       console.error("confirm-email: failed to send confirmation email", emailError);
       // Continue anyway - the subscription is confirmed even if email fails
+    }
+
+    // Send notification email to admin
+    const adminNotificationHtml = `
+      <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; line-height:1.6; color:#0f172a; max-width:600px; margin:0 auto;">
+        <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); padding:32px; border-radius:8px 8px 0 0;">
+          <h1 style="margin:0; color:#ffffff; font-size:24px;">New Email Signup Confirmed</h1>
+        </div>
+        <div style="background:#ffffff; padding:32px; border-radius:0 0 8px 8px; border:1px solid #e2e8f0;">
+          <p style="margin:0 0 16px; font-size:16px;"><strong>Email:</strong> ${emailRecord.email}</p>
+          <p style="margin:0 0 16px; font-size:16px;"><strong>Name:</strong> ${emailRecord.name || "Not provided"}</p>
+          <p style="margin:0 0 16px; font-size:16px;"><strong>List:</strong> ${brand}</p>
+          <p style="margin:0 0 16px; font-size:16px;"><strong>Source:</strong> ${emailRecord.source_path || "Unknown"}</p>
+          <p style="margin:0 0 16px; font-size:16px;"><strong>Confirmed at:</strong> ${new Date().toLocaleString()}</p>
+        </div>
+      </div>
+    `;
+
+    try {
+      await resend.emails.send({
+        from: "Innovix Dynamix <noreply@innovixdynamix.com>",
+        to: ["jay.cadmus@innovix-llc.com"],
+        subject: `New ${brand} Signup: ${emailRecord.email}`,
+        html: adminNotificationHtml,
+      });
+      console.log("confirm-email: admin notification sent");
+    } catch (adminEmailError) {
+      console.error("confirm-email: failed to send admin notification", adminEmailError);
+      // Continue anyway
     }
 
     // Redirect to homepage
