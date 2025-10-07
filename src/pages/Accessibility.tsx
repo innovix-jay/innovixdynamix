@@ -3,107 +3,158 @@ import { Helmet } from "react-helmet-async";
 
 const Accessibility: React.FC = () => {
   const canonical = typeof window !== 'undefined' ? `${window.location.origin}/accessibility` : 'https://www.innovixdynamix.com/accessibility';
-  const updated = new Date().toLocaleDateString();
+  
   return (
     <div className="container py-16">
       <Helmet>
         <title>Accessibility Statement | Innovix Dynamix</title>
-        <meta name="description" content="Our commitment to inclusive, accessible digital experiences with WCAG guidance, features, feedback, and conformance." />
+        <meta name="description" content="Our commitment to making our digital services accessible to people with disabilities. Learn about our conformance status, features, and known limitations." />
         <link rel="canonical" href={canonical} />
         <meta property="og:image" content="/assets/share.jpg" />
-        <script type="application/ld+json">{JSON.stringify({
-          "@context":"https://schema.org",
-          "@type":"WebPage",
-          name:"Accessibility Statement",
-          url: canonical
-        })}</script>
       </Helmet>
 
-      <header className="prose prose-invert max-w-3xl mx-auto text-center mb-10">
-        <h1>Accessibility Statement</h1>
-        <p className="text-muted-foreground">Committed to inclusive digital experiences for all users</p>
-      </header>
+      <article className="prose prose-invert max-w-4xl mx-auto">
+        <header className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-2">Accessibility Statement</h1>
+          <p className="text-muted-foreground">Last Updated: October 7, 2025</p>
+        </header>
 
-      <section className="glass-card rounded-xl p-6 max-w-4xl mx-auto mb-6">
-        <h2 className="text-lg font-semibold mb-3">Our Commitment to Accessibility</h2>
-        <div className="grid gap-4 md:grid-cols-3">
-          <div className="rounded-lg border border-border/50 p-4">
-            <div className="font-medium">Visual Accessibility</div>
-            <p className="text-sm text-muted-foreground">High contrast design and scalable text</p>
-          </div>
-          <div className="rounded-lg border border-border/50 p-4">
-            <div className="font-medium">Keyboard Navigation</div>
-            <p className="text-sm text-muted-foreground">Full keyboard accessibility support</p>
-          </div>
-          <div className="rounded-lg border border-border/50 p-4">
-            <div className="font-medium">Screen Readers</div>
-            <p className="text-sm text-muted-foreground">Compatible with assistive technologies</p>
-          </div>
-        </div>
-      </section>
-
-      <div className="grid gap-6 max-w-4xl mx-auto">
-        <section className="glass-card p-6 rounded-xl">
-          <h2 className="text-xl font-semibold mb-2">Accessibility Statement for Matalino</h2>
-          <p>We are committed to ensuring digital accessibility for people with disabilities and are continually improving the user experience for everyone.</p>
+        <section className="mb-8">
+          <h2>Our Commitment to Accessibility</h2>
+          <p>Innovative Vision X LLC, operating as Innovix Dynamix (including our products JCAL and Matalino), is committed to making our digital services accessible to people with disabilities. We strive to provide equal access to all users to the best of our ability.</p>
         </section>
 
-        <section className="glass-card p-6 rounded-xl">
-          <h2 className="text-xl font-semibold mb-2">Conformance Status</h2>
-          <p>The Web Content Accessibility Guidelines (WCAG) define requirements to improve accessibility for people with disabilities. Matalino is partially conformant with WCAG 2.1 level AA, meaning some parts may not fully conform.</p>
+        <section className="mb-8">
+          <h2>Conformance Status</h2>
+          <p><strong>Current Status:</strong> Partially conformant with WCAG 2.1 Level AA</p>
+          <p>"Partially conformant" means that some portions of the content do not fully conform to the accessibility standard. We have implemented accessibility features where feasible within our platform capabilities, but recognize there are areas that could be improved.</p>
         </section>
 
-        <section className="glass-card p-6 rounded-xl">
-          <h2 className="text-xl font-semibold mb-2">Our Accessibility Features</h2>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>Semantic HTML structure for screen readers</li>
-            <li>High contrast color schemes</li>
-            <li>Keyboard navigation support</li>
-            <li>Alternative text for images</li>
+        <section className="mb-8">
+          <h2>How Our Sites Are Built</h2>
+          <p>Our websites and products are built using modern low-code/no-code development platforms and frameworks. While these platforms provide built-in accessibility features, we acknowledge that they may not cover all accessibility scenarios.</p>
+        </section>
+
+        <section className="mb-8">
+          <h2>Accessibility Features We've Implemented</h2>
+          
+          <h3>Visual Accessibility</h3>
+          <ul>
+            <li>High contrast design elements</li>
+            <li>Scalable text that works with browser zoom</li>
             <li>Responsive design for various screen sizes</li>
-            <li>Visible focus indicators for interactive elements</li>
+          </ul>
+
+          <h3>Keyboard Navigation</h3>
+          <ul>
+            <li>Keyboard accessibility for navigation and interactive elements</li>
+            <li>Visible focus indicators on clickable items</li>
+          </ul>
+
+          <h3>Screen Reader Support</h3>
+          <ul>
+            <li>Semantic HTML structure where supported by our platforms</li>
+            <li>Alternative text for meaningful images</li>
+            <li>Proper form labels</li>
+          </ul>
+
+          <h3>Content</h3>
+          <ul>
+            <li>Clear, straightforward language</li>
+            <li>Descriptive link text</li>
+            <li>Logical page structure</li>
           </ul>
         </section>
 
-        <section className="glass-card p-6 rounded-xl">
-          <h2 className="text-xl font-semibold mb-2">Feedback</h2>
-          <p>We welcome your feedback on the accessibility of Matalino. Let us know if you encounter barriers:</p>
-          <ul className="list-disc pl-6 mt-1 space-y-1">
-            <li>Email: <a className="story-link" href="mailto:accessibility@matalino.ai">accessibility@matalino.ai</a></li>
-            <li>Contact Form: <a className="story-link" href="/contact">Submit a support request</a></li>
+        <section className="mb-8">
+          <h2>Known Limitations</h2>
+          <p>We want to be transparent about areas where accessibility may be limited:</p>
+          
+          <h3>AI Chat Interfaces (JCAL, Matalino):</h3>
+          <p>Dynamic content generated by AI may not be immediately accessible to screen readers. Content becomes accessible once generation completes.</p>
+
+          <h3>Code Editor (JCAL):</h3>
+          <p>The code editing interface may have limited screen reader support due to its complexity. A simpler text editing option may be available.</p>
+
+          <h3>File Uploads:</h3>
+          <p>Drag-and-drop functionality may not be fully keyboard accessible. Click-to-upload buttons are provided as an alternative.</p>
+
+          <h3>Third-Party Services:</h3>
+          <p>Payment processing, authentication, and other integrated services are provided by third-party vendors and may have their own accessibility limitations.</p>
+
+          <h3>Platform Constraints:</h3>
+          <p>As we use low-code/no-code platforms to build our products, some accessibility features are dependent on those platforms' built-in capabilities.</p>
+        </section>
+
+        <section className="mb-8">
+          <h2>Browser and Technology Compatibility</h2>
+          <p>Our sites work best with current versions of:</p>
+          <ul>
+            <li>Google Chrome</li>
+            <li>Mozilla Firefox</li>
+            <li>Apple Safari</li>
+            <li>Microsoft Edge</li>
+          </ul>
+          <p>We recommend using the latest version of your browser and operating system for the best experience.</p>
+          <p>Our sites require JavaScript to be enabled for full functionality.</p>
+        </section>
+
+        <section className="mb-8">
+          <h2>Feedback</h2>
+          <p>If you encounter accessibility barriers or have difficulty accessing any part of our sites or products, please let us know:</p>
+          <p>
+            <strong>Email:</strong> <a href="mailto:jay.cadmus@innovixdynamix.com" className="story-link">jay.cadmus@innovixdynamix.com</a><br />
+            <strong>Contact Form:</strong> <a href="https://innovixdynamix.com/contact" className="story-link">https://innovixdynamix.com/contact</a><br />
+            <strong>Mail:</strong><br />
+            Innovative Vision X LLC<br />
+            953 Bentstation Ln #303<br />
+            Lake Mary, FL 32746
+          </p>
+          <p>When reporting an issue, please include:</p>
+          <ul>
+            <li>The URL or page where you encountered difficulty</li>
+            <li>A description of the problem</li>
+            <li>The browser and assistive technology you're using (if applicable)</li>
+          </ul>
+          <p>We'll do our best to address accessibility concerns as resources allow.</p>
+        </section>
+
+        <section className="mb-8">
+          <h2>Our Approach</h2>
+          <p>We approach accessibility as:</p>
+          <ul>
+            <li>Testing keyboard navigation on key user flows</li>
+            <li>Reviewing color contrast and text sizing</li>
+            <li>Checking that form fields have labels</li>
+            <li>Ensuring images have alternative text where needed</li>
+            <li>Making improvements when we become aware of issues</li>
+          </ul>
+          <p>We're a small business doing our best to accommodate users with disabilities within the constraints of our development platforms and resources.</p>
+        </section>
+
+        <section className="mb-8">
+          <h2>VPAT Availability</h2>
+          <p>We do not currently maintain a Voluntary Product Accessibility Template (VPAT). If formal accessibility documentation becomes necessary for government or enterprise requirements, we will evaluate creating one at that time.</p>
+        </section>
+
+        <section className="mb-8">
+          <h2>Updates to This Statement</h2>
+          <p>This statement will be updated when we make significant changes to our accessibility features or become aware of important limitations.</p>
+        </section>
+
+        <section className="mb-8">
+          <h2>Additional Resources</h2>
+          <p>For more information about web accessibility:</p>
+          <ul>
+            <li><a href="https://www.w3.org/WAI/standards-guidelines/wcag/" className="story-link" target="_blank" rel="noopener noreferrer">Web Content Accessibility Guidelines (WCAG)</a></li>
+            <li><a href="https://webaim.org/" className="story-link" target="_blank" rel="noopener noreferrer">WebAIM (Web Accessibility In Mind)</a></li>
           </ul>
         </section>
 
-        <section className="glass-card p-6 rounded-xl">
-          <h2 className="text-xl font-semibold mb-2">Technical Specifications</h2>
-          <p>Accessibility of Matalino relies on the following technologies to work with your browser and assistive tools: HTML, WAI‑ARIA, CSS, and JavaScript.</p>
-        </section>
-
-        <section className="glass-card p-6 rounded-xl">
-          <h2 className="text-xl font-semibold mb-2">Assessment Approach</h2>
-          <ul className="list-disc pl-6 space-y-1">
-            <li>Self‑evaluation using automated testing tools</li>
-            <li>Manual testing with keyboard navigation</li>
-            <li>Screen reader testing</li>
-            <li>User testing with individuals who use assistive technologies</li>
-          </ul>
-        </section>
-
-        <section className="glass-card p-6 rounded-xl">
-          <h2 className="text-xl font-semibold mb-2">Limitations and Known Issues</h2>
-          <ul className="list-disc pl-6 space-y-1">
-            <li><strong>AI Chat Interface:</strong> Some dynamic content may not be immediately announced to screen readers.</li>
-            <li><strong>File Uploads:</strong> Drag‑and‑drop may not be fully accessible; alternative upload methods are provided.</li>
-            <li><strong>Third‑party Integrations:</strong> Embedded third‑party content may have limited accessibility features.</li>
-          </ul>
-        </section>
-
-        <section className="glass-card p-6 rounded-xl">
-          <h2 className="text-xl font-semibold mb-2">Need Help?</h2>
-          <p>If you're experiencing difficulties accessing any part of Matalino, please <a className="story-link" href="/contact">contact us</a>. We're committed to providing equal access for all users.</p>
-          <p className="text-sm text-muted-foreground mt-4">This statement was last updated on {updated}.</p>
-        </section>
-      </div>
+        <footer className="text-center text-muted-foreground italic mt-12">
+          <p>We appreciate your patience as we continue working to improve accessibility across our digital properties.</p>
+        </footer>
+      </article>
     </div>
   );
 };
