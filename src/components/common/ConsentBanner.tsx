@@ -54,7 +54,7 @@ const ConsentBanner: React.FC = () => {
               <p className="text-xs text-muted-foreground mb-3">
                 We use cookies to enhance your experience, analyze site traffic, and personalize content. You can customize your preferences below.{" "}
                 <Link to="/privacy" className="text-primary hover:underline">
-                  Learn more
+                  View our Privacy Policy
                 </Link>
               </p>
 
