@@ -52,7 +52,7 @@ const TrainingFlowDiagram: React.FC = () => {
                 Configuration & user provisioning
               </p>
               <div className="mt-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                Phase 1
+                Phase 2
               </div>
             </div>
 
@@ -74,7 +74,7 @@ const TrainingFlowDiagram: React.FC = () => {
                 Role-based learning & prompt engineering
               </p>
               <div className="mt-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                Phase 2
+                Phase 3
               </div>
             </div>
 
