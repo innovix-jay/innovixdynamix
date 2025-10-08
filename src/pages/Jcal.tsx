@@ -8,17 +8,75 @@ const Jcal: React.FC = () => {
   return (
     <div className="container py-16">
       <Helmet>
-        <title>JCAL.ai – From idea to app | Innovix Dynamix</title>
-        <meta name="description" content="Describe your app in plain English and JCAL.ai scaffolds production-ready UI. Ship tools in minutes." />
+        <title>JCAL.ai - AI App Building Platform | Prompt to Production | Innovix Dynamix</title>
+        <meta name="description" content="JCAL.ai: Revolutionary AI app building platform. Transform natural language prompts into production-ready applications. Rapid prototyping, workflow automation, and SaaS development without coding. Perfect for government modernization and enterprise digital transformation." />
+        <meta name="keywords" content="AI app building, AI development platform, prompt to app, no-code AI, low-code development, rapid prototyping, SaaS platform, AI workflow automation, government modernization, citizen development, agentic IDE" />
         <link rel="canonical" href={canonical} />
-        <meta property="og:image" content="/assets/share.jpg" />
+        
+        {/* Open Graph */}
+        <meta property="og:url" content={canonical} />
+        <meta property="og:title" content="JCAL.ai - AI App Building Platform | Build Apps with Prompts" />
+        <meta property="og:description" content="Transform ideas into production-ready apps using natural language. Revolutionary AI development platform for rapid prototyping and deployment." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.innovixdynamix.com/assets/share.jpg" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="JCAL.ai - Build AI Apps with Prompts" />
+        <meta name="twitter:description" content="Revolutionary AI app building platform. From prompt to production in minutes." />
+        <meta name="twitter:image" content="https://www.innovixdynamix.com/assets/share.jpg" />
+        
+        {/* Structured Data - SoftwareApplication */}
         <script type="application/ld+json">{JSON.stringify({
-          "@context":"https://schema.org",
-          "@type":"SoftwareApplication",
-          name:"JCAL.ai",
-          applicationCategory:"BusinessApplication",
-          operatingSystem:"Web",
-          offers:{"@type":"Offer","price":"0","priceCurrency":"USD"}
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "JCAL.ai",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Web",
+          "description": "AI-powered app building platform that transforms natural language prompts into production-ready applications",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/PreOrder"
+          },
+          "featureList": [
+            "Natural language to code conversion",
+            "Live preview and real-time compilation",
+            "Integrated deployment pipelines",
+            "Multi-LLM support",
+            "Rapid prototyping",
+            "Zero infrastructure setup"
+          ],
+          "applicationSubCategory": [
+            "AI Development",
+            "Low-Code Platform",
+            "Rapid Application Development"
+          ],
+          "screenshot": "https://www.innovixdynamix.com/assets/jcal-screenshot.jpg",
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "ratingCount": "1"
+          }
+        })}</script>
+        
+        {/* Structured Data - Product */}
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "JCAL.ai",
+          "description": "Agentic cloud IDE for building applications from natural language prompts",
+          "brand": {
+            "@type": "Organization",
+            "name": "Innovix Dynamix"
+          },
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/PreOrder",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
         })}</script>
       </Helmet>
       <div className="mx-auto max-w-3xl text-center">

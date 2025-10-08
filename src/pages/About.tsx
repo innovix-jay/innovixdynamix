@@ -7,17 +7,56 @@ const About: React.FC = () => {
   return (
     <div className="container py-16">
       <Helmet>
-        <title>About Innovix Dynamix | Innovation, Integration, Excellence</title>
-        <meta name="description" content="Innovix Dynamix builds AI tools for builders and businesses—innovation, integration, and excellence—led by Founder & CEO Jay Cadmus." />
+        <title>About Innovix Dynamix | Leading AI Consulting & Digital Transformation Firm</title>
+        <meta name="description" content="Service-disabled veteran-owned AI consulting firm specializing in government contracts and enterprise digital transformation. Expert AI training, workflow automation, and production-ready solutions led by CEO Jay Cadmus." />
+        <meta name="keywords" content="AI consulting firm, digital transformation, service-disabled veteran-owned business, SDVOSB, AI training experts, government AI consulting, enterprise AI solutions, Jay Cadmus CEO" />
         <link rel="canonical" href={canonical} />
-        <meta property="og:image" content="/assets/share.jpg" />
+        
+        {/* Open Graph */}
+        <meta property="og:url" content={canonical} />
+        <meta property="og:title" content="About Innovix Dynamix | Leading AI Consulting Firm" />
+        <meta property="og:description" content="Service-disabled veteran-owned AI consulting firm specializing in government contracts and enterprise digital transformation." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.innovixdynamix.com/assets/share.jpg" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Innovix Dynamix | Leading AI Consulting Firm" />
+        <meta name="twitter:description" content="SDVOSB AI consulting firm led by CEO Jay Cadmus. Government contracts and enterprise digital transformation experts." />
+        <meta name="twitter:image" content="https://www.innovixdynamix.com/assets/share.jpg" />
+        
+        {/* Structured Data - Person */}
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Person",
-          name: "Jay Cadmus",
-          jobTitle: "Founder & CEO",
-          worksFor: { "@type": "Organization", name: "Innovix Dynamix LLC" },
-          image: ceoPhoto,
+          "name": "Jay Cadmus",
+          "jobTitle": "Founder & CEO",
+          "description": "Service-disabled Air Force veteran specializing in AI consulting, digital transformation, and data science for government and enterprise clients",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Innovix Dynamix LLC"
+          },
+          "image": "https://www.innovixdynamix.com" + ceoPhoto,
+          "alumniOf": "United States Air Force",
+          "knowsAbout": [
+            "Artificial Intelligence",
+            "Digital Transformation",
+            "Data Science",
+            "Government Contracting",
+            "Enterprise AI Training"
+          ]
+        })}</script>
+        
+        {/* Structured Data - AboutPage */}
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "name": "About Innovix Dynamix",
+          "description": "Learn about Innovix Dynamix, a leading AI consulting and training firm for government and enterprise clients",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Innovix Dynamix LLC"
+          }
         })}</script>
       </Helmet>
       <h1 className="text-3xl font-bold">About Innovix Dynamix</h1>
@@ -39,9 +78,11 @@ const About: React.FC = () => {
         <div className="mt-6 grid items-start gap-6 md:grid-cols-[auto,1fr]">
           <img
             src={ceoPhoto}
-            alt="Jay Cadmus, Founder & CEO of Innovix Dynamix"
+            alt="Jay Cadmus - Founder and CEO of Innovix Dynamix, Service-Disabled Air Force Veteran specializing in AI consulting, digital transformation, and government contracting"
             className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover ring-2 ring-border shadow-lg"
             loading="lazy"
+            width="192"
+            height="192"
           />
           <div>
             <h3 className="sr-only">Jay Cadmus</h3>

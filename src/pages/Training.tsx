@@ -11,16 +11,104 @@ const Training: React.FC = () => {
   return (
     <div className="min-h-screen">
       <Helmet>
-        <title>AI Training & Enablement | Innovix Dynamix</title>
-        <meta name="description" content="Standards-aligned AI training portal for government and enterprise teams. Role-based learning, OMB M-24-10 & NIST AI RMF aligned. Ready in 1-3 weeks." />
-        <meta name="keywords" content="AI training, government contractors, OMB M-24-10, NIST AI RMF, enterprise AI training, federal staffing contracts" />
+        <title>AI Training for Government & Enterprise | Innovix Dynamix</title>
+        <meta name="description" content="Professional AI training and enablement for government contractors and enterprise teams. Standards-aligned with OMB M-24-10 & NIST AI RMF. Role-based learning, workflow automation, and prompt engineering. Deployment in 1-3 weeks." />
+        <meta name="keywords" content="AI training, government AI training, enterprise AI enablement, OMB M-24-10 compliance, NIST AI RMF training, federal AI contracts, AI workflow automation training, prompt engineering, cybersecurity AI training, government contractor training, federal staffing contracts" />
         <link rel="canonical" href={canonical} />
-        <meta property="og:title" content="AI Training & Enablement | Innovix Dynamix" />
-        <meta property="og:description" content="Standards-aligned AI training portal for government and enterprise teams. Role-based learning, OMB M-24-10 & NIST AI RMF aligned." />
+        
+        {/* Open Graph */}
+        <meta property="og:url" content={canonical} />
+        <meta property="og:title" content="AI Training for Government & Enterprise | Innovix Dynamix" />
+        <meta property="og:description" content="Professional AI training portal for government and enterprise. OMB M-24-10 & NIST AI RMF aligned. Ready in 1-3 weeks." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/assets/share.jpg" />
+        <meta property="og:image" content="https://www.innovixdynamix.com/assets/share.jpg" />
+        
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="/assets/share.jpg" />
+        <meta name="twitter:title" content="AI Training for Government & Enterprise" />
+        <meta name="twitter:description" content="Standards-aligned AI training for government contractors and enterprise teams. Deployment in 1-3 weeks." />
+        <meta name="twitter:image" content="https://www.innovixdynamix.com/assets/share.jpg" />
+        
+        {/* Structured Data - Service */}
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": "AI Training & Enablement",
+          "description": "Standards-aligned AI training portal for government and enterprise teams with role-based learning paths",
+          "provider": {
+            "@type": "Organization",
+            "name": "Innovix Dynamix LLC"
+          },
+          "areaServed": "US",
+          "audience": {
+            "@type": "Audience",
+            "audienceType": [
+              "Government Contractors",
+              "Enterprise IT Teams",
+              "Cybersecurity Professionals",
+              "Federal Agencies"
+            ]
+          },
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/InStock",
+            "description": "Hosted AI training portal with role-based learning, standards compliance, and rapid deployment"
+          },
+          "serviceType": "AI Training",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "AI Training Features",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Hosted Training Portal",
+                  "description": "No infrastructure required, fully managed hosting"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Role-Based Learning Paths",
+                  "description": "Tailored training for cybersecurity, project management, IT support, and engineering roles"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Standards Compliance",
+                  "description": "Aligned to OMB M-24-10 and NIST AI RMF specifications"
+                }
+              }
+            ]
+          }
+        })}</script>
+        
+        {/* Structured Data - Course */}
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Course",
+          "name": "AI Training & Enablement for Government and Enterprise",
+          "description": "Comprehensive AI training covering prompt engineering, workflow automation, and safe AI adoption",
+          "provider": {
+            "@type": "Organization",
+            "name": "Innovix Dynamix LLC"
+          },
+          "educationalLevel": "Professional",
+          "coursePrerequisites": "IT or cybersecurity role in government or enterprise organization",
+          "availableLanguage": "en",
+          "isAccessibleForFree": false,
+          "teaches": [
+            "Prompt Engineering",
+            "AI Workflow Automation",
+            "Safe AI Adoption",
+            "OMB M-24-10 Compliance",
+            "NIST AI RMF Implementation"
+          ]
+        })}</script>
       </Helmet>
 
       {/* Hero Section */}

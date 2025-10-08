@@ -43,12 +43,15 @@ const Hero: React.FC<React.HTMLAttributes<HTMLElement>> = (props) => {
               {/* Animated glow effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-brand-2 via-brand-1 to-brand-3 rounded-xl blur-3xl opacity-20 animate-pulse"></div>
               
-              {/* Dashboard image */}
+              {/* Dashboard image with optimized alt text for SEO */}
               <div className="relative glass-card p-2 rounded-xl transform hover:scale-[1.02] transition-all duration-500">
                 <img 
                   src={trainingDashboard} 
-                  alt="AI Training Dashboard Interface showing role-based learning paths and progress tracking" 
+                  alt="Innovix Dynamix AI Training Dashboard - Interactive interface showing role-based learning paths, progress tracking, and OMB M-24-10 compliance monitoring for government and enterprise AI enablement programs" 
                   className="rounded-lg w-full h-auto shadow-2xl"
+                  loading="lazy"
+                  width="800"
+                  height="600"
                 />
               </div>
 

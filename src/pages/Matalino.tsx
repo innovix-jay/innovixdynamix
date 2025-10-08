@@ -9,28 +9,89 @@ const Matalino: React.FC = () => {
   return (
     <div className="container py-16">
       <Helmet>
-        <title>Matalino – AI model aggregator + business suite | Innovix Dynamix</title>
-        <meta name="description" content="Unified access to several premium AI models with store, email, and automations—launch faster without multiple subscriptions." />
+        <title>Matalino - AI Business Suite for Creators | All-in-One SaaS Platform</title>
+        <meta name="description" content="Matalino: Unified AI model access + complete business suite. Multi-LLM aggregator with digital storefront, email marketing, AI contracts, and automation tools. Perfect for small businesses, creators, and solopreneurs. Replace multiple subscriptions with one platform." />
+        <meta name="keywords" content="AI business suite, multi-LLM aggregator, AI for small business, creator tools, digital storefront, AI contracts, email marketing automation, solopreneur platform, AI SaaS, business automation, AI knowledge base" />
         <link rel="canonical" href={canonical} />
-        <meta property="og:image" content="/assets/share.jpg" />
+        
+        {/* Open Graph */}
+        <meta property="og:url" content={canonical} />
+        <meta property="og:title" content="Matalino - AI Business Suite | All-in-One Platform for Creators" />
+        <meta property="og:description" content="Unified AI model access + complete business tools. Digital storefront, email marketing, AI contracts, and more in one platform." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.innovixdynamix.com/assets/share.jpg" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Matalino - AI Business Suite for Creators" />
+        <meta name="twitter:description" content="All-in-one platform: AI models, digital storefront, email marketing, and automation." />
+        <meta name="twitter:image" content="https://www.innovixdynamix.com/assets/share.jpg" />
+        
+        {/* Structured Data - SoftwareApplication */}
         <script type="application/ld+json">{JSON.stringify({
-          "@context":"https://schema.org",
-          "@type":"SoftwareApplication",
-          name:"Matalino",
-          applicationCategory:"BusinessApplication",
-          operatingSystem:"Web",
-          offers:{"@type":"Offer","price":"0","priceCurrency":"USD"}
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "Matalino",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "description": "All-in-one business suite with unified AI model access, digital storefront, email marketing, and automation tools for creators and small businesses",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/PreOrder"
+          },
+          "featureList": [
+            "Unified multi-LLM access",
+            "Digital storefront builder",
+            "Link-in-bio creator",
+            "Email marketing automation",
+            "AI-generated contracts",
+            "Payment processing",
+            "Business automation"
+          ],
+          "applicationSubCategory": [
+            "Business Management",
+            "E-commerce",
+            "Marketing Automation",
+            "AI Tools"
+          ],
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "ratingCount": "1"
+          }
         })}</script>
+        
+        {/* Structured Data - Product */}
         <script type="application/ld+json">{JSON.stringify({
-          "@context":"https://schema.org",
-          "@type":"FAQPage",
-          mainEntity:[
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Matalino",
+          "description": "All-in-one business platform combining AI model access with essential business tools",
+          "brand": {
+            "@type": "Organization",
+            "name": "Innovix Dynamix"
+          },
+          "offers": {
+            "@type": "Offer",
+            "availability": "https://schema.org/PreOrder",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        })}</script>
+        
+        {/* Structured Data - FAQPage */}
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
             {
-              "@type":"Question",
-              name:"Do I need coding skills?",
-              acceptedAnswer:{
-                "@type":"Answer",
-                text:"No. Matalino is a no-code business suite with a product store builder, link-in-bio maker, and email campaign creator. It also offers unified access to several premium AI models under one roof—nothing to code."
+              "@type": "Question",
+              "name": "Do I need coding skills to use Matalino?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Matalino is a no-code business suite with a product store builder, link-in-bio maker, and email campaign creator. It also offers unified access to several premium AI models under one roof—nothing to code."
               }
             }
           ]

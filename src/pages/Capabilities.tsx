@@ -11,10 +11,92 @@ const Capabilities: React.FC = () => {
   return (
     <div className="container py-16 max-w-5xl">
       <Helmet>
-        <title>Innovix Dynamix Capabilities Statement | AI Training, Enablement & Production-Ready Solutions</title>
-        <meta name="description" content="SDVOSB-certified AI training, JCAL development platform, and Matalino business tools. Standards-aligned solutions for government and commercial teams." />
+        <title>Capabilities Statement | AI Consulting & Government Contracting | Innovix Dynamix</title>
+        <meta name="description" content="SDVOSB AI consulting firm capabilities statement. Government AI training, JCAL app building platform, and Matalino SaaS solutions. NAICS: 611430, 541511, 541512, 518210. Federal-grade security, OMB M-24-10 & NIST AI RMF aligned." />
+        <meta name="keywords" content="capabilities statement, SDVOSB, government contracting, AI training services, federal AI contracts, NAICS codes, government AI consulting, AI app building, SaaS platform, federal security standards, AI for government" />
         <link rel="canonical" href={canonical} />
-        <meta property="og:image" content="/assets/share.jpg" />
+        
+        {/* Open Graph */}
+        <meta property="og:url" content={canonical} />
+        <meta property="og:title" content="Capabilities Statement | AI Consulting & Government Contracting" />
+        <meta property="og:description" content="SDVOSB AI consulting firm. Government training, JCAL platform, and Matalino SaaS. Federal-grade security and standards compliance." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://www.innovixdynamix.com/assets/share.jpg" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Capabilities Statement | AI Consulting for Government" />
+        <meta name="twitter:description" content="SDVOSB firm offering AI training, JCAL app building, and Matalino SaaS for government and enterprise." />
+        <meta name="twitter:image" content="https://www.innovixdynamix.com/assets/share.jpg" />
+        
+        {/* Structured Data - GovernmentService */}
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "GovernmentService",
+          "name": "Innovix Dynamix Government AI Services",
+          "description": "AI training, consulting, and production-ready solutions for government agencies and contractors",
+          "provider": {
+            "@type": "Organization",
+            "name": "Innovix Dynamix LLC",
+            "description": "Service-Disabled Veteran-Owned Small Business (SDVOSB)"
+          },
+          "serviceType": [
+            "AI Training & Enablement",
+            "Agentic Development Platforms",
+            "Business Enablement Platforms"
+          ],
+          "areaServed": {
+            "@type": "Country",
+            "name": "United States"
+          }
+        })}</script>
+        
+        {/* Structured Data - ProfessionalService */}
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          "name": "Innovix Dynamix AI Consulting",
+          "description": "Comprehensive AI capabilities for government and commercial clients",
+          "knowsAbout": [
+            "AI Training",
+            "Digital Transformation",
+            "Workflow Automation",
+            "Government Contracting",
+            "Federal Security Standards",
+            "OMB M-24-10",
+            "NIST AI RMF"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Core Competencies",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "AI Workforce Training & Enablement",
+                  "description": "Role-based AI training for government and commercial IT personnel"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "SoftwareApplication",
+                  "name": "JCAL",
+                  "description": "Agentic cloud IDE for rapid application development"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "SoftwareApplication",
+                  "name": "Matalino",
+                  "description": "All-in-one platform for creators and small businesses"
+                }
+              }
+            ]
+          }
+        })}</script>
       </Helmet>
 
       {/* Header */}
@@ -31,12 +113,15 @@ const Capabilities: React.FC = () => {
               {/* Photo */}
               <img 
                 src={profilePhoto} 
-                alt="Jay Cadmus, CEO" 
+                alt="Jay Cadmus - CEO and Founder of Innovix Dynamix, Service-Disabled Veteran-Owned Small Business (SDVOSB) specializing in AI training and government contracts"
                 className="relative w-[160px] h-[160px] rounded-full object-cover border-4 border-primary/40 shadow-2xl ring-2 ring-primary/20"
                 style={{
                   objectPosition: 'center 15%',
                   clipPath: 'circle(50%)'
                 }}
+                loading="lazy"
+                width="160"
+                height="160"
               />
             </div>
           </div>

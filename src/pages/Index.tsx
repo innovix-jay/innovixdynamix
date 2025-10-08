@@ -24,32 +24,94 @@ const Index = () => {
       <StickyCTABanner />
       
       <Helmet>
-        <title>Innovix Dynamix | AI Training & Enablement, Ready on Day One</title>
-        <meta name="description" content="Standards-aligned AI Training & Enablement for government and enterprise—aligned to OMB M-24-10 and NIST AI RMF." />
-        <meta name="keywords" content="AI training, AI enablement, OMB M-24-10, NIST AI RMF, government AI, enterprise AI training" />
+        <title>AI Training & Consulting for Government & Enterprise | Innovix Dynamix</title>
+        <meta name="description" content="Leading AI consulting and training firm specializing in government contracts, digital transformation, and enterprise AI enablement. OMB M-24-10 & NIST AI RMF aligned. Expert AI workflow automation and app building solutions." />
+        <meta name="keywords" content="AI consulting, AI training, government AI contracts, digital transformation, AI workflow automation, AI app building, enterprise AI training, OMB M-24-10, NIST AI RMF, AI enablement, SaaS AI solutions, AI knowledge base, federal AI training, AI for government contractors" />
         <link rel="canonical" href={canonical} />
-        <meta property="og:title" content="Innovix Dynamix | AI Training & Enablement, Ready on Day One" />
-        <meta property="og:description" content="Standards-aligned AI Training & Enablement for government and enterprise—aligned to OMB M-24-10 and NIST AI RMF." />
+        
+        {/* Open Graph */}
+        <meta property="og:url" content={canonical} />
+        <meta property="og:title" content="AI Training & Consulting for Government & Enterprise | Innovix Dynamix" />
+        <meta property="og:description" content="Leading AI consulting and training firm specializing in government contracts, digital transformation, and enterprise AI enablement. Standards-aligned solutions that deliver results." />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="/assets/share.jpg" />
+        <meta property="og:image" content="https://www.innovixdynamix.com/assets/share.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Innovix Dynamix" />
+        <meta property="og:locale" content="en_US" />
+        
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="/assets/share.jpg" />
+        <meta name="twitter:title" content="AI Training & Consulting for Government & Enterprise" />
+        <meta name="twitter:description" content="Leading AI consulting and training firm. Government contracts, digital transformation, enterprise AI enablement." />
+        <meta name="twitter:image" content="https://www.innovixdynamix.com/assets/share.jpg" />
+        
+        {/* LinkedIn */}
+        <meta property="og:image:alt" content="Innovix Dynamix - AI Training and Consulting Solutions" />
+        
+        {/* Structured Data - Organization */}
         <script type="application/ld+json">{JSON.stringify({
-          "@context":"https://schema.org",
-          "@type":"Organization",
-          name:"Innovix Dynamix LLC",
-          url:"https://www.innovixdynamix.com",
-          logo:"https://www.innovixdynamix.com/assets/innovix-logo.png",
-          sameAs:["https://www.linkedin.com/company/innovixdynamix"]
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Innovix Dynamix LLC",
+          "alternateName": "Innovix Dynamix",
+          "url": "https://www.innovixdynamix.com",
+          "logo": "https://www.innovixdynamix.com/assets/innovix-logo.png",
+          "description": "Leading AI consulting and training firm specializing in government contracts, digital transformation, and enterprise AI enablement",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "953 Bentstation Ln #303",
+            "addressLocality": "Lake Mary",
+            "addressRegion": "FL",
+            "postalCode": "32746",
+            "addressCountry": "US"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Business Inquiries",
+            "email": "jay.cadmus@innovixdynamix.com"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/company/innovixdynamix"
+          ],
+          "founder": {
+            "@type": "Person",
+            "name": "Jay Cadmus",
+            "jobTitle": "Founder & CEO"
+          }
         })}</script>
+        
+        {/* Structured Data - Service */}
         <script type="application/ld+json">{JSON.stringify({
-          "@context":"https://schema.org",
-          "@type":"WebSite",
-          url:"https://www.innovixdynamix.com",
-          potentialAction:{
-            "@type":"SearchAction",
-            target:"https://www.innovixdynamix.com/search?q={search_term_string}",
-            "query-input":"required name=search_term_string"
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          "name": "Innovix Dynamix AI Training & Consulting",
+          "description": "AI consulting, training, and enablement services for government and enterprise",
+          "provider": {
+            "@type": "Organization",
+            "name": "Innovix Dynamix LLC"
+          },
+          "areaServed": "US",
+          "serviceType": [
+            "AI Training",
+            "AI Consulting",
+            "Digital Transformation",
+            "AI Workflow Automation",
+            "Government AI Contracts",
+            "Enterprise AI Enablement"
+          ]
+        })}</script>
+        
+        {/* Structured Data - Website */}
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "url": "https://www.innovixdynamix.com",
+          "name": "Innovix Dynamix",
+          "description": "AI Training & Consulting for Government & Enterprise",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Innovix Dynamix LLC"
           }
         })}</script>
       </Helmet>
