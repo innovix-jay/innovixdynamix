@@ -103,13 +103,16 @@ Deno.serve(async (req) => {
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; line-height:1.6; color:#0f172a">
         <h2 style="margin:0 0 12px;">Thanks for reaching out${name ? ", " + String(name) : ""}.</h2>
         <p style="margin:0 0 12px;">We received your message and will get back shortly.</p>
+        <p style="margin:16px 0 4px;font-size:14px;color:#64748b;">Need to add anything? Just reply to this email at support@innovixdynamix.com</p>
         <p style="margin:0 0 12px;">– Jay</p>
       </div>
     `;
 
     const emailResult = await resend.emails.send({
-      from: "Innovix Dynamix <noreply@innovixdynamix.com>",
+      from: "Innovix Dynamix <support@innovixdynamix.com>",
+      replyTo: "support@innovixdynamix.com",
       to: [email],
+      cc: ["jay.cadmus@innovixdynamix.com"],
       subject: "We received your message",
       html,
     });

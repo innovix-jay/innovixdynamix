@@ -359,6 +359,7 @@ Deno.serve(async (req) => {
           <p style="margin:24px 0;">
             <a href="${siteUrl}" style="display:inline-block;padding:14px 28px;background:#0f172a;color:#ffffff;text-decoration:none;border-radius:6px;font-weight:600;font-size:16px;">Visit ${brand}</a>
           </p>
+          <p style="margin:16px 0 4px; font-size:14px; color:#64748b;">Have questions or feedback? Reply to this email at support@innovixdynamix.com — we'd love to hear from you!</p>
           <p style="margin:16px 0 0;">– Jay Cadmus, Founder & CEO</p>
         </div>
       </div>
@@ -366,7 +367,8 @@ Deno.serve(async (req) => {
 
     try {
       await resend.emails.send({
-        from: "Innovix Dynamix <noreply@innovixdynamix.com>",
+        from: "Innovix Dynamix <support@innovixdynamix.com>",
+        replyTo: "support@innovixdynamix.com",
         to: [emailRecord.email],
         subject,
         html,
@@ -395,7 +397,8 @@ Deno.serve(async (req) => {
 
     try {
       await resend.emails.send({
-        from: "Innovix Dynamix <noreply@innovixdynamix.com>",
+        from: "Innovix Dynamix <support@innovixdynamix.com>",
+        replyTo: "support@innovixdynamix.com",
         to: ["jay.cadmus@innovixdynamix.com"],
         subject: `New ${brand} Signup: ${emailRecord.email}`,
         html: adminNotificationHtml,

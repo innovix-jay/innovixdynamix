@@ -148,12 +148,14 @@ Deno.serve(async (req) => {
           <a href="${confirmUrl}" style="display:inline-block;padding:12px 24px;background:#0f172a;color:#ffffff;text-decoration:none;border-radius:6px;font-weight:600;">Confirm Email</a>
         </p>
         <p style="margin:0 0 12px;font-size:14px;color:#64748b;">Or copy and paste this link: ${confirmUrl}</p>
+        <p style="margin:16px 0 4px;font-size:14px;color:#64748b;">Questions? Reply to this email anytime at support@innovixdynamix.com</p>
         <p style="margin:0 0 12px;">– Jay</p>
       </div>
     `;
 
     const emailResult = await resend.emails.send({
-      from: "Innovix Dynamix <noreply@innovixdynamix.com>",
+      from: "Innovix Dynamix <support@innovixdynamix.com>",
+      replyTo: "support@innovixdynamix.com",
       to: [email],
       subject,
       html,
